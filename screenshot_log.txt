@@ -4665,3 +4665,200 @@ playwright._impl._errors.TargetClosedError: Target page, context or browser has 
 2025-11-06 16:55:11 | INFO | user=AnuroopParambil | Added entry sdgfds.png for URL=https://single.mcns.io/dashboard/overview with clip={'x': 80, 'y': 22, 'width': 1145, 'height': 632} and 270 actions
 2025-11-06 17:04:45 | INFO | user=AnuroopParambil | Recorded 295 raw events, 325 actions for https://single.mcns.io/dashboard/overview
 2025-11-06 17:04:48 | INFO | user=AnuroopParambil | Added entry asds for URL=https://single.mcns.io/dashboard/overview with clip={'x': 22, 'y': 24, 'width': 1255, 'height': 694} and 325 actions
+2025-11-06 17:07:45 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-06 17:08:46 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-06 17:10:47 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-06 17:11:18 | ERROR | user=AnuroopParambil | Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<graceful_shutdown() done, defined at c:\Users\AnuroopParambil\OneDrive - Aviatrix Systems, Inc\downloaded_pngs\Scripts\4K_bulk_Screenshot\Scale4_screenshot.py:54> exception=SystemExit(0)>
+Traceback (most recent call last):
+  File "c:\Users\AnuroopParambil\OneDrive - Aviatrix Systems, Inc\downloaded_pngs\Scripts\4K_bulk_Screenshot\Scale4_screenshot.py", line 600, in main
+    await context.close()
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\async_api\_generated.py", line 13451, in close
+    return mapping.from_maybe_impl(await self._impl_obj.close(reason=reason))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_browser_context.py", line 594, in close
+    await self.request.dispose(reason=reason)
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_fetch.py", line 114, in dispose
+    await self._channel.send("dispose", None, {"reason": reason})
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py", line 556, in wrap_api_call
+    return await cb()
+           ^^^^^^^^^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py", line 123, in _inner_send
+    done, _ = await asyncio.wait(
+              ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 451, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 537, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "c:\Users\AnuroopParambil\OneDrive - Aviatrix Systems, Inc\downloaded_pngs\Scripts\4K_bulk_Screenshot\Scale4_screenshot.py", line 565, in main
+    async with async_playwright() as p:
+               ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\async_api\_context_manager.py", line 57, in __aexit__
+    await self._connection.stop_async()
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py", line 322, in stop_async
+    await self._transport.wait_until_stopped()
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_transport.py", line 102, in wait_until_stopped
+    await self._stopped_future
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\AnuroopParambil\OneDrive - Aviatrix Systems, Inc\downloaded_pngs\Scripts\4K_bulk_Screenshot\Scale4_screenshot.py", line 61, in graceful_shutdown
+    await asyncio.gather(*tasks, return_exceptions=True)
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py", line 312, in run
+    await self._transport.run()
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\site-packages\playwright\_impl\_transport.py", line 142, in run
+    buffer = await self._proc.stdout.readexactly(4)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\streams.py", line 769, in readexactly
+    await self._wait_for_data('readexactly')
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\streams.py", line 539, in _wait_for_data
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\AnuroopParambil\OneDrive - Aviatrix Systems, Inc\downloaded_pngs\Scripts\4K_bulk_Screenshot\Scale4_screenshot.py", line 605, in <module>
+    asyncio.run(main())
+    ~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 194, in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 62, in __exit__
+    self.close()
+    ~~~~~~~~~~^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 70, in close
+    _cancel_all_tasks(loop)
+    ~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 206, in _cancel_all_tasks
+    loop.run_until_complete(tasks.gather(*to_cancel, return_exceptions=True))
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 712, in run_until_complete
+    self.run_forever()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 683, in run_forever
+    self._run_once()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 2050, in _run_once
+    handle._run()
+    ~~~~~~~~~~~^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\AnuroopParambil\OneDrive - Aviatrix Systems, Inc\downloaded_pngs\Scripts\4K_bulk_Screenshot\Scale4_screenshot.py", line 65, in graceful_shutdown
+    sys.exit(0)
+    ~~~~~~~~^^^
+SystemExit: 0
+2025-11-06 17:11:18 | ERROR | user=AnuroopParambil | Task was destroyed but it is pending!
+task: <Task cancelling name='Task-6' coro=<graceful_shutdown() done, defined at c:\Users\AnuroopParambil\OneDrive - Aviatrix Systems, Inc\downloaded_pngs\Scripts\4K_bulk_Screenshot\Scale4_screenshot.py:54> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py:820]>
+2025-11-06 17:12:44 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-06 17:13:11 | ERROR | user=AnuroopParambil | Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<graceful_shutdown() done, defined at c:\Users\AnuroopParambil\OneDrive - Aviatrix Systems, Inc\downloaded_pngs\Scripts\4K_bulk_Screenshot\Scale4_screenshot.py:54> exception=SystemExit(0)>
+Traceback (most recent call last):
+  File "c:\Users\AnuroopParambil\OneDrive - Aviatrix Systems, Inc\downloaded_pngs\Scripts\4K_bulk_Screenshot\Scale4_screenshot.py", line 61, in graceful_shutdown
+    await asyncio.gather(*tasks, return_exceptions=True)
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\AnuroopParambil\OneDrive - Aviatrix Systems, Inc\downloaded_pngs\Scripts\4K_bulk_Screenshot\Scale4_screenshot.py", line 604, in <module>
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 194, in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 62, in __exit__
+    self.close()
+    ~~~~~~~~~~^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 70, in close
+    _cancel_all_tasks(loop)
+    ~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 206, in _cancel_all_tasks
+    loop.run_until_complete(tasks.gather(*to_cancel, return_exceptions=True))
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 712, in run_until_complete
+    self.run_forever()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 683, in run_forever
+    self._run_once()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 2050, in _run_once
+    handle._run()
+    ~~~~~~~~~~~^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\AnuroopParambil\OneDrive - Aviatrix Systems, Inc\downloaded_pngs\Scripts\4K_bulk_Screenshot\Scale4_screenshot.py", line 65, in graceful_shutdown
+    sys.exit(0)
+    ~~~~~~~~^^^
+SystemExit: 0
+2025-11-06 17:13:14 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-06 17:13:53 | ERROR | user=AnuroopParambil | Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<graceful_shutdown() done, defined at c:\Users\AnuroopParambil\OneDrive - Aviatrix Systems, Inc\downloaded_pngs\Scripts\4K_bulk_Screenshot\Scale4_screenshot.py:54> exception=SystemExit(0)>
+Traceback (most recent call last):
+  File "c:\Users\AnuroopParambil\OneDrive - Aviatrix Systems, Inc\downloaded_pngs\Scripts\4K_bulk_Screenshot\Scale4_screenshot.py", line 61, in graceful_shutdown
+    actions.append({"type": "wait", "ms": delta})
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\AnuroopParambil\OneDrive - Aviatrix Systems, Inc\downloaded_pngs\Scripts\4K_bulk_Screenshot\Scale4_screenshot.py", line 600, in <module>
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 194, in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 62, in __exit__
+    self.close()
+    ~~~~~~~~~~^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 70, in close
+    _cancel_all_tasks(loop)
+    ~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 206, in _cancel_all_tasks
+    loop.run_until_complete(tasks.gather(*to_cancel, return_exceptions=True))
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 712, in run_until_complete
+    self.run_forever()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 683, in run_forever
+    self._run_once()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 2050, in _run_once
+    handle._run()
+    ~~~~~~~~~~~^^
+  File "C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\AnuroopParambil\OneDrive - Aviatrix Systems, Inc\downloaded_pngs\Scripts\4K_bulk_Screenshot\Scale4_screenshot.py", line 65, in graceful_shutdown
+    actions.append({"type": "scrollTo", "x": ev["x"], "y": ev["y"]})
+    ^^^^^^^
+SystemExit: 0
+2025-11-06 17:13:56 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-06 17:14:03 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-06 17:15:38 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-06 17:15:49 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.

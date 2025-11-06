@@ -48,6 +48,7 @@ async def get_current_url(context):
     # fallback
     return context.pages[-1], context.pages[-1].url
 
+
 def convert_events_to_actions(events):
     """Convert raw JS events into structured Playwright actions."""
     if not events:
@@ -359,7 +360,6 @@ async def run_json_editor(context, page: Page, recorded_events_buffer):
         print("3. Remove entry")
         print("4. Edit entry")
         print("5. Go to Main Menu")
-        print("6. Return to Main Menu")
         choice = input("Choose: ").strip()
 
         if choice == "1":
@@ -481,10 +481,7 @@ async def run_json_editor(context, page: Page, recorded_events_buffer):
 
         elif choice == "5":
             return  # Go back to main menu
-
-        elif choice == "6":
-            loop = False  # Exit program
-
+            loop = False  # Exit program        
         else:
             print("[ERROR] Invalid choice")
 
