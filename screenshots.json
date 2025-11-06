@@ -1,7 +1,7 @@
 [
     {
         "url": "https://single.mcns.io/dashboard/overview",
-        "png_name": "asds",
+        "png_name": "asds.png",
         "clip": {
             "x": 22,
             "y": 24,
@@ -1583,6 +1583,783 @@
                 "type": "mousemove",
                 "x": 1252,
                 "y": 477
+            }
+        ]
+    },
+    {
+        "url": "https://single.mcns.io/dashboard/overview",
+        "png_name": "sad.png",
+        "clip": {
+            "x": 618,
+            "y": 185,
+            "width": 387,
+            "height": 291
+        },
+        "actions": [
+            {
+                "type": "mousemove",
+                "x": 1273,
+                "y": 163
+            },
+            {
+                "type": "wait",
+                "ms": 1636
+            },
+            {
+                "type": "mousedown",
+                "x": 1273,
+                "y": 163
+            },
+            {
+                "type": "wait",
+                "ms": 3653
+            },
+            {
+                "type": "mouseup",
+                "x": 1297,
+                "y": 341
+            },
+            {
+                "type": "wait",
+                "ms": 187
+            },
+            {
+                "type": "mousemove",
+                "x": 1276,
+                "y": 342
+            },
+            {
+                "type": "mousemove",
+                "x": 1259,
+                "y": 342
+            },
+            {
+                "type": "mousemove",
+                "x": 1214,
+                "y": 345
+            },
+            {
+                "type": "mousemove",
+                "x": 1152,
+                "y": 354
+            },
+            {
+                "type": "mousemove",
+                "x": 1115,
+                "y": 359
+            },
+            {
+                "type": "mousemove",
+                "x": 1025,
+                "y": 376
+            },
+            {
+                "type": "mousemove",
+                "x": 992,
+                "y": 379
+            },
+            {
+                "type": "mousemove",
+                "x": 968,
+                "y": 379
+            },
+            {
+                "type": "mousemove",
+                "x": 954,
+                "y": 379
+            },
+            {
+                "type": "mousemove",
+                "x": 944,
+                "y": 379
+            },
+            {
+                "type": "mousemove",
+                "x": 936,
+                "y": 379
+            },
+            {
+                "type": "mousemove",
+                "x": 928,
+                "y": 379
+            },
+            {
+                "type": "mousemove",
+                "x": 917,
+                "y": 379
+            },
+            {
+                "type": "mousemove",
+                "x": 902,
+                "y": 381
+            },
+            {
+                "type": "mousemove",
+                "x": 886,
+                "y": 383
+            },
+            {
+                "type": "mousemove",
+                "x": 862,
+                "y": 389
+            },
+            {
+                "type": "mousemove",
+                "x": 855,
+                "y": 392
+            },
+            {
+                "type": "mousemove",
+                "x": 844,
+                "y": 396
+            },
+            {
+                "type": "mousemove",
+                "x": 835,
+                "y": 401
+            },
+            {
+                "type": "mousemove",
+                "x": 832,
+                "y": 403
+            },
+            {
+                "type": "mousemove",
+                "x": 828,
+                "y": 405
+            },
+            {
+                "type": "mousemove",
+                "x": 818,
+                "y": 412
+            },
+            {
+                "type": "mousemove",
+                "x": 812,
+                "y": 414
+            },
+            {
+                "type": "mousemove",
+                "x": 799,
+                "y": 419
+            },
+            {
+                "type": "mousemove",
+                "x": 792,
+                "y": 421
+            },
+            {
+                "type": "mousemove",
+                "x": 789,
+                "y": 421
+            },
+            {
+                "type": "mousemove",
+                "x": 786,
+                "y": 423
+            },
+            {
+                "type": "wait",
+                "ms": 50
+            },
+            {
+                "type": "mousemove",
+                "x": 782,
+                "y": 425
+            },
+            {
+                "type": "mousemove",
+                "x": 780,
+                "y": 426
+            },
+            {
+                "type": "mousemove",
+                "x": 776,
+                "y": 429
+            },
+            {
+                "type": "wait",
+                "ms": 47
+            },
+            {
+                "type": "mousemove",
+                "x": 772,
+                "y": 431
+            },
+            {
+                "type": "mousemove",
+                "x": 769,
+                "y": 433
+            },
+            {
+                "type": "mousemove",
+                "x": 766,
+                "y": 435
+            },
+            {
+                "type": "mousemove",
+                "x": 764,
+                "y": 436
+            },
+            {
+                "type": "mousemove",
+                "x": 763,
+                "y": 439
+            },
+            {
+                "type": "mousemove",
+                "x": 760,
+                "y": 441
+            },
+            {
+                "type": "wait",
+                "ms": 132
+            },
+            {
+                "type": "mousedown",
+                "x": 760,
+                "y": 441
+            },
+            {
+                "type": "wait",
+                "ms": 81
+            },
+            {
+                "type": "mouseup",
+                "x": 760,
+                "y": 441
+            },
+            {
+                "type": "click",
+                "x": 760,
+                "y": 441
+            },
+            {
+                "type": "wait",
+                "ms": 199
+            },
+            {
+                "type": "mousemove",
+                "x": 795,
+                "y": 417
+            },
+            {
+                "type": "wait",
+                "ms": 45
+            },
+            {
+                "type": "mousemove",
+                "x": 802,
+                "y": 410
+            },
+            {
+                "type": "wait",
+                "ms": 210
+            },
+            {
+                "type": "mousemove",
+                "x": 796,
+                "y": 409
+            },
+            {
+                "type": "mousemove",
+                "x": 794,
+                "y": 406
+            },
+            {
+                "type": "mousemove",
+                "x": 792,
+                "y": 405
+            },
+            {
+                "type": "wait",
+                "ms": 143
+            },
+            {
+                "type": "mousemove",
+                "x": 789,
+                "y": 405
+            },
+            {
+                "type": "wait",
+                "ms": 83
+            },
+            {
+                "type": "mousemove",
+                "x": 795,
+                "y": 394
+            },
+            {
+                "type": "mousemove",
+                "x": 800,
+                "y": 389
+            },
+            {
+                "type": "mousemove",
+                "x": 806,
+                "y": 381
+            },
+            {
+                "type": "mousemove",
+                "x": 812,
+                "y": 374
+            },
+            {
+                "type": "mousemove",
+                "x": 817,
+                "y": 366
+            },
+            {
+                "type": "mousemove",
+                "x": 821,
+                "y": 361
+            },
+            {
+                "type": "mousemove",
+                "x": 824,
+                "y": 356
+            },
+            {
+                "type": "mousemove",
+                "x": 825,
+                "y": 354
+            },
+            {
+                "type": "mousemove",
+                "x": 827,
+                "y": 352
+            },
+            {
+                "type": "mousemove",
+                "x": 831,
+                "y": 349
+            },
+            {
+                "type": "mousemove",
+                "x": 843,
+                "y": 341
+            },
+            {
+                "type": "mousemove",
+                "x": 851,
+                "y": 336
+            },
+            {
+                "type": "mousemove",
+                "x": 852,
+                "y": 334
+            },
+            {
+                "type": "mousemove",
+                "x": 852,
+                "y": 327
+            },
+            {
+                "type": "mousemove",
+                "x": 852,
+                "y": 321
+            },
+            {
+                "type": "wait",
+                "ms": 60
+            },
+            {
+                "type": "mousemove",
+                "x": 852,
+                "y": 305
+            },
+            {
+                "type": "mousemove",
+                "x": 852,
+                "y": 300
+            },
+            {
+                "type": "mousemove",
+                "x": 855,
+                "y": 294
+            },
+            {
+                "type": "wait",
+                "ms": 54
+            },
+            {
+                "type": "mousemove",
+                "x": 864,
+                "y": 291
+            },
+            {
+                "type": "mousemove",
+                "x": 880,
+                "y": 282
+            },
+            {
+                "type": "mousemove",
+                "x": 886,
+                "y": 278
+            },
+            {
+                "type": "mousemove",
+                "x": 892,
+                "y": 277
+            },
+            {
+                "type": "wait",
+                "ms": 52
+            },
+            {
+                "type": "mousemove",
+                "x": 896,
+                "y": 277
+            },
+            {
+                "type": "wait",
+                "ms": 43
+            },
+            {
+                "type": "mousemove",
+                "x": 897,
+                "y": 277
+            },
+            {
+                "type": "wait",
+                "ms": 46
+            },
+            {
+                "type": "mousemove",
+                "x": 903,
+                "y": 274
+            },
+            {
+                "type": "mousemove",
+                "x": 907,
+                "y": 269
+            },
+            {
+                "type": "mousemove",
+                "x": 907,
+                "y": 260
+            },
+            {
+                "type": "wait",
+                "ms": 51
+            },
+            {
+                "type": "mousemove",
+                "x": 904,
+                "y": 254
+            },
+            {
+                "type": "mousemove",
+                "x": 901,
+                "y": 253
+            },
+            {
+                "type": "mousemove",
+                "x": 893,
+                "y": 250
+            },
+            {
+                "type": "mousemove",
+                "x": 891,
+                "y": 249
+            },
+            {
+                "type": "wait",
+                "ms": 66
+            },
+            {
+                "type": "mousemove",
+                "x": 890,
+                "y": 249
+            },
+            {
+                "type": "mousedown",
+                "x": 890,
+                "y": 249
+            },
+            {
+                "type": "wait",
+                "ms": 102
+            },
+            {
+                "type": "mouseup",
+                "x": 890,
+                "y": 249
+            },
+            {
+                "type": "wait",
+                "ms": 52
+            },
+            {
+                "type": "click",
+                "x": 890,
+                "y": 249
+            },
+            {
+                "type": "mousemove",
+                "x": 888,
+                "y": 249
+            },
+            {
+                "type": "wait",
+                "ms": 136
+            },
+            {
+                "type": "mousemove",
+                "x": 888,
+                "y": 250
+            },
+            {
+                "type": "wait",
+                "ms": 50
+            },
+            {
+                "type": "mousemove",
+                "x": 888,
+                "y": 253
+            },
+            {
+                "type": "mousemove",
+                "x": 892,
+                "y": 257
+            },
+            {
+                "type": "mousemove",
+                "x": 896,
+                "y": 261
+            },
+            {
+                "type": "mousemove",
+                "x": 906,
+                "y": 265
+            },
+            {
+                "type": "mousemove",
+                "x": 913,
+                "y": 270
+            },
+            {
+                "type": "mousemove",
+                "x": 928,
+                "y": 275
+            },
+            {
+                "type": "mousemove",
+                "x": 953,
+                "y": 278
+            },
+            {
+                "type": "mousemove",
+                "x": 978,
+                "y": 280
+            },
+            {
+                "type": "mousemove",
+                "x": 996,
+                "y": 280
+            },
+            {
+                "type": "mousemove",
+                "x": 1011,
+                "y": 274
+            },
+            {
+                "type": "mousemove",
+                "x": 1035,
+                "y": 257
+            },
+            {
+                "type": "mousemove",
+                "x": 1047,
+                "y": 247
+            },
+            {
+                "type": "mousemove",
+                "x": 1052,
+                "y": 244
+            },
+            {
+                "type": "wait",
+                "ms": 84
+            },
+            {
+                "type": "mousemove",
+                "x": 1055,
+                "y": 243
+            },
+            {
+                "type": "mousemove",
+                "x": 1057,
+                "y": 250
+            },
+            {
+                "type": "mousemove",
+                "x": 1060,
+                "y": 260
+            },
+            {
+                "type": "mousemove",
+                "x": 1063,
+                "y": 272
+            },
+            {
+                "type": "mousemove",
+                "x": 1066,
+                "y": 278
+            },
+            {
+                "type": "mousemove",
+                "x": 1068,
+                "y": 288
+            },
+            {
+                "type": "mousemove",
+                "x": 1072,
+                "y": 302
+            },
+            {
+                "type": "mousemove",
+                "x": 1072,
+                "y": 309
+            },
+            {
+                "type": "mousemove",
+                "x": 1076,
+                "y": 323
+            },
+            {
+                "type": "mousemove",
+                "x": 1076,
+                "y": 337
+            },
+            {
+                "type": "mousemove",
+                "x": 1079,
+                "y": 341
+            },
+            {
+                "type": "mousemove",
+                "x": 1079,
+                "y": 344
+            },
+            {
+                "type": "wait",
+                "ms": 98
+            },
+            {
+                "type": "mousemove",
+                "x": 1079,
+                "y": 347
+            },
+            {
+                "type": "mousemove",
+                "x": 1080,
+                "y": 350
+            },
+            {
+                "type": "mousemove",
+                "x": 1081,
+                "y": 353
+            },
+            {
+                "type": "wait",
+                "ms": 119
+            },
+            {
+                "type": "mousedown",
+                "x": 1081,
+                "y": 353
+            },
+            {
+                "type": "wait",
+                "ms": 91
+            },
+            {
+                "type": "mouseup",
+                "x": 1081,
+                "y": 353
+            },
+            {
+                "type": "click",
+                "x": 1081,
+                "y": 353
+            },
+            {
+                "type": "wait",
+                "ms": 46
+            },
+            {
+                "type": "mousemove",
+                "x": 1081,
+                "y": 356
+            },
+            {
+                "type": "mousemove",
+                "x": 1083,
+                "y": 361
+            },
+            {
+                "type": "mousemove",
+                "x": 1084,
+                "y": 363
+            },
+            {
+                "type": "mousemove",
+                "x": 1086,
+                "y": 365
+            },
+            {
+                "type": "wait",
+                "ms": 299
+            },
+            {
+                "type": "mousemove",
+                "x": 1087,
+                "y": 365
+            },
+            {
+                "type": "wait",
+                "ms": 64
+            },
+            {
+                "type": "mousemove",
+                "x": 1089,
+                "y": 366
+            },
+            {
+                "type": "mousemove",
+                "x": 1092,
+                "y": 367
+            },
+            {
+                "type": "mousemove",
+                "x": 1094,
+                "y": 369
+            },
+            {
+                "type": "mousemove",
+                "x": 1097,
+                "y": 369
+            },
+            {
+                "type": "mousemove",
+                "x": 1104,
+                "y": 371
+            },
+            {
+                "type": "mousemove",
+                "x": 1116,
+                "y": 374
+            },
+            {
+                "type": "mousemove",
+                "x": 1141,
+                "y": 381
+            },
+            {
+                "type": "mousemove",
+                "x": 1211,
+                "y": 394
             }
         ]
     }

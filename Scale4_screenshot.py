@@ -387,6 +387,7 @@ async def run_json_editor(context, page: Page, recorded_events_buffer):
             await page.wait_for_load_state("domcontentloaded", timeout=15000)
             await page.wait_for_load_state("networkidle")
             await page.evaluate("document.readyState")  # ensure loaded
+            await page.goto(url, wait_until="networkidle", timeout=60000)
 
             status = await page.evaluate(RECORD_ACTIONS_JS)
             recorded_events_buffer.clear()
@@ -492,8 +493,18 @@ async def run_screenshots(page: Page):
     data = load_json()
     SCREENSHOT_DIR.mkdir(exist_ok=True)
 
+    
+
     for file in SCREENSHOT_DIR.glob("*.png"):
         file.unlink()
+
+    for entry in data:
+        png_name = entry.get("png_name", "")
+        if not png_name.lower().endswith(".png"):
+            entry["png_name"] = f"{png_name}.png"
+            logging.warning(f"Missing .png extension for {png_name}; fixed automatically.")
+    save_json(data)
+
 
     print("[INFO] Open the login page if required and log in manually.")
     #input("[ACTION] After logging in, press Enter to continue...")
@@ -504,7 +515,7 @@ async def run_screenshots(page: Page):
         clip = entry.get("clip")
 
         if not url or not png_name or not clip:
-            print(f"[SKIP] Missing info in entry: {entry}")
+            print(f"[SKIP] Missing URL or PNG in entry: {entry}")
             continue
 
         print(f"\n[URL] {url}")
@@ -514,7 +525,12 @@ async def run_screenshots(page: Page):
             print(f"[ERROR] Failed to open {url}: {e}")
             continue
 
+        if not png_name.lower().endswith(".png"):
+            png_name += ".png"
         path = SCREENSHOT_DIR / png_name
+
+
+        
         actions = entry.get("actions", [])
         
         if actions:

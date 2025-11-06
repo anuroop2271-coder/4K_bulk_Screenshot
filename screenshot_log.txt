@@ -4862,3 +4862,8 @@ SystemExit: 0
 2025-11-06 17:14:03 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
 2025-11-06 17:15:38 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
 2025-11-06 17:15:49 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-06 17:20:03 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-06 17:20:43 | INFO | user=AnuroopParambil | Recorded 129 raw events, 159 actions for https://single.mcns.io/dashboard/overview
+2025-11-06 17:20:47 | INFO | user=AnuroopParambil | Added entry sad.png for URL=https://single.mcns.io/dashboard/overview with clip={'x': 618, 'y': 185, 'width': 387, 'height': 291} and 159 actions
+2025-11-06 17:25:35 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-06 17:25:44 | WARNING | user=AnuroopParambil | Missing .png extension for asds; fixed automatically.
