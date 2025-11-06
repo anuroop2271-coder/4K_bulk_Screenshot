@@ -1635,3 +1635,91 @@
     at eval (<anonymous>)
     at UtilityScript.evaluate (<anonymous>:291:30)
     at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-11-04 12:19:42 | INFO | user=AnuroopParambil | Overlay injected on page https://single.mcns.io/ (host=single.mcns.io)
+2025-11-04 12:19:42 | WARNING | user=AnuroopParambil | Failed to push entries to UI: Page.evaluate: ReferenceError: arguments is not defined
+    at eval (eval at evaluate (:291:30), <anonymous>:1:58)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:291:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-11-04 12:19:42 | INFO | user=AnuroopParambil | UI command from page: request_entries
+2025-11-04 12:19:42 | WARNING | user=AnuroopParambil | Failed to push entries to UI: BindingCall.call: ReferenceError: arguments is not defined
+    at eval (eval at evaluate (:291:30), <anonymous>:1:58)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:291:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-11-04 12:19:46 | INFO | user=AnuroopParambil | Overlay injected on page https://single.mcns.io/ (host=single.mcns.io)
+2025-11-04 12:19:46 | WARNING | user=AnuroopParambil | Failed to push entries to UI: Page.evaluate: ReferenceError: arguments is not defined
+    at eval (eval at evaluate (:291:30), <anonymous>:1:58)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:291:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-11-04 12:19:47 | INFO | user=AnuroopParambil | Overlay injected on page https://single.mcns.io/ (host=single.mcns.io)
+2025-11-04 12:19:47 | WARNING | user=AnuroopParambil | Failed to push entries to UI: Page.evaluate: ReferenceError: arguments is not defined
+    at eval (eval at evaluate (:291:30), <anonymous>:1:58)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:291:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-11-04 12:20:46 | INFO | user=AnuroopParambil | Overlay injected on page https://single.mcns.io/ (host=single.mcns.io)
+2025-11-04 12:20:46 | WARNING | user=AnuroopParambil | Failed to push entries to UI: Page.evaluate: ReferenceError: arguments is not defined
+    at eval (eval at evaluate (:291:30), <anonymous>:1:58)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:291:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-11-04 12:20:46 | INFO | user=AnuroopParambil | UI command from page: request_entries
+2025-11-04 12:20:46 | WARNING | user=AnuroopParambil | Failed to push entries to UI: BindingCall.call: ReferenceError: arguments is not defined
+    at eval (eval at evaluate (:291:30), <anonymous>:1:58)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:291:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-11-04 12:20:47 | INFO | user=AnuroopParambil | Overlay injected on page https://single.mcns.io/ (host=single.mcns.io)
+2025-11-04 12:20:47 | WARNING | user=AnuroopParambil | Failed to push entries to UI: Page.evaluate: ReferenceError: arguments is not defined
+    at eval (eval at evaluate (:291:30), <anonymous>:1:58)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:291:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-11-04 12:20:47 | INFO | user=AnuroopParambil | Overlay injected on page https://single.mcns.io/ (host=single.mcns.io)
+2025-11-04 12:20:47 | WARNING | user=AnuroopParambil | Failed to push entries to UI: Page.evaluate: ReferenceError: arguments is not defined
+    at eval (eval at evaluate (:291:30), <anonymous>:1:58)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:291:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-11-04 12:20:49 | INFO | user=AnuroopParambil | Overlay injected on page https://single.mcns.io/dashboard/overview (host=single.mcns.io)
+2025-11-04 12:20:49 | WARNING | user=AnuroopParambil | Failed to push entries to UI: Page.evaluate: ReferenceError: arguments is not defined
+    at eval (eval at evaluate (:291:30), <anonymous>:1:58)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:291:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-11-04 12:23:20 | INFO | user=AnuroopParambil | Overlay injected on page https://single.mcns.io/ (host=single.mcns.io)
+2025-11-04 12:23:20 | WARNING | user=AnuroopParambil | Failed to push entries to UI: Page.evaluate: ReferenceError: arguments is not defined
+    at eval (eval at evaluate (:291:30), <anonymous>:1:58)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:291:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-11-04 12:23:20 | INFO | user=AnuroopParambil | UI command from page: request_entries
+2025-11-04 12:23:20 | WARNING | user=AnuroopParambil | Failed to push entries to UI: BindingCall.call: ReferenceError: arguments is not defined
+    at eval (eval at evaluate (:291:30), <anonymous>:1:58)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:291:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-11-04 12:23:21 | INFO | user=AnuroopParambil | Overlay injected on page https://single.mcns.io/ (host=single.mcns.io)
+2025-11-04 12:23:21 | WARNING | user=AnuroopParambil | Failed to push entries to UI: Page.evaluate: ReferenceError: arguments is not defined
+    at eval (eval at evaluate (:291:30), <anonymous>:1:58)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:291:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-11-04 12:23:21 | INFO | user=AnuroopParambil | Overlay injected on page https://single.mcns.io/ (host=single.mcns.io)
+2025-11-04 12:23:21 | WARNING | user=AnuroopParambil | Failed to push entries to UI: Page.evaluate: ReferenceError: arguments is not defined
+    at eval (eval at evaluate (:291:30), <anonymous>:1:58)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:291:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-11-04 12:23:23 | INFO | user=AnuroopParambil | Overlay injected on page https://single.mcns.io/dashboard/overview (host=single.mcns.io)
+2025-11-04 12:23:23 | WARNING | user=AnuroopParambil | Failed to push entries to UI: Page.evaluate: ReferenceError: arguments is not defined
+    at eval (eval at evaluate (:291:30), <anonymous>:1:58)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:291:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-11-04 12:28:14 | INFO | user=AnuroopParambil | Overlay injected on page https://single.mcns.io/ (host=single.mcns.io)
+2025-11-04 12:28:15 | INFO | user=AnuroopParambil | Overlay injected on page https://single.mcns.io/ (host=single.mcns.io)
+2025-11-04 12:28:16 | INFO | user=AnuroopParambil | Overlay injected on page https://single.mcns.io/ (host=single.mcns.io)
+2025-11-04 12:28:17 | INFO | user=AnuroopParambil | Overlay injected on page https://single.mcns.io/dashboard/overview (host=single.mcns.io)
