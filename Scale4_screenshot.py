@@ -145,166 +145,530 @@ async def take_screenshot_and_compare(page: Page, path: Path, clip: Dict[str, in
 # We define the UI code as a single string and inject it.
 OVERLAY_JS = r"""
 (() => {
-  if (window.screenshotOverlayInjected) return;
-  window.screenshotOverlayInjected = true;
+  if (window._screenshotUIInjected) return { status: 'already' };
+  window._screenshotUIInjected = true;
 
-  // Create overlay panel
-  const panel = document.createElement('div');
-  panel.style.position = 'fixed';
-  panel.style.top = '20px';
-  panel.style.right = '20px';
-  panel.style.width = '260px';
-  panel.style.background = 'rgba(30, 30, 30, 0.9)';
-  panel.style.color = '#fff';
-  panel.style.padding = '10px';
-  panel.style.borderRadius = '10px';
-  panel.style.boxShadow = '0 4px 10px rgba(0,0,0,0.4)';
-  panel.style.zIndex = 999999;
-  panel.style.fontFamily = 'Arial, sans-serif';
-  panel.style.userSelect = 'none';
-  panel.style.transition = 'all 0.2s ease-in-out';
+  // helper to create elements quickly
+  function el(tag, attrs = {}, children = []) {
+    const e = document.createElement(tag);
+    for (const k in attrs) {
+      if (k === 'style') Object.assign(e.style, attrs[k]);
+      else e.setAttribute(k, attrs[k]);
+    }
+    for (const c of children) {
+      if (typeof c === 'string') e.appendChild(document.createTextNode(c));
+      else e.appendChild(c);
+    }
+    return e;
+  }
 
-  // Title bar
-  const titleBar = document.createElement('div');
-  titleBar.textContent = '📸 Screenshot Manager';
-  titleBar.style.fontWeight = 'bold';
-  titleBar.style.cursor = 'grab';
-  titleBar.style.display = 'flex';
-  titleBar.style.justifyContent = 'space-between';
-  titleBar.style.alignItems = 'center';
+// ----- PANEL WITH DRAG + MIN/MAX/CLOSE -----
+const panel = el('div',{
+  id: 'overlay-root',
+  style: {
+    position: 'fixed',
+    top: '12px',
+    right: '12px',
+    width: '420px',
+    maxHeight: '80vh',
+    overflow: 'auto',
+    zIndex: 2147483647,
+    background: 'rgba(32,34,37,0.95)',
+    color: '#e6edf3',
+    borderRadius: '8px',
+    padding: '10px',
+    fontFamily: 'Arial, sans-serif',
+    boxShadow: '0 6px 18px rgba(0,0,0,0.4)',
+    userSelect: 'none',
+    cursor: 'move'
+  }});
 
-  // Button container
-  const buttonContainer = document.createElement('div');
-  buttonContainer.style.display = 'flex';
-  buttonContainer.style.gap = '6px';
+// Title + window controls row
+const titleBar = el('div', { style: { display: 'flex', justifyContent: 'space-between', alignItems:'center', marginBottom:'6px' }});
 
-  // Minimize button
-  const minimizeBtn = document.createElement('button');
-  minimizeBtn.textContent = '—';
-  minimizeBtn.title = 'Minimize';
-  minimizeBtn.style.background = '#444';
-  minimizeBtn.style.border = 'none';
-  minimizeBtn.style.color = '#fff';
-  minimizeBtn.style.cursor = 'pointer';
-  minimizeBtn.style.borderRadius = '5px';
-  minimizeBtn.style.width = '22px';
-  minimizeBtn.style.height = '22px';
+const title = el('div', { style: { fontWeight: '700', fontSize: '14px', cursor:'grab' }}, ['Screenshot Manager']);
 
-  // Maximize button
-  const maximizeBtn = document.createElement('button');
-  maximizeBtn.textContent = '⬜';
-  maximizeBtn.title = 'Maximize';
-  maximizeBtn.style.background = '#444';
-  maximizeBtn.style.border = 'none';
-  maximizeBtn.style.color = '#fff';
-  maximizeBtn.style.cursor = 'pointer';
-  maximizeBtn.style.borderRadius = '5px';
-  maximizeBtn.style.width = '22px';
-  maximizeBtn.style.height = '22px';
-  maximizeBtn.style.display = 'none'; // hidden by default
+const controlButtons = el('div', { style:{ display:'flex', gap:'6px' }}, [
+  (function(){
+    const b = el('button', {}, ['_']);
+    b.title = 'Minimize';
+    b.onclick = () => {
+    panel.style.display = 'none';
+    restoreBtn.style.display = '';
+    window._overlayMinimized = true;
+    window.addEventListener('keydown', (e) => {
+    if (e.ctrlKey && e.shiftKey && e.key === 'S') {
+    panel.style.display = '';
+    window._overlayMinimized = false;
+    }
+    }, { once: true });
+    };
 
-  // Add buttons to title bar
-  buttonContainer.appendChild(minimizeBtn);
-  buttonContainer.appendChild(maximizeBtn);
-  titleBar.appendChild(buttonContainer);
+    return b;
+  })(),
+  (function(){
+    const b = el('button', {}, ['□']);
+    let maximized = false;
+    b.onclick = () => {
+    maximized = !maximized;
+    const bulkArea = document.getElementById('bulk-json-area');
+    
+    if(maximized){
+    panel.style.top = '0px';
+    panel.style.left = '0px';
+    panel.style.right = '0px';
+    panel.style.width = '100vw';
+    panel.style.height = '100vh';
+    panel.style.maxHeight = '100vh';
 
-  // Content area
-  const content = document.createElement('div');
-  content.innerHTML = `
-    <button id="takeShot">Take Screenshot</button><br><br>
-    <button id="addEntry">Add New Entry</button><br><br>
-    <button id="editEntry">Edit Entry</button><br><br>
-    <button id="deleteEntry">Delete Entry</button><br><br>
-    <button id="viewList">View Entries</button><br><br>
-    <button id="exportJson">Export JSON</button><br><br>
-    <button id="bulkAdd">Bulk Add</button><br><br>
-    <button id="bulkDelete">Bulk Delete</button><br><br>
-    <button id="saveAll">Close</button>
-  `;
-  content.style.marginTop = '10px';
+    // Increase bulk JSON text box height
+    if (bulkArea) bulkArea.style.height = '280px';
+    } else {
+    panel.style.width = '420px';
+    panel.style.height = '';
+    panel.style.maxHeight = '80vh';
+    panel.style.top = '12px';
+    panel.style.right = '12px';
+    panel.style.left = '';
+    
+    // Restore original height
+    if (bulkArea) bulkArea.style.height = '80px';
+    }
+    };
 
-  panel.appendChild(titleBar);
-  panel.appendChild(content);
+    return b;
+  })(),
+  (function(){
+    const b = el('button', {}, ['X']);
+    b.title = 'Close Overlay';
+    b.onclick = () => { panel.remove(); window._screenshotUIInjected = false; };
+    return b;
+  })()
+]);
+
+titleBar.appendChild(title);
+titleBar.appendChild(controlButtons);
+panel.appendChild(titleBar);
+
+// DRAG MOVE LOGIC
+let isDragging = false, offsetX = 0, offsetY = 0;
+
+titleBar.onmousedown = (e) => {
+  isDragging = true;
+  offsetX = e.clientX - panel.offsetLeft;
+  offsetY = e.clientY - panel.offsetTop;
+  titleBar.style.cursor = 'grabbing';
+};
+
+document.onmouseup = () => { isDragging = false; titleBar.style.cursor = 'grab'; };
+
+document.onmousemove = (e) => {
+  if (!isDragging) return;
+  panel.style.left = (e.clientX - offsetX) + 'px';
+  panel.style.top = (e.clientY - offsetY) + 'px';
+  panel.style.right = 'auto';
+};
+
+
+
+  // control row
+  const controls = el('div', { style: { display: 'flex', gap: '6px', marginBottom: '8px' }});
+  const btnTakeAll = el('button', { style: { flex: '1' }}, ['Take all screenshots']);
+  const btnExport = el('button', { style: { flex: '1' }}, ['Export JSON']);
+  controls.appendChild(btnTakeAll);
+  controls.appendChild(btnExport);
+  panel.appendChild(controls);
+
+  // add / bulk area
+  const addRow = el('div', { style: { marginBottom: '8px', display: 'flex', gap: '6px' }});
+  const txtName = el('input', { type: 'text', placeholder: 'screenshot name (no .png)', style: { flex: '1', padding: '6px' }});
+  const btnAdd = el('button', {}, ['Add new']);
+  addRow.appendChild(txtName);
+  addRow.appendChild(btnAdd);
+  panel.appendChild(addRow);
+
+  const bulkLabel = el('div', { style: { fontSize: '12px', opacity: '0.8', marginBottom: '4px' }}, ['Bulk JSON (paste array):']);
+  const bulkArea = el('textarea', { id: 'bulk-json-area', style: { width: '100%', height: '80px', padding: '6px', fontSize: '12px' }});
+  const bulkRow = el('div', { style: { display: 'flex', gap: '6px', marginTop: '6px' }});
+  const btnBulkAdd = el('button', {}, ['Bulk add']);
+  const btnBulkDelete = el('button', {}, ['Bulk delete']);
+  bulkRow.appendChild(btnBulkAdd); bulkRow.appendChild(btnBulkDelete);
+  panel.appendChild(bulkLabel); panel.appendChild(bulkArea); panel.appendChild(bulkRow);
+
+  // entries list container
+  const list = el('div', { style: { marginTop: '10px' }});
+  panel.appendChild(list);
+
+  // status / log area
+  const status = el('div', { style: { marginTop: '8px', fontSize: '12px', opacity: '0.9' }}, ['Status: ready']);
+  panel.appendChild(status);
+
+  // helper to send message to Python
+  async function send(msg) {
+    try {
+      if (window.py_bridge) {
+        // call the python binding injected by playwright
+        window.py_bridge(msg);
+      } else {
+        console.warn('py_bridge not available', msg);
+      }
+    } catch (err) {
+      console.error('send error', err, msg);
+    }
+  }
+
+  // render entries (called when Python pushes current JSON)
+  window.__renderEntries = function(entries) {
+    list.innerHTML = '';
+    if (!entries || !entries.length) {
+      list.appendChild(el('div', { style: { color: '#bbb', fontSize: '13px' } }, ['No entries']));
+      return;
+    }
+    for (let i = 0; i < entries.length; ++i) {
+      const e = entries[i];
+      const row = el('div', { style: { padding: '6px', borderBottom: '1px solid rgba(255,255,255,0.03)', display: 'flex', gap: '8px', alignItems: 'center' }});
+      const info = el('div', { style: { flex: '1' }});
+      const titleLine = el('div', {}, [ `${i+1}. ${e.png_name}.png` ]);
+      const urlLine = el('div', { style: { fontSize: '12px', color: '#cbd5e1' }}, [ e.url ]);
+      info.appendChild(titleLine); info.appendChild(urlLine);
+      const btns = el('div', { style: { display: 'flex', gap: '6px' }});
+      const btnRecord = el('button', {}, ['Record']);
+      const btnReclip = el('button', {}, ['Re-clip']);
+      const btnEdit = el('button', {}, ['Edit']);
+      const btnDelete = el('button', {}, ['Delete']);
+      const btnTake = el('button', {}, ['Take']);
+      btns.appendChild(btnTake); btns.appendChild(btnRecord); btns.appendChild(btnReclip); btns.appendChild(btnEdit); btns.appendChild(btnDelete);
+      row.appendChild(info); row.appendChild(btns);
+      list.appendChild(row);
+
+      // click handlers
+      btnRecord.onclick = async () => {
+        status.textContent = `Status: recording actions for ${e.png_name}. Click Start in overlay then interact.`;
+        // notify Python to show in-page recorder overlay and capture; python will send back events then update UI
+        await send({ cmd: 'record_actions_for_index', index: i });
+      };
+      btnReclip.onclick = async () => {
+        status.textContent = `Status: re-clip for ${e.png_name}`;
+        await send({ cmd: 'reclip_index', index: i });
+      };
+      btnEdit.onclick = async () => {
+        status.textContent = `Status: edit entry ${e.png_name}`;
+        await send({ cmd: 'edit_index', index: i });
+      };
+      btnDelete.onclick = async () => {
+        if (!confirm('Delete this entry?')) return;
+        await send({ cmd: 'delete_index', index: i });
+      };
+      btnTake.onclick = async () => {
+        status.textContent = `Status: taking screenshot for ${e.png_name}`;
+        await send({ cmd: 'take_index', index: i });
+      };
+    }
+  };
+
+  // top controls callbacks
+  btnAdd.onclick = async () => {
+    const name = txtName.value.trim();
+    if (!name) {
+      alert('Enter screenshot name (no .png)');
+      return;
+    }
+    status.textContent = 'Status: creating new entry and starting record...';
+    await send({ cmd: 'add_new', png_name: name });
+  };
+
+  btnExport.onclick = async () => {
+    // ask python to send the JSON string back to UI; python will call window.__receiveJSONExport(text)
+    await send({ cmd: 'export_json' });
+    status.textContent = 'Status: exported JSON to clipboard (or displayed)';
+  };
+
+  btnTakeAll.onclick = async () => {
+    status.textContent = 'Status: taking screenshots for all entries...';
+    await send({ cmd: 'take_all' });
+  };
+
+  btnBulkAdd.onclick = async () => {
+    const text = bulkArea.value.trim();
+    if (!text) { alert('Paste JSON array into the textarea'); return; }
+    let parsed;
+    try { parsed = JSON.parse(text); }
+    catch (err) { alert('Invalid JSON'); return; }
+    await send({ cmd: 'bulk_add', items: parsed });
+  };
+
+  btnBulkDelete.onclick = async () => {
+    if (!confirm('Delete all entries from JSON? This cannot be undone')) return;
+    await send({ cmd: 'bulk_delete' });
+  };
+
+  // helper to create a small recording overlay inside the page for user interaction
+  window.__showInlineRecorder = async function() {
+    // If there is already a recorder, return a handle
+    if (window._inlineRecorderActive) return { status: 'already' };
+
+    return new Promise((resolve) => {
+      window._inlineRecorderActive = true;
+      const recorderBar = el('div', { style: {
+        position: 'fixed', left: '50%', transform: 'translateX(-50%)', top: '10px',
+        zIndex: 2147483647, background: 'rgba(0,0,0,0.85)', color: '#fff',
+        padding: '8px 12px', borderRadius: '8px', fontFamily: 'sans-serif', display: 'flex', gap: '8px', alignItems: 'center'
+      }});
+      const startBtn = el('button', {}, ['Start']);
+      const stopBtn = el('button', {}, ['Stop']);
+      const hint = el('span', { style: { fontSize: '13px', opacity: '0.9' }}, ['Idle']);
+      recorderBar.appendChild(startBtn); recorderBar.appendChild(stopBtn); recorderBar.appendChild(hint);
+      document.body.appendChild(recorderBar);
+
+      const events = [];
+      let recording = false;
+      let lastScroll = { x: window.scrollX, y: window.scrollY, t: Date.now() };
+
+      function clickHandler(e) {
+        // ignore clicks on the recorder itself
+        if (recorderBar.contains(e.target)) return;
+        events.push({ type: 'click', x: e.clientX, y: e.clientY, t: Date.now() });
+      }
+      function scrollHandler() {
+        const now = Date.now(), x = window.scrollX, y = window.scrollY;
+        if ((x !== lastScroll.x || y !== lastScroll.y) && (now - lastScroll.t) > 80) {
+          events.push({ type: 'scroll', x: x, y: y, t: now });
+          lastScroll = { x, y, t: now };
+        }
+      }
+      // mousemove for drag events (we also capture mousedown/mouseup)
+      function mouseDownHandler(e) {
+        if (recorderBar.contains(e.target)) return;
+        events.push({ type: 'mousedown', x: e.clientX, y: e.clientY, t: Date.now() });
+      }
+      function mouseUpHandler(e) {
+        if (recorderBar.contains(e.target)) return;
+        events.push({ type: 'mouseup', x: e.clientX, y: e.clientY, t: Date.now() });
+      }
+      function keyHandler(e) {
+        // do not capture modifier-only keys excessively, only capture key presses
+        events.push({ type: 'keyboard', key: e.key, t: Date.now() });
+      }
+
+      startBtn.onclick = () => {
+        if (recording) return;
+        recording = true; hint.textContent = 'Recording...';
+        window.addEventListener('click', clickHandler, true);
+        window.addEventListener('scroll', scrollHandler, true);
+        window.addEventListener('mousedown', mouseDownHandler, true);
+        window.addEventListener('mouseup', mouseUpHandler, true);
+        window.addEventListener('keydown', keyHandler, true);
+      };
+
+      stopBtn.onclick = () => {
+        if (!recording) return;
+        recording = false; hint.textContent = 'Stopping...';
+        window.removeEventListener('click', clickHandler, true);
+        window.removeEventListener('scroll', scrollHandler, true);
+        window.removeEventListener('mousedown', mouseDownHandler, true);
+        window.removeEventListener('mouseup', mouseUpHandler, true);
+        window.removeEventListener('keydown', keyHandler, true);
+        setTimeout(() => {
+          recorderBar.remove();
+          window._inlineRecorderActive = false;
+          // send events to Python by calling py_bridge
+          window.py_bridge({ cmd: 'record_finished', events: events });
+          resolve({ status: 'ok', events: events });
+        }, 120);
+      };
+
+      // keyboard shortcuts
+      window.addEventListener('keydown', (ev) => {
+        if (ev.ctrlKey && ev.shiftKey && ev.key === 'S') startBtn.click();
+        if (ev.ctrlKey && ev.shiftKey && ev.key === 'E') stopBtn.click();
+      });
+    });
+  };
+
+  // clip selector (drag overlay) - returns clip rect {x,y,width,height}
+  window.__selectClip = async function() {
+    return new Promise((resolve) => {
+      const overlayPanel = document.getElementById('overlay-root');
+      if (overlayPanel) overlayPanel.style.display = 'none';
+
+      const overlay = el('div', {
+        style: {
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          cursor: 'crosshair',
+          zIndex: 2147483646,
+          backgroundColor: 'rgba(0,0,0,0.06)',
+        }
+      });
+      document.body.appendChild(overlay);
+
+      let startX = 0, startY = 0, box = null;
+
+      function down(ev) {
+        startX = ev.clientX;
+        startY = ev.clientY;
+        box = el('div', {
+          style: {
+            position: 'absolute',
+            border: '2px dashed #ff5c5c',
+            background: 'rgba(255,92,92,0.12)',
+            left: startX + 'px',
+            top: startY + 'px',
+            zIndex: 2147483647,
+          }
+        });
+        overlay.appendChild(box);
+        window.addEventListener('mousemove', move);
+      }
+
+      function move(ev) {
+        const x = Math.min(startX, ev.clientX);
+        const y = Math.min(startY, ev.clientY);
+        const w = Math.abs(ev.clientX - startX);
+        const h = Math.abs(ev.clientY - startY);
+        Object.assign(box.style, {
+          left: x + 'px',
+          top: y + 'px',
+          width: w + 'px',
+          height: h + 'px'
+        });
+      }
+
+      
+      function cleanup() {
+      window.removeEventListener('mousemove', move);
+  window.removeEventListener('mouseup', up);
+  overlay.remove();
+  const panel = document.getElementById('overlay-root');
+  if (panel) {
+  panel.style.display = '';     // show overlay again
+  panel.style.visibility = '';  // ensure visible
+  panel.style.opacity = '1';    // ensure visible
+  }
+  }
+
+      function up(ev) {
+        cleanup();
+        const scrollX = window.scrollX, scrollY = window.scrollY;
+        const x = Math.min(startX, ev.clientX) + scrollX;
+        const y = Math.min(startY, ev.clientY) + scrollY;
+        const width = Math.max(1, Math.abs(ev.clientX - startX));
+        const height = Math.max(1, Math.abs(ev.clientY - startY));
+        resolve({ x: Math.round(x), y: Math.round(y), width: Math.round(width), height: Math.round(height) });
+      }
+
+      window.addEventListener('mousedown', down);
+      window.addEventListener('mouseup', up);
+
+      // Cancel with Escape
+      window.addEventListener('keydown', function onEsc(e) {
+        if (e.key === 'Escape') {
+          window.removeEventListener('keydown', onEsc);
+          cleanup();
+          resolve(null);
+        }
+      });
+    });
+  };
+
+
+
+
+  // receives commands from Python to update UI status or show JSON export
+  window.__receiveFromPython = function(payload) {
+    if (!payload) return;
+    if (payload.type === 'entries') {
+      window.__renderEntries(payload.entries || []);
+      status.textContent = `Status: ${payload.info || 'ready'}`;
+    } else if (payload.type === 'export') {
+      // show export in popup
+      const w = window.open('', '_blank', 'width=700,height=500');
+      w.document.write('<pre style="white-space:pre-wrap;font-family:monospace;">' + (payload.text || '') + '</pre>');
+      status.textContent = 'Status: exported JSON in new tab';
+    } else if (payload.type === 'status') {
+      status.textContent = `Status: ${payload.text}`;
+    }
+  };
+
   document.body.appendChild(panel);
 
-  // --- Draggable logic ---
-  (function makeOverlayDraggable() {
-    let offsetX = 0, offsetY = 0, isDown = false;
+  // create restore button (hidden by default)
+const restoreBtn = el('div', {
+  id: 'overlay-restore',
+  style: {
+    position: 'fixed',
+    bottom: '12px',
+    right: '12px',
+    padding: '6px 10px',
+    background: 'rgba(32,34,37,0.9)',
+    color: '#e6edf3',
+    borderRadius: '6px',
+    fontFamily: 'Arial, sans-serif',
+    cursor: 'pointer',
+    zIndex: 2147483647,
+    display: 'none'
+  }
+}, ['Screenshot panel']);
 
-    titleBar.addEventListener('mousedown', (e) => {
-      isDown = true;
-      panel.style.cursor = 'grabbing';
-      titleBar.style.cursor = 'grabbing';
-      offsetX = e.clientX - panel.getBoundingClientRect().left;
-      offsetY = e.clientY - panel.getBoundingClientRect().top;
-      e.preventDefault();
-    });
+document.body.appendChild(restoreBtn);
 
-    window.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      const x = e.clientX - offsetX;
-      const y = e.clientY - offsetY;
-      panel.style.left = x + 'px';
-      panel.style.top = y + 'px';
-      panel.style.right = 'auto';
-      panel.style.bottom = 'auto';
-      panel.style.position = 'fixed';
-    });
+restoreBtn.onclick = () => {
+  panel.style.display = '';
+  restoreBtn.style.display = 'none';
+  window._overlayMinimized = false;
+};
 
-    window.addEventListener('mouseup', () => {
-      isDown = false;
-      panel.style.cursor = 'default';
-      titleBar.style.cursor = 'grab';
-    });
-  })();
 
-  // --- Minimize / Maximize functionality ---
-  minimizeBtn.addEventListener('click', () => {
-    content.style.display = 'none';
-    minimizeBtn.style.display = 'none';
-    maximizeBtn.style.display = 'inline-block';
-    panel.style.height = 'auto';
-  });
 
-  maximizeBtn.addEventListener('click', () => {
-    content.style.display = 'block';
-    maximizeBtn.style.display = 'none';
-    minimizeBtn.style.display = 'inline-block';
-  });
+
+
+  window.__hideOverlayTemporarily = async function(ms = 2000) {
+    const overlayPanel = document.getElementById('overlay-root');
+    if (!overlayPanel) return;
+    overlayPanel.style.display = 'none';
+    setTimeout(() => { overlayPanel.style.display = ''; }, ms);
+  };
+
+
+  // initial request to Python to send entries
+  setTimeout(() => { if (window.py_bridge) window.py_bridge({ cmd: 'request_entries' }); }, 200);
+
+  return { status: 'injected' };
 })();
-
 """
 
 
 async def inject_overlay_if_target(page: Page):
-    """
-    Inject OVERLAY_JS into the given page iff the page's hostname ends with TARGET_HOST.
-    Safe-guarded to avoid double injection.
-    """
+    from urllib.parse import urlparse
     try:
         url = page.url or ""
-        # quick check using Python parsing to avoid evaluating on pages we shouldn't
-        from urllib.parse import urlparse
-        parsed = urlparse(url)
-        hostname = (parsed.hostname or "").lower()
+        hostname = (urlparse(url).hostname or "").lower()
+
         if hostname.endswith(TARGET_HOST):
-            # try to inject overlay; if already injected the JS will return {status: 'already'}
+            # Load overlay BEFORE CSP blocks it
             try:
-                # prefer add_script_tag for safer injection of large scripts
-                await page.add_script_tag(content=OVERLAY_JS)
-            except Exception:
-                # fallback to evaluate in case add_script_tag fails (e.g., CSP)
-                await page.evaluate(OVERLAY_JS)
-            logging.info("Overlay injected on page %s (host=%s)", url, hostname)
-            # push entries to UI after injection so the panel is populated
-            try:
-                await push_entries_to_ui(page)
+                await page.add_init_script(OVERLAY_JS)
             except Exception:
                 pass
-        else:
-            logging.debug("Skipping overlay injection for host=%s", hostname)
+
+            # Now run overlay (safe because code already exists in page context)
+            try:
+                await page.evaluate(
+                    "(() => { if(!window._screenshotUIInjected){ " + OVERLAY_JS + " } })()"
+                )
+            except Exception:
+                pass
+
+            await push_entries_to_ui(page, info="Overlay active")
+
+            logging.info(f"[Overlay] Active on {hostname}")
+
     except Exception as e:
-        logging.warning("inject_overlay_if_target failed: %s", e)
+        logging.warning(f"[Overlay] Inject failed: {e}")
+
 
 
 # ---------- Python-side handlers for messages from UI ----------
@@ -462,18 +826,12 @@ async def setup_bindings(page: Page):
             await export_json_to_ui(page)
             return {"status": "ok"}
         elif cmd == "add_new":
-            # create new entry: we will prompt the user via the UI for recording and clip selection
-            png_name = payload.get("png_name")
-            # open target url (constant) and then show inline recorder in page via evaluate
+            page._pending_new_name = payload.get("png_name")
             await page.goto(TARGET_URL, wait_until="networkidle")
-            # instruct page to show inline recorder (it will call Python back with record_finished)
             await page.evaluate("window.__showInlineRecorder && window.__showInlineRecorder()")
-            # wait for record_finished callback which will call this same binding with cmd 'record_finished'
-            # store a temporary context to map the incoming record to a new entry:
-            # to simplify, when record_finished arrives we create the entry and then ask user to select clip.
-            # We'll instruct the UI to indicate status and the page will receive modal to select clip via evaluate below.
-            # For now return and wait for record_finished handler to run
+            await page.evaluate("window.__receiveFromPython && window.__receiveFromPython({type:'status', text:'Recording... Click Stop when done'})")
             return {"status": "record_started"}
+
         elif cmd == "record_finished":
             # raw events come here after inline recorder stops
             events = payload.get("events", [])
@@ -501,10 +859,11 @@ async def setup_bindings(page: Page):
             # create an entry with placeholder name; the UI will ask for a name on next step - but since UI triggered recording,
             # we need to create an entry skeleton and then push to UI so user may edit the name, or we can ask the UI to prompt.
             # Simpler path: ask user (via prompt window) for name now.
-            name = await page.evaluate("(text, defaultVal) => prompt(text, defaultVal)", "Enter screenshot name (no .png) for the recorded entry:", f"screenshot_{stamp}")
+            name = getattr(page, "_pending_new_name", None)
 
             if not name:
-                name = f"screenshot_{stamp}"
+                name = await page.evaluate("(t,d)=>prompt(t,d)", "Enter screenshot name (no .png):", f"screenshot_{stamp}")
+                page._pending_new_name = None                
             entry = {"url": TARGET_URL, "png_name": name, "clip": clip, "actions": actions_loaded}
             data = load_json()
             data.append(entry)
@@ -532,7 +891,20 @@ async def setup_bindings(page: Page):
                 except Exception:
                     pass
                 await page.evaluate("window.__receiveFromPython", {"type": "status", "text": f"Select clip for {entry.get('png_name')}"})
+                # call clip selector
                 clip = await page.evaluate("window.__selectClip && window.__selectClip()")
+                # force overlay to reappear after clip
+                await page.evaluate("""(() => {const p = document.getElementById('overlay-root');
+                                    if (p) {
+                                    p.style.display = '';
+                                    p.style.visibility = 'visible';
+                                    p.style.opacity = '1';
+                                    p.style.pointerEvents = 'auto';
+                                    }
+                                    })();
+                                    """)
+
+
                 if isinstance(clip, dict):
                     entry["clip"] = clip
                     data[idx] = entry
