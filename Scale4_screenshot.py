@@ -34,7 +34,21 @@ logger = logging.getLogger()
 for handler in logger.handlers:
     handler.addFilter(UsernameFilter())
 
-    
+async def safe_goto(page, url, timeout=60000):
+    """Navigate safely, ignoring interruptions or internal redirects."""
+    try:
+        await page.goto(url, wait_until="domcontentloaded", timeout=timeout)
+        try:
+            await page.wait_for_load_state("networkidle", timeout=10000)
+        except Exception:
+            # Some SPAs never reach 'networkidle' — that's fine
+            pass
+        return True
+    except Exception as e:
+        print(f"[WARN] Navigation to {url} interrupted or redirected: {e}")
+        return False
+
+
 
 async def get_current_url(context):
     """Return the most recently active tab's current URL."""
@@ -340,9 +354,12 @@ async def take_screenshot(page: Page, path, clip):
        # "height": int(clip["height"] * HIGH_RESOLUTION_SCALE)
    # }
     #clip = scaled_clip
-    await page.evaluate(f'window.scrollTo({clip["x"]}, {clip["y"]})')
-    await page.screenshot(path=path, clip=clip, scale="device")
-    print(f"[SAVED] {path}")
+    try:
+        await page.evaluate(f'window.scrollTo({clip["x"]}, {clip["y"]})')
+        await page.screenshot(path=path, clip=clip, scale="device")
+        print(f"[SAVED] {path}")
+    except Exception as e:
+        print(f"[ERROR] Failed to take screenshot {path}: {e}")
 
 
 async def run_json_editor(context, page: Page, recorded_events_buffer):
@@ -457,23 +474,71 @@ async def run_json_editor(context, page: Page, recorded_events_buffer):
 
         elif choice == "4":
             for i, entry in enumerate(data):
-                print(f"{i+1}. {entry['url']} -> {entry.get('png_name','')}")
+                print(f"{i+1}. {entry.get('png_name','')} -> {entry['url']}")
             idx = int(input("Enter index to edit: ")) - 1
+
             if 0 <= idx < len(data):
                 entry = data[idx]
-                print(f"Editing: {entry['url']}")
+                print(f"Editing: {entry.get('png_name','')} -> {entry['url']}")
+
+                new_url = input(f"Enter new URL (current: {entry['url']}): ").strip()
+                if new_url:
+                    entry["url"] = new_url
+                    print(f"[SAVED] URL updated to: {entry['url']}")
+                else:
+                    print("[INFO] URL unchanged.")
+
+
                 new_png = input(f"Enter new PNG name (current: {entry.get('png_name','')}): ").strip()
                 if new_png:
+                    if not new_png.lower().endswith(".png"):
+                        new_png += ".png"
                     entry["png_name"] = new_png
+                    print(f"[SAVED] PNG name updated to: {entry['png_name']}")
+                else:
+                    print("[INFO] PNG name unchanged.")
+
+                # --- Re-record actions ---
+                edit_actions = input("Re-record actions? (y/n): ").strip().lower()
+                if edit_actions == "y":
+                    print(f"[INFO] Opening {entry['url']} for action recording...")
+                    await safe_goto(page, entry['url'])
+
+                    print("[ACTION] Log in if required")
+                    if not entry['url'] or entry['url'].startswith("about:"):
+                        print("[ACTION REQUIRED] No URL found. Taking single.mcns.io as URL")
+                        await page.goto("https://single.mcns.io", wait_until="networkidle", timeout=60000)
+
+                    await page.bring_to_front()
+                    await page.wait_for_load_state("domcontentloaded", timeout=15000)
+                    await page.wait_for_load_state("networkidle")
+                    await page.evaluate("document.readyState")
+                    recorded_events_buffer.clear()
+                    status = await page.evaluate(RECORD_ACTIONS_JS)
+                    print(f"[INFO] Recorder status: {status}")
+                    print("[ACTION] Interact with the page, then press Enter here to stop recording...")
+                    input()
+                    await page.evaluate("window.__stopInlineRecorder && window.__stopInlineRecorder();")
+
+                    if not recorded_events_buffer:
+                        print("[WARN] No actions recorded.\n Keeping the existing actions.")
+                        
+                    else:
+                        actions = convert_events_to_actions(recorded_events_buffer)
+                        entry["actions"] = actions
+                        print(f"[INFO] Recorded {len(actions)} actions.")
+                        logging.info(f"Re-recorded {len(actions)} actions for {entry['png_name']}")
 
                 edit_clip = input("Edit clip? (y/n): ").strip().lower()
                 if edit_clip == "y":
                     print(f"[INFO] Opening {entry['url']} for clip selection...")
-                    await page.goto(entry['url'], wait_until="networkidle")
-                    #input("[ACTION] Log in if required, then press Enter to continue...")
+                    await safe_goto(page, entry['url'])
+
+                    print("[ACTION] Log in if required, contunuing in 1 second...")
                     clip = await select_region(page)
                     entry["clip"] = clip
                     print(f"[UPDATED] Clip saved: {clip}")
+
 
                 save_json(data)
                 print("[UPDATED] Entry saved")
@@ -518,7 +583,7 @@ async def run_screenshots(page: Page):
             print(f"[SKIP] Missing URL or PNG in entry: {entry}")
             continue
 
-        print(f"\n[URL] {url}")
+        print(f"\n Taking {png_name} screenshot for {url} ")
         try:
             await page.goto(url, wait_until="networkidle", timeout=60000)
         except Exception as e:
