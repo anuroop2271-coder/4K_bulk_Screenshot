@@ -60,17 +60,19 @@ def convert_events_to_actions(events):
             actions.append({"type": "wait", "ms": delta})
         if ev["type"] == "click":
             actions.append({"type": "click", "x": ev["x"], "y": ev["y"]})
-        elif ev["type"] == "scroll":
+        elif ev["type"] == "scrollTo":
             actions.append({"type": "scrollTo", "x": ev["x"], "y": ev["y"]})
             
         elif ev["type"] == "mousedown":
             actions.append({"type": "mousedown", "x": ev["x"], "y": ev["y"]})
-            
+        elif ev["type"] == "mousemove":
+            actions.append({"type": "mousemove", "x": ev["x"], "y": ev["y"]})
         elif ev["type"] == "mouseup":
-            actions.append({"type": "mouseup", "x": ev["x"], "y": ev["y"]})
-            
+            actions.append({"type": "mouseup", "x": ev["x"], "y": ev["y"]})            
         elif ev["type"] == "keydown":
             actions.append({"type": "keyboard", "key": ev["key"]})
+        elif ev["type"] == "wheel":
+            actions.append({"type": "wheel", "deltaX": ev.get("deltaX", 0), "deltaY": ev.get("deltaY", 0), "selector": ev.get("selector", "")})
         last_time = ev["t"]
     return actions
 
@@ -98,7 +100,49 @@ async def replay_actions(page, actions):
         elif typ == "scrollTo":
             await page.evaluate(f"window.scrollTo({act['x']}, {act['y']})")
 
-        # ✅ Handle scrollable element replay
+        # ✅ Wheel event replay fix — now also handles missing selectors
+        elif typ == "wheel":
+            selector = act.get("selector", "")
+            dx = act.get("deltaX", 0)
+            dy = act.get("deltaY", 0)
+
+            if selector:
+                # Try dispatching a wheel event to the original element
+                script = f"""
+                (function(){{
+                  try {{
+                    const el = document.querySelector({json.dumps(selector)});
+                    if (el) {{
+                      const ev = new WheelEvent('wheel', {{
+                        deltaX: {dx},
+                        deltaY: {dy},
+                        bubbles: true,
+                        cancelable: true
+                      }});
+                      el.dispatchEvent(ev);
+                      el.scrollBy({dx}, {dy});
+                      return true;
+                    }}
+                  }} catch (e) {{
+                    console.warn('Wheel replay failed for selector', e);
+                  }}
+                  return false;
+                }})();
+                """
+                ok = await page.evaluate(script)
+                if not ok:
+                    try:
+                        await page.mouse.wheel(dx, dy)
+                    except Exception:
+                        await page.evaluate(f"window.scrollBy({dx}, {dy})")
+            else:
+                # No selector available → fallback to page-level scroll
+                try:
+                    await page.mouse.wheel(dx, dy)
+                except Exception:
+                    await page.evaluate(f"window.scrollBy({dx}, {dy})")
+
+        # ✅ Handle scrollable element replay (still needed for div.scrollable)
         elif typ == "scrollElement":
             selector = act.get("selector")
             if selector:
@@ -115,6 +159,7 @@ async def replay_actions(page, actions):
                 await page.keyboard.press(act["key"])
             except Exception:
                 await page.keyboard.insert_text(act["key"])
+
 
 
 
@@ -195,64 +240,14 @@ async () => {
   window._inlineRecorderActive = true;
   const send = window.recordEventBridge;
   const start = Date.now();
-  let isDragging = false;
   let lastMove = { x: 0, y: 0, t: 0 };
+  let lastScroll = { x: window.scrollX, y: window.scrollY, t: start };
 
   function emit(type, payload) {
     payload.t = Date.now() - start;
     send({ type, ...payload });
   }
 
-  // --- Mouse events ---
-  function onMouseDown(e) {
-    isDragging = true;
-    emit('mousedown', { x: e.clientX, y: e.clientY });
-  }
-
-  function onMouseUp(e) {
-    isDragging = false;
-    emit('mouseup', { x: e.clientX, y: e.clientY });
-  }
-
-  function onMouseMove(e) {
-    const now = Date.now();
-    const dist = Math.abs(e.clientX - lastMove.x) + Math.abs(e.clientY - lastMove.y);
-    if (dist > 2 || now - lastMove.t > 40) {
-      emit('mousemove', { x: e.clientX, y: e.clientY });
-      lastMove = { x: e.clientX, y: e.clientY, t: now };
-    }
-  }
-
-  function onClick(e) { emit('click', { x: e.clientX, y: e.clientY }); }
-  function onKey(e) { emit('keyboard', { key: e.key }); }
-
-  // --- Scroll events (window + scrollable divs) ---
-  const observed = new WeakSet();
-
-  function observeScrollables(root = document) {
-    const elements = Array.from(root.querySelectorAll('*')).filter(el => {
-      const style = getComputedStyle(el);
-      return (style.overflowY === 'auto' || style.overflowY === 'scroll' ||
-              style.overflowX === 'auto' || style.overflowX === 'scroll');
-    });
-
-    for (const el of elements) {
-      if (observed.has(el)) continue;
-      observed.add(el);
-
-      let lastScroll = { x: el.scrollLeft, y: el.scrollTop, t: Date.now() };
-      el.addEventListener('scroll', () => {
-        const now = Date.now();
-        const x = el.scrollLeft, y = el.scrollTop;
-        if ((x !== lastScroll.x || y !== lastScroll.y) && (now - lastScroll.t) > 40) {
-          emit('scrollElement', { x, y, selector: uniqueSelector(el) });
-          lastScroll = { x, y, t: now };
-        }
-      }, { passive: true });
-    }
-  }
-
-  // --- Helper: create a unique CSS selector ---
   function uniqueSelector(el) {
     if (!el || !el.tagName) return '';
     const path = [];
@@ -273,37 +268,60 @@ async () => {
     return path.join(' > ');
   }
 
-  // Observe scrollable elements initially and periodically
-  observeScrollables();
-  const observer = new MutationObserver(() => observeScrollables());
-  observer.observe(document.body, { childList: true, subtree: true });
+  function onMouseDown(e) { emit('mousedown', { x: e.clientX, y: e.clientY }); }
+  function onMouseUp(e)   { emit('mouseup',   { x: e.clientX, y: e.clientY }); }
+  function onMouseMove(e) {
+    const now = Date.now();
+    const dist = Math.abs(e.clientX - lastMove.x) + Math.abs(e.clientY - lastMove.y);
+    if (dist > 2 || now - lastMove.t > 40) {
+      emit('mousemove', { x: e.clientX, y: e.clientY });
+      lastMove = { x: e.clientX, y: e.clientY, t: now };
+    }
+  }
+  function onClick(e) { emit('click', { x: e.clientX, y: e.clientY }); }
+  function onKey(e) { emit('keyboard', { key: e.key }); }
+  function onWheel(e) {
+    emit('wheel', {
+      deltaX: e.deltaX,
+      deltaY: e.deltaY,
+      selector: uniqueSelector(e.target)
+    });
+  }
+  function onScroll() {
+    const now = Date.now();
+    const x = window.scrollX, y = window.scrollY;
+    if ((x !== lastScroll.x || y !== lastScroll.y) && (now - lastScroll.t) > 50) {
+      emit('scrollTo', { x, y });
+      lastScroll = { x, y, t: now };
+    }
+  }
 
-  // --- Attach global listeners ---
   window.addEventListener('mousedown', onMouseDown, true);
   window.addEventListener('mouseup', onMouseUp, true);
   window.addEventListener('mousemove', onMouseMove, true);
+  window.addEventListener('scroll', onScroll, true);
   window.addEventListener('click', onClick, true);
   window.addEventListener('keydown', onKey, true);
-  window.addEventListener('scroll', () => {
-    emit('scrollTo', { x: window.scrollX, y: window.scrollY });
-  }, true);
+  window.addEventListener('wheel', onWheel, { passive: true, capture: true });
 
-  // --- Cleanup ---
   window.__stopInlineRecorder = () => {
-    observer.disconnect();
     window.removeEventListener('mousedown', onMouseDown, true);
     window.removeEventListener('mouseup', onMouseUp, true);
     window.removeEventListener('mousemove', onMouseMove, true);
+    window.removeEventListener('scroll', onScroll, true);
     window.removeEventListener('click', onClick, true);
     window.removeEventListener('keydown', onKey, true);
-    window.removeEventListener('scroll', onMouseMove, true);
+    window.removeEventListener('wheel', onWheel, true);
     window._inlineRecorderActive = false;
   };
 
-  console.log('[Recorder] Started with window + div scroll tracking');
+  console.log('[Recorder] Started with full mouse + wheel + scroll tracking');
   return 'recording_started';
 }
 """
+
+
+
 
 
 
@@ -348,7 +366,12 @@ async def run_json_editor(context, page: Page, recorded_events_buffer):
             print(json.dumps(data, indent=4))
 
         elif choice == "2":
-            png_name = input("Enter PNG name (example.png): ").strip()
+            png_name = input("Enter PNG name: ").strip()
+            if not png_name.lower().endswith(".png"):
+                 png_name += ".png"
+            import re
+            png_name = re.sub(r'[<>:"/\\|?*]', '_', png_name)
+
 
             print("[INFO] Recording user actions has started... (click, scroll, keys)")
             page, url = await get_current_url(context)
@@ -366,6 +389,7 @@ async def run_json_editor(context, page: Page, recorded_events_buffer):
             await page.evaluate("document.readyState")  # ensure loaded
 
             status = await page.evaluate(RECORD_ACTIONS_JS)
+            recorded_events_buffer.clear()
             print(f"[INFO] Recorder status: {status}")
             print("[ACTION] Interact with the page (click, scroll, type, drag), then press Enter here to stop recording...")
             

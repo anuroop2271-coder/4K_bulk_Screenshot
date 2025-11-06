@@ -4653,3 +4653,15 @@ playwright._impl._errors.TargetClosedError: Target page, context or browser has 
 2025-11-06 16:40:16 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
 2025-11-06 16:40:47 | INFO | user=AnuroopParambil | Recorded 273 raw events, 50 actions for https://single.mcns.io/dashboard/overview
 2025-11-06 16:40:49 | INFO | user=AnuroopParambil | Added entry sds.png for URL=https://single.mcns.io/dashboard/overview with clip={'x': 42, 'y': 42, 'width': 1206, 'height': 607} and 50 actions
+2025-11-06 16:49:58 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-06 16:50:26 | INFO | user=AnuroopParambil | Recorded 260 raw events, 253 actions for https://single.mcns.io/dashboard/overview
+2025-11-06 16:50:32 | INFO | user=AnuroopParambil | Added entry sd.png for URL=https://single.mcns.io/dashboard/overview with clip={'x': 0, 'y': 0, 'width': 1280, 'height': 715} and 253 actions
+2025-11-06 16:51:55 | INFO | user=AnuroopParambil | Recorded 103 raw events, 131 actions for https://single.mcns.io/dashboard/overview
+2025-11-06 16:51:58 | INFO | user=AnuroopParambil | Added entry sef.pnh for URL=https://single.mcns.io/dashboard/overview with clip={'x': 29, 'y': 23, 'width': 1176, 'height': 572} and 131 actions
+2025-11-06 16:53:32 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-06 16:53:45 | INFO | user=AnuroopParambil | Recorded 0 raw events, 0 actions for https://single.mcns.io/dashboard/overview
+2025-11-06 16:53:53 | INFO | user=AnuroopParambil | Added entry  for URL=https://single.mcns.io/dashboard/overview with clip={'x': 540, 'y': 169, 'width': 280, 'height': 243} and 0 actions
+2025-11-06 16:55:09 | INFO | user=AnuroopParambil | Recorded 273 raw events, 270 actions for https://single.mcns.io/dashboard/overview
+2025-11-06 16:55:11 | INFO | user=AnuroopParambil | Added entry sdgfds.png for URL=https://single.mcns.io/dashboard/overview with clip={'x': 80, 'y': 22, 'width': 1145, 'height': 632} and 270 actions
+2025-11-06 17:04:45 | INFO | user=AnuroopParambil | Recorded 295 raw events, 325 actions for https://single.mcns.io/dashboard/overview
+2025-11-06 17:04:48 | INFO | user=AnuroopParambil | Added entry asds for URL=https://single.mcns.io/dashboard/overview with clip={'x': 22, 'y': 24, 'width': 1255, 'height': 694} and 325 actions
