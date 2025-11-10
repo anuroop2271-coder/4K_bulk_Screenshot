@@ -4873,3 +4873,18 @@ SystemExit: 0
 2025-11-06 18:21:10 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
 2025-11-06 18:24:21 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
 2025-11-06 18:25:02 | INFO | user=AnuroopParambil | Re-recorded 336 actions for asd.png
+2025-11-10 17:53:46 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-10 18:01:55 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-10 18:02:52 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-10 18:03:55 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-10 18:32:54 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-10 18:33:13 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-10 18:34:29 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-10 18:36:22 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-10 18:40:07 | INFO | user=AnuroopParambil | Recorded 195 raw events, 231 actions for https://single.mcns.io/dashboard/overview
+2025-11-10 18:40:14 | INFO | user=AnuroopParambil | Added entry jykuh.png for URL=https://single.mcns.io/dashboard/overview with clip={'x': 0, 'y': 0, 'width': 1280, 'height': 715} and 231 actions
+2025-11-10 18:50:00 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-10 18:50:29 | INFO | user=AnuroopParambil | Recorded 165 raw events, 187 actions for https://single.mcns.io
+2025-11-10 18:50:34 | INFO | user=AnuroopParambil | Added entry bvdsad.png ({'x': 276, 'y': 302, 'width': 702, 'height': 383}) with 187 actions
+2025-11-10 18:50:59 | INFO | user=AnuroopParambil | Recorded 67 raw events, 82 actions for https://single.mcns.io/cloud-fabric/topology/transit
+2025-11-10 18:51:03 | INFO | user=AnuroopParambil | Added entry sasdadsadsadsada.png ({'x': 357, 'y': 173, 'width': 568, 'height': 374}) with 82 actions
