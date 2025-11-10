@@ -1,5 +1,5 @@
 #Scale4_screenshot.py
-# 
+#Bulk operations for taking high-resolution (4x) screenshots of web pages
 
 
 import asyncio
