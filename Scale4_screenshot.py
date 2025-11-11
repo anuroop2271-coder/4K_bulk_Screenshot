@@ -1,5 +1,6 @@
 #Scale4_screenshot.py
 # Add border
+#Comparison page magnification fix
 
 
 import asyncio
@@ -9,7 +10,7 @@ import getpass
 import re
 from pathlib import Path
 from playwright.async_api import async_playwright, Page
-from PIL import Image, ImageChops
+from PIL import Image, ImageChops, ImageOps
 
 JSON_FILE = Path("screenshots.json")
 SCREENSHOT_DIR = Path("screenshots")
@@ -360,10 +361,20 @@ async def take_screenshot(page: Page, path, clip):
     try:
         await page.wait_for_load_state("domcontentloaded", timeout=30000)
         await page.wait_for_load_state("networkidle", timeout=30000)
-        await page.wait_for_timeout(1000)
+        await page.wait_for_timeout(1000)        
         await page.evaluate(f'window.scrollTo({clip["x"]}, {clip["y"]})')
+        await asyncio.sleep(2)
         await page.screenshot(path=path, clip=clip, scale="device")
         print(f"[SAVED] {path}")
+
+
+        with Image.open(path) as img:
+            bordered = ImageOps.expand(img, border=5, fill="black")
+            bordered.save(path)
+
+        print(f"[UPDATED] Added black borders")
+
+
     except Exception as e:
         print(f"[ERROR] Failed to take screenshot {path}: {e}")
 
@@ -661,27 +672,135 @@ async def compare_and_prompt(page: Page):
 
         # Prepare HTML for visual comparison
         html = f"""
-        <html>
-        <head>
-        <style>
-          body {{ background: #222; color: #fff; font-family: sans-serif; text-align: center; }}
-          img {{ max-width: 45%; border: 3px solid #444; margin: 10px; }}
-          h2 {{ color: #ffd700; }}
-        </style>
-        </head>
-        <body>
-        <h2>Compare: {tmp_file.name}</h2>
-        <div>
-          <h3>Old</h3>
-          <img src="file:///{main_file.resolve()}" />
-          <h3>New</h3>
-          <img src="file:///{tmp_file.resolve()}" />
-          <h3>Diff</h3>
-          <img src="file:///{diff_path.resolve()}" />
-        </div>
-        </body>
-        </html>
-        """
+<html>
+<head>
+<style>
+  body {{
+    background: #222;
+    color: #fff;
+    font-family: sans-serif;
+    text-align: center;
+    margin: 0;
+    overflow-x: hidden;
+  }}
+  h2 {{
+    color: #ffd700;
+    margin-top: 20px;
+  }}
+  .container {{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+  }}
+  .images {{
+    flex: 3;
+  }}
+  .zoom-preview {{
+    flex: 1;
+    border: 3px solid #555;
+    background: #111;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    position: sticky;
+    top: 50px;
+  }}
+  .zoom-preview h3 {{
+    color: #0ff;
+    font-size: 16px;
+    margin: 5px 0;
+  }}
+  img {{
+    max-width: 45%;
+    border: 3px solid #444;
+    margin: 10px;
+  }}
+</style>
+</head>
+<body>
+<h2>Compare: {tmp_file.name}</h2>
+
+<div class="container">
+  <div class="images">
+    <div>
+      <h3>Old</h3>
+      <img id="imgOld" src="file:///{main_file.resolve()}" />
+    </div>
+    <div>
+      <h3>New</h3>
+      <img id="imgNew" src="file:///{tmp_file.resolve()}" />
+    </div>
+    <div>
+      <h3>Diff</h3>
+      <img id="imgDiff" src="file:///{diff_path.resolve()}" />
+    </div>
+  </div>
+
+  <div class="zoom-preview" id="zoomBox">
+    <h3>Zoom preview</h3>
+    <canvas id="zoomCanvas" width="400" height="370"></canvas>
+  </div>
+</div>
+
+<script>
+function enableFixedZoom(imgIDs, zoom = 2) {{
+  const zoomCanvas = document.getElementById("zoomCanvas");
+  const ctx = zoomCanvas.getContext("2d");
+  const zoomBox = document.getElementById("zoomBox");
+
+  imgIDs.forEach(id => {{
+    const img = document.getElementById(id);
+    img.addEventListener("mousemove", e => showZoom(e, img));
+    img.addEventListener("mouseleave", clearZoom);
+  }});
+
+  function showZoom(e, img) {{
+    const rect = img.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const scaleX = img.naturalWidth / img.width;
+    const scaleY = img.naturalHeight / img.height;
+    const realX = x * scaleX;
+    const realY = y * scaleY;
+
+    const zoomSize = 150;
+    const sx = Math.max(0, realX - zoomSize / 2);
+    const sy = Math.max(0, realY - zoomSize / 2);
+    const sWidth = zoomSize;
+    const sHeight = zoomSize;
+
+    const imgElement = new Image();
+    imgElement.src = img.src;
+    imgElement.onload = () => {{
+      ctx.clearRect(0, 0, zoomCanvas.width, zoomCanvas.height);
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = 'high';
+      ctx.drawImage(
+        imgElement,
+        sx, sy, sWidth, sHeight,
+        0, 0, zoomCanvas.width, zoomCanvas.height
+      );
+    }};
+  }}
+
+  function clearZoom() {{
+    ctx.clearRect(0, 0, zoomCanvas.width, zoomCanvas.height);
+  }}
+}}
+
+enableFixedZoom(["imgOld", "imgNew", "imgDiff"], 2);
+</script>
+
+</body>
+</html>
+"""
+
+
+
+
 
         # Write temporary HTML to file
         html_path = TEMP_SCREENSHOT_DIR / f"compare_{tmp_file.stem}.html"
