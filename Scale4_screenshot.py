@@ -6,6 +6,7 @@ import asyncio
 import json
 import logging
 import getpass
+import re
 from pathlib import Path
 from playwright.async_api import async_playwright, Page
 
@@ -380,86 +381,99 @@ async def run_json_editor(context, page: Page, recorded_events_buffer):
         choice = input("Choose: ").strip()
 
         if choice == "1":
-            print(json.dumps(data, indent=4))
+            print("\nSaved Entries: ")
+            for i, entry in enumerate(data):                
+                print(f"{i+1}. {entry.get('png_name','')} -> {entry['url']} -> {len(entry.get('actions',[]))} actions")
+            
+            try:
+                vw_idx = int(input("Enter index to view clip area (0 to skip): ")) - 1
+            except ValueError:
+                print("\n Invalid input")
+                input("\nPress Enter to continue")
+                return
+            
+            if 0 <= vw_idx < len(data):
+                clip = data[vw_idx].get("clip", {})
+                print("\n Clip area:")
+                print(f" x: {clip.get('x',0)}")
+                print(f" y: {clip.get('y',0)}")
+                print(f" width: {clip.get('width',0)}")
+                print(f" height: {clip.get('height',0)}")
+            else:
+                print("\n Existing...")
+                loop = False
+            
+            
+            return
+
 
         elif choice == "2":
-            png_name = input("Enter PNG name: ").strip()
-            if not png_name.lower().endswith(".png"):
-                 png_name += ".png"
-            import re
-            png_name = re.sub(r'[<>:"/\\|?*]', '_', png_name)
+
+            while True:
+                png_name = input("\nEnter PNG name (or type exit to stop): ").strip()
+                if png_name.lower() == "exit" or png_name == "":
+                    print("\nStopping entry add mode...")
+                    break
+
+                if not png_name.lower().endswith(".png"):
+                    png_name += ".png"
 
 
-            print("[INFO] Recording user actions has started... (click, scroll, keys)")
-            page, url = await get_current_url(context)
-            if not url or url.startswith("about:"):
-                print("[ACTION REQUIRED] No URL found in active tabs. Taking single.mcns.io as URL")
-                url = "https://single.mcns.io"
+                png_name = re.sub(r'[<>:"/\\|?*]', '_', png_name)
+
+                print("[INFO] Recording user actions has started... (click, scroll, keys)")
+
+                page, url = await get_current_url(context)
+                if not url or url.startswith("about:"):
+                    print("[ACTION REQUIRED] No URL found in active tabs. Taking single.mcns.io as URL")
+                    url = "https://single.mcns.io"
+                    await page.goto(url, wait_until="networkidle", timeout=60000)
+
+                await page.bring_to_front()
+                await page.wait_for_load_state("domcontentloaded", timeout=15000)
+                await page.wait_for_load_state("networkidle")
+                await page.evaluate("document.readyState")
                 await page.goto(url, wait_until="networkidle", timeout=60000)
-                
 
+                status = await page.evaluate(RECORD_ACTIONS_JS)
+                recorded_events_buffer.clear()
+                print(f"[INFO] Recorder status: {status}")
+                print("[ACTION] Interact with the page, then press Enter here to stop recording...")
 
-            #Bring page front and start recording
-            await page.bring_to_front()
-            await page.wait_for_load_state("domcontentloaded", timeout=15000)
-            await page.wait_for_load_state("networkidle")
-            await page.evaluate("document.readyState")  # ensure loaded
-            await page.goto(url, wait_until="networkidle", timeout=60000)
+                input()
+                await page.evaluate("window.__stopInlineRecorder && window.__stopInlineRecorder();")
 
-            status = await page.evaluate(RECORD_ACTIONS_JS)
-            recorded_events_buffer.clear()
-            print(f"[INFO] Recorder status: {status}")
-            print("[ACTION] Interact with the page (click, scroll, type, drag), then press Enter here to stop recording...")
-            
-            input()
-            await page.evaluate("window.__stopInlineRecorder && window.__stopInlineRecorder();")
+                print(f"[DEBUG] Stopped recorder; {len(recorded_events_buffer)} events were recorded.")
+                if not recorded_events_buffer:
+                    print("[WARN] No actions recorded.")
 
-            print(f"[DEBUG] Stopped recorder; {len(recorded_events_buffer)} events were streamed back.")
-            if not recorded_events_buffer:
-                print("[WARN] No actions recorded. Did you interact inside the browser tab (not terminal)?")
+                actions = convert_events_to_actions(recorded_events_buffer)
+                print(f"[INFO] Recorded {len(recorded_events_buffer)} raw events → {len(actions)} actions")
+                logging.info(f"Recorded {len(recorded_events_buffer)} raw events, {len(actions)} actions for {url}")
 
+                print("[ACTION REQUIRED] Click and drag to select clip region.")
 
-            # Now recorded[] has all events from browser
+                DEFAULT_CLIP = {"x": 0, "y": 0, "width": 1280, "height": 715}
 
-            actions = convert_events_to_actions(recorded_events_buffer)
-            print(f"[INFO] Recorded {len(recorded_events_buffer)} raw events → {len(actions)} actions")
-            logging.info(f"Recorded {len(recorded_events_buffer)} raw events, {len(actions)} actions for {url}")
-                
-                
-                
-
-            #url = page.url or ""
-            #if not url:
-            #    url = input("Enter URL: ").strip()
-            #input("[ACTION] Log in if required, then press Enter to continue...")
-            print("[Action required] Click, drag, and release the mouse to select region for screenshot.")
-            
-            
-            def is_approx_default(clip, default, tol=5):
-                """Return True if clip is approximately equal to default region (within ±tol pixels)."""
-                if not clip:
+                def is_approx_default(clip, default, tol=5):
+                    if not clip:
+                        return True
+                    for key in ("x", "y", "width", "height"):
+                        if abs(clip.get(key, 0) - default[key]) > tol:
+                            return False
                     return True
-                for key in ("x", "y", "width", "height"):
-                    if abs(clip.get(key, 0) - default[key]) > tol:
-                        return False
-                return True
 
+                clip = await select_region(page)
 
-            DEFAULT_CLIP = {"x": 0, "y": 0, "width": 1280, "height": 715}
-            
-            clip = await select_region(page)
-            
-            #After user selects region:
-            if not clip or clip.get("width", 0) < 5 or clip.get("height", 0) < 5 or is_approx_default(clip, DEFAULT_CLIP):
-                print("[INFO] Using default clip 1280x715 (Standard Fullscreen).")
-                clip = DEFAULT_CLIP.copy()
+                if not clip or clip.get("width", 0) < 5 or clip.get("height", 0) < 5 or is_approx_default(clip, DEFAULT_CLIP):
+                    print("[INFO] Using default clip 1280x715.")
+                    clip = DEFAULT_CLIP.copy()
 
+                data.append({"url": url, "png_name": png_name, "clip": clip, "actions": actions})
+                save_json(data)
+                print(f"[ADDED] {png_name} with clip {clip}")
+                logging.info(f"Added entry {png_name} ({clip}) with {len(actions)} actions")
 
-
-            data.append({"url": url, "png_name": png_name, "clip": clip, "actions": actions})
-            save_json(data)
-            print(f"[ADDED] {url} → {png_name} with clip {clip}")
-            logging.info(f"Added entry {png_name} for URL={url} with clip={clip} and {len(actions)} actions")
 
         elif choice == "3":
             for i, entry in enumerate(data):
