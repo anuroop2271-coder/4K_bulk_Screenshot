@@ -1,0 +1,7 @@
+playwright
+aiohttp
+pillow
+scikit-image
+opencv-python
+imagehash
+scikit-image opencv-python

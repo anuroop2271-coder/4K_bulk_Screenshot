@@ -9,9 +9,11 @@ import getpass
 import re
 from pathlib import Path
 from playwright.async_api import async_playwright, Page
+from PIL import Image, ImageChops
 
 JSON_FILE = Path("screenshots.json")
 SCREENSHOT_DIR = Path("screenshots")
+TEMP_SCREENSHOT_DIR = Path("screenshots_tmp")
 USERDATA_DIR = Path("./userdata")
 LOG_FILE = Path("screenshot_log.txt")
 HIGH_RESOLUTION_SCALE = 4  # High-res factor
@@ -356,6 +358,9 @@ async def take_screenshot(page: Page, path, clip):
    # }
     #clip = scaled_clip
     try:
+        await page.wait_for_load_state("domcontentloaded", timeout=30000)
+        await page.wait_for_load_state("networkidle", timeout=30000)
+        await page.wait_for_timeout(1000)
         await page.evaluate(f'window.scrollTo({clip["x"]}, {clip["y"]})')
         await page.screenshot(path=path, clip=clip, scale="device")
         print(f"[SAVED] {path}")
@@ -571,10 +576,9 @@ async def run_screenshots(page: Page):
     ensure_json()
     data = load_json()
     SCREENSHOT_DIR.mkdir(exist_ok=True)
+    TEMP_SCREENSHOT_DIR.mkdir(exist_ok=True)
 
-    
-
-    for file in SCREENSHOT_DIR.glob("*.png"):
+    for file in TEMP_SCREENSHOT_DIR.glob("*.png"):
         file.unlink()
 
     for entry in data:
@@ -597,7 +601,7 @@ async def run_screenshots(page: Page):
             print(f"[SKIP] Missing URL or PNG in entry: {entry}")
             continue
 
-        print(f"\n Taking {png_name} screenshot for {url} ")
+        print(f"\nTaking {png_name} screenshot for {url} ")
         try:
             await page.goto(url, wait_until="networkidle", timeout=60000)
         except Exception as e:
@@ -606,7 +610,8 @@ async def run_screenshots(page: Page):
 
         if not png_name.lower().endswith(".png"):
             png_name += ".png"
-        path = SCREENSHOT_DIR / png_name
+        path = TEMP_SCREENSHOT_DIR / png_name
+
 
 
         
@@ -620,6 +625,93 @@ async def run_screenshots(page: Page):
 
         await take_screenshot(page, path, clip)
         #input("[ACTION] Finished, press Enter to continue...")
+
+    await compare_and_prompt(page)
+
+
+
+async def compare_and_prompt(page: Page):
+    """Compare screenshots one by one, show single browser preview, and ask user in CLI to replace or discard."""
+
+    # Create or reuse one tab for preview
+    compare_tab = await page.context.new_page()
+
+    for tmp_file in TEMP_SCREENSHOT_DIR.glob("*.png"):
+        main_file = SCREENSHOT_DIR / tmp_file.name
+
+        # If old screenshot doesn’t exist — just move it
+        if not main_file.exists():
+            tmp_file.replace(main_file)
+            print(f"[NEW] Saved new screenshot: {main_file.name}")
+            continue
+
+        # Compare old and new
+        img1 = Image.open(main_file).convert("RGB")
+        img2 = Image.open(tmp_file).convert("RGB")
+        diff = ImageChops.difference(img1, img2)
+
+        if diff.getbbox() is None:
+            print(f"[NO CHANGE] {main_file.name} — identical, discarding new image.")
+            tmp_file.unlink()
+            continue
+
+        # Save diff image
+        diff_path = TEMP_SCREENSHOT_DIR / f"diff_{tmp_file.name}"
+        diff.save(diff_path)
+
+        # Prepare HTML for visual comparison
+        html = f"""
+        <html>
+        <head>
+        <style>
+          body {{ background: #222; color: #fff; font-family: sans-serif; text-align: center; }}
+          img {{ max-width: 45%; border: 3px solid #444; margin: 10px; }}
+          h2 {{ color: #ffd700; }}
+        </style>
+        </head>
+        <body>
+        <h2>Compare: {tmp_file.name}</h2>
+        <div>
+          <h3>Old</h3>
+          <img src="file:///{main_file.resolve()}" />
+          <h3>New</h3>
+          <img src="file:///{tmp_file.resolve()}" />
+          <h3>Diff</h3>
+          <img src="file:///{diff_path.resolve()}" />
+        </div>
+        </body>
+        </html>
+        """
+
+        # Write temporary HTML to file
+        html_path = TEMP_SCREENSHOT_DIR / f"compare_{tmp_file.stem}.html"
+        html_path.write_text(html, encoding="utf-8")
+
+        # Load it in the same tab
+        print(f"\n[COMPARE] Showing {tmp_file.name} in browser...")
+        await compare_tab.goto(f"file:///{html_path.resolve()}")
+        await asyncio.sleep(1)
+
+        # CLI prompt for user decision
+        while True:
+            choice = input("\nReplace or Discard this screenshot? (r/d): ").strip().lower()
+            if choice == "r":
+                tmp_file.replace(main_file)
+                print(f"[REPLACED] {tmp_file.name}")
+                break
+            elif choice == "d":
+                tmp_file.unlink()
+                print(f"[DISCARDED] {tmp_file.name}")
+                break
+            else:
+                print("Invalid input. Please enter 'r' or 'd'.")
+
+    await compare_tab.close()
+    print("\n[INFO] All comparisons completed.")
+
+
+
+
 
 
 async def main():
@@ -647,7 +739,10 @@ async def main():
             print("1. Take screenshots")
             print("2. Edit JSON entries")
             print("3. Exit program")
-            choice = input("Choose: ").strip()
+            print("[INFO] Open the login page if required and log in manually.")
+            choice = input("\nChoose: ").strip()
+
+            
 
             if choice == "1":
                 await run_screenshots(page)
