@@ -583,9 +583,11 @@ async def run_json_editor(context, page: Page, recorded_events_buffer):
 
 
 
-async def run_screenshots(page: Page):
+async def run_screenshots(page: Page, selection_filter: str = None):
     ensure_json()
     data = load_json()
+    # need to add filter for selected entries
+    
     SCREENSHOT_DIR.mkdir(exist_ok=True)
     TEMP_SCREENSHOT_DIR.mkdir(exist_ok=True)
 
@@ -865,7 +867,23 @@ async def main():
             
 
             if choice == "1":
-                await run_screenshots(page)
+                print("\n[SCREENSHOT MODE]")
+                print("1. Take all screenshots as per JSON")
+                print("2. Take selected screenshots from JSON")
+                sub_choice = input("\nChoose: ").strip()
+                if sub_choice == "1":
+                    await run_screenshots(page)
+                elif sub_choice == "2":
+                    
+                    print("\nSaved Entries: ")
+                    ensure_json()
+                    data = load_json()
+                    for i, entry in enumerate(data):                
+                        print(f"{i+1}. {entry.get('png_name','')} -> {entry['url']} -> {len(entry.get('actions',[]))} actions")
+                    selection = input("Enter indices of entries to screenshot (example: 1,5,7 or 1-3,6,9-10): ")
+                    await run_screenshots(page, selection_filter=selection)
+
+                
             elif choice == "2":
                 await run_json_editor(context, page, recorded_events_buffer)
             elif choice == "3":
