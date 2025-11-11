@@ -857,7 +857,8 @@ async def main():
             print("\n[MAIN MENU]")
             print("1. Take screenshots")
             print("2. Edit JSON entries")
-            print("3. Exit program")
+            print("3. Take screenshot of the current page")
+            print("4. Exit program")
             print("[INFO] Open the login page if required and log in manually.")
             choice = input("\nChoose: ").strip()
 
@@ -868,6 +869,32 @@ async def main():
             elif choice == "2":
                 await run_json_editor(context, page, recorded_events_buffer)
             elif choice == "3":
+                from datetime import datetime
+                SCREENSHOT_DIR.mkdir(exist_ok=True)
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+
+                png_name = input("Enter PNG name for current page screenshot: ").strip()
+                if not png_name.lower().endswith(".png"):
+                    png_name += ".png" 
+                
+                path = SCREENSHOT_DIR / png_name
+                try:
+                    await page.wait_for_load_state("domcontentloaded", timeout=15000)
+                    await asyncio.sleep(1)                    
+                    await page.screenshot(path=path, full_page=True, scale="device")
+
+                    with Image.open(path) as img:
+                        bordered = ImageOps.expand(img, border=5, fill="black")
+                        bordered.save(path)
+
+                    print(f"[SAVED] Full-page screenshot saved as {png_name}")
+                    logging.info(f"Captured full-page screenshot: {png_name}")
+
+                except Exception as e:
+                    print(f"[ERROR] Failed to take full-page screenshot: {e}")
+                    logging.error(f"Failed full-page capture: {e}")
+                
+            elif choice == "4":
                 break
             else:
                 print("[ERROR] Invalid choice")
