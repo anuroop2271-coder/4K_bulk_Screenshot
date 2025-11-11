@@ -4888,3 +4888,22 @@ SystemExit: 0
 2025-11-10 18:50:34 | INFO | user=AnuroopParambil | Added entry bvdsad.png ({'x': 276, 'y': 302, 'width': 702, 'height': 383}) with 187 actions
 2025-11-10 18:50:59 | INFO | user=AnuroopParambil | Recorded 67 raw events, 82 actions for https://single.mcns.io/cloud-fabric/topology/transit
 2025-11-10 18:51:03 | INFO | user=AnuroopParambil | Added entry sasdadsadsadsada.png ({'x': 357, 'y': 173, 'width': 568, 'height': 374}) with 82 actions
+2025-11-11 11:20:20 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-11 11:23:49 | INFO | user=AnuroopParambil | Recorded 146 raw events, 167 actions for https://login.microsoftonline.com/4780055e-ce37-4f02-b33d-fdad8493a4b6/saml2?SAMLRequest=fZJdS8MwFIbv%2FRUl9226fugM62Q6xIFi2aqId1mazmB6zsxJh%2Fjr7Tq%2FQBjk6nw%2B73syuXhvbbDTjgxCwUZRzAINCmsDm4I9VNfhmF1MTyYkW7sVs86%2FwFK%2FdZp80DcCiSFRsM6BQEmGBMhWk%2FBKrGZ3tyKJYrF16FGhZcFiXjBTh%2BvNzWNmP57ul7jxl0SnLHj8Jkj2BAuiTi%2BAvATfh%2BIkD0ej%2FlVxLvJYpKNnFsx7BgPSD10v3m9JcG5xYyBqjXJI2HgEa0BHCluenY3jOM91qHR6FmZNnITrNK3Dppb1ODtPZbY%2B5XsxCQuu0Sk9aC1YIy3pPVEpicxO%2F0TKL1WXBg5mHbNgfSgicVNVZVjeryoWzIi02%2BNfIVDXarfSbmeUflje%2FgpSCN6htdpFrQKKDPLGSnodUDkR8issjUU%2Fm7OvM4nBPffnPsfZ5DcHmx7ZOuF%2FZveb%2BP8fMf0E
+2025-11-11 11:23:59 | INFO | user=AnuroopParambil | Added entry gateways-management.png ({'x': 0, 'y': 0, 'width': 1280, 'height': 715}) with 167 actions
+2025-11-11 11:24:42 | INFO | user=AnuroopParambil | Recorded 31 raw events, 39 actions for https://single.mcns.io/cloud-fabric/gateways/management
+2025-11-11 11:24:49 | INFO | user=AnuroopParambil | Added entry gateways-overview.png ({'x': 0, 'y': 0, 'width': 1280, 'height': 715}) with 39 actions
+2025-11-11 11:25:14 | INFO | user=AnuroopParambil | Recorded 46 raw events, 52 actions for https://single.mcns.io/cloud-fabric/gateways/overview
+2025-11-11 11:25:22 | INFO | user=AnuroopParambil | Added entry gateways-settings.png ({'x': 0, 'y': 0, 'width': 1280, 'height': 715}) with 52 actions
+2025-11-11 11:25:47 | INFO | user=AnuroopParambil | Recorded 25 raw events, 29 actions for https://single.mcns.io/cloud-fabric/gateways/settings
+2025-11-11 11:25:55 | INFO | user=AnuroopParambil | Added entry gateways-specialty.png ({'x': 0, 'y': 0, 'width': 1280, 'height': 715}) with 29 actions
+2025-11-11 11:26:17 | INFO | user=AnuroopParambil | Recorded 42 raw events, 49 actions for https://single.mcns.io/cloud-fabric/gateways/specialty
+2025-11-11 11:26:23 | INFO | user=AnuroopParambil | Added entry gateways-spoke.png ({'x': 0, 'y': 0, 'width': 1280, 'height': 715}) with 49 actions
+2025-11-11 11:26:46 | INFO | user=AnuroopParambil | Recorded 120 raw events, 137 actions for https://single.mcns.io/cloud-fabric/gateways/spoke
+2025-11-11 11:26:52 | INFO | user=AnuroopParambil | Added entry gateways-transit.png ({'x': 0, 'y': 0, 'width': 1280, 'height': 715}) with 137 actions
+2025-11-11 11:47:42 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-11 12:04:18 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-11 12:09:03 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-11 12:13:24 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-11 12:39:34 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-11 12:40:32 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
