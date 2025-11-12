@@ -1,5 +1,5 @@
 #Scale4_screenshot.py
-# Log
+# Actions click elements even if they are in different position on the web page
 
 
 import asyncio
