@@ -1,6 +1,5 @@
 #Scale4_screenshot.py
-# Add border
-#Comparison page magnification fix
+# Log
 
 
 import asyncio
@@ -51,6 +50,15 @@ async def safe_goto(page, url, timeout=60000):
     except Exception as e:
         print(f"[WARN] Navigation to {url} interrupted or redirected: {e}")
         return False
+
+
+def log_action(action_type: str, details: str):
+    """Standardized logging helper for troubleshooting."""
+    logging.info(f"[ACTION] {action_type} | {details}")
+
+def save_json(data):
+    JSON_FILE.write_text(json.dumps(data, indent=4))
+    log_action("JSON_SAVE", f"File saved with {len(data)} entries → {JSON_FILE.resolve()}")
 
 
 
@@ -488,7 +496,7 @@ async def run_json_editor(context, page: Page, recorded_events_buffer):
                 data.append({"url": url, "png_name": png_name, "clip": clip, "actions": actions})
                 save_json(data)
                 print(f"[ADDED] {png_name} with clip {clip}")
-                logging.info(f"Added entry {png_name} ({clip}) with {len(actions)} actions")
+                log_action("JSON_ADD", f"Added entry {png_name} with clip {clip} and {len(actions)} actions")
 
 
         elif choice == "3":
@@ -499,6 +507,7 @@ async def run_json_editor(context, page: Page, recorded_events_buffer):
                 removed = data.pop(idx)
                 save_json(data)
                 print(f"[REMOVED] {removed['url']}")
+                log_action("JSON_REMOVE", f"Removed entry: {removed.get('png_name')} ({removed.get('url')})")
             else:
                 print("[ERROR] Invalid index")
 
@@ -515,6 +524,7 @@ async def run_json_editor(context, page: Page, recorded_events_buffer):
                 if new_url:
                     entry["url"] = new_url
                     print(f"[SAVED] URL updated to: {entry['url']}")
+                    log_action("JSON_EDIT", f"Updated URL: {entry.get('png_name')} | URL={entry.get('url')} | Clip={entry.get('clip')}")
                 else:
                     print("[INFO] URL unchanged.")
 
@@ -525,6 +535,7 @@ async def run_json_editor(context, page: Page, recorded_events_buffer):
                         new_png += ".png"
                     entry["png_name"] = new_png
                     print(f"[SAVED] PNG name updated to: {entry['png_name']}")
+                    log_action("JSON_EDIT", f"Updated PNG name: {entry.get('png_name')} | URL={entry.get('url')} | Clip={entry.get('clip')}")
                 else:
                     print("[INFO] PNG name unchanged.")
 
@@ -538,6 +549,8 @@ async def run_json_editor(context, page: Page, recorded_events_buffer):
                     if not entry['url'] or entry['url'].startswith("about:"):
                         print("[ACTION REQUIRED] No URL found. Taking single.mcns.io as URL")
                         await page.goto("https://single.mcns.io", wait_until="networkidle", timeout=60000)
+                        entry["url"] = "https://single.mcns.io"
+                        log_action("JSON_EDIT", f"URL not found: Used default URL with {entry.get('png_name')} | URL={entry.get('url')} | Clip={entry.get('clip')}")
 
                     await page.bring_to_front()
                     await page.wait_for_load_state("domcontentloaded", timeout=15000)
@@ -545,13 +558,14 @@ async def run_json_editor(context, page: Page, recorded_events_buffer):
                     await page.evaluate("document.readyState")
                     recorded_events_buffer.clear()
                     status = await page.evaluate(RECORD_ACTIONS_JS)
-                    print(f"[INFO] Recorder status: {status}")
+                    print(f"[INFO] Recorder status: {status}\n Wait until the page is fully loaded before interacting.")
                     print("[ACTION] Interact with the page, then press Enter here to stop recording...")
                     input()
                     await page.evaluate("window.__stopInlineRecorder && window.__stopInlineRecorder();")
 
                     if not recorded_events_buffer:
                         print("[WARN] No actions recorded.\n Keeping the existing actions.")
+                        log_action("JSON_EDIT", f"No actions recorded with {entry.get('png_name')} | URL={entry.get('url')} | Clip={entry.get('clip')}")
                         
                     else:
                         actions = convert_events_to_actions(recorded_events_buffer)
@@ -568,10 +582,12 @@ async def run_json_editor(context, page: Page, recorded_events_buffer):
                     clip = await select_region(page)
                     entry["clip"] = clip
                     print(f"[UPDATED] Clip saved: {clip}")
+                    log_action("JSON_EDIT", f"Clip area edited with {entry.get('png_name')} | URL={entry.get('url')} | Clip={entry.get('clip')}")
 
 
                 save_json(data)
                 print("[UPDATED] Entry saved")
+                log_action("JSON_EDIT", f"JSON updated for {entry.get('png_name')} | URL={entry.get('url')} | Clip={entry.get('clip')}")
             else:
                 print("[ERROR] Invalid index")
 
@@ -612,18 +628,23 @@ async def run_screenshots(page: Page, selection_filter: str = None):
 
         if not url or not png_name or not clip:
             print(f"[SKIP] Missing URL or PNG in entry: {entry}")
+            logging.warning(f"Missing URL or PNG name or clip for entry: {entry}; skipping.")
             continue
 
         print(f"\nTaking {png_name} screenshot for {url} ")
+        logging.warning(f"Taking screenshotfor: {png_name}: {url}.")
+        
         try:
             await page.goto(url, wait_until="networkidle", timeout=60000)
         except Exception as e:
             print(f"[ERROR] Failed to open {url}: {e}")
+            logging.warning(f"Failed to open: {url}.")
             continue
 
         if not png_name.lower().endswith(".png"):
             png_name += ".png"
         path = TEMP_SCREENSHOT_DIR / png_name
+        logging.warning(f"png_name saved to TEMP_SCREENSHOT_DIR.")
 
 
 
@@ -633,13 +654,18 @@ async def run_screenshots(page: Page, selection_filter: str = None):
         if actions:
             print(f"[INFO] Replaying {len(actions)} actions for {entry['png_name']}")
             await replay_actions(page, actions)
+
+            logging.warning(f"Replaying {len(actions)} actions for {entry}.")
         else:
             print(f"[INFO] No recorded actions for {entry['png_name']} — skipping replay.")
+            logging.info(f"No recorded actions for {entry['png_name']} — skipping replay.")
 
         await take_screenshot(page, path, clip)
+        logging.info(f"Screenshot taken for {entry['png_name']} at {path}.")
         #input("[ACTION] Finished, press Enter to continue...")
 
     await compare_and_prompt(page)
+    logging.info("All screenshots processed and compared.")
 
 
 
