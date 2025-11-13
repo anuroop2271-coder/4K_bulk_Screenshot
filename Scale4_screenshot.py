@@ -619,11 +619,13 @@ async def run_json_editor(context, page: Page, recorded_events_buffer):
 
 
 
-async def run_screenshots(page: Page, entries,  selection_filter: str = None):
+async def run_screenshots(page: Page, entries=None, selection_filter: str = None):
     ensure_json()
     data = load_json()
-    # need to add filter for selected entries
 
+    # -------------------------------
+    # Determine which entries to process
+    # -------------------------------
     if selection_filter:
         indices = set()
         for part in selection_filter.split(','):
@@ -642,29 +644,37 @@ async def run_screenshots(page: Page, entries,  selection_filter: str = None):
 
         selected_data = [entry for i, entry in enumerate(data, start=1) if i in indices]
         print(f"[INFO] Selected entries: {sorted(indices)}")
+    elif entries is not None:
+        selected_data = entries
+        print(f"[INFO] Using pre-filtered entries ({len(entries)} total).")
     else:
         selected_data = data
         print("[INFO] No filter applied, processing all entries.")
 
-
+    # -------------------------------
+    # Directory setup and cleanup
+    # -------------------------------
     SCREENSHOT_DIR.mkdir(exist_ok=True)
     TEMP_SCREENSHOT_DIR.mkdir(exist_ok=True)
-
     for file in TEMP_SCREENSHOT_DIR.glob("*.png"):
         file.unlink()
 
-    for entry in data:
+    # -------------------------------
+    # Fix missing extensions
+    # -------------------------------
+    for entry in selected_data:
         png_name = entry.get("png_name", "")
         if not png_name.lower().endswith(".png"):
             entry["png_name"] = f"{png_name}.png"
             logging.warning(f"Missing .png extension for {png_name}; fixed automatically.")
     save_json(data)
 
-
     print("[INFO] Open the login page if required and log in manually.")
-    #input("[ACTION] After logging in, press Enter to continue...")
 
-    for entry in data:
+    # -------------------------------
+    # Main screenshot loop
+    # -------------------------------
+    for entry in selected_data:
         url = entry.get("url")
         png_name = entry.get("png_name")
         clip = entry.get("clip")
@@ -674,44 +684,39 @@ async def run_screenshots(page: Page, entries,  selection_filter: str = None):
             logging.warning(f"Missing URL or PNG name or clip for entry: {entry}; skipping.")
             continue
 
-        print(f"\nTaking {png_name} screenshot for {url} ")
-        logging.warning(f"Taking screenshotfor: {png_name}: {url}.")
-        
+        print(f"\nTaking {png_name} screenshot for {url}")
+        logging.warning(f"Taking screenshot for: {png_name}: {url}")
+
         try:
             await page.goto(url, wait_until="networkidle", timeout=60000)
             if "saml_login" in page.url:
                 print("[INFO] Redirected to login page. Please log in manually.")
-                await page.wait_for_url("**/single.mcns.io/**", timeout=0)  # waits until logged in
+                await page.wait_for_url("**/single.mcns.io/**", timeout=0)
         except Exception as e:
             print(f"[ERROR] Failed to open {url}: {e}")
-            logging.warning(f"Failed to open: {url}.")
+            logging.warning(f"Failed to open: {url}")
             continue
-
         if not png_name.lower().endswith(".png"):
-            png_name += ".png"
+            png_name += ".png"  
+
         path = TEMP_SCREENSHOT_DIR / png_name
         logging.warning(f"png_name saved to TEMP_SCREENSHOT_DIR.")
 
-
-
-        
         actions = entry.get("actions", [])
-        
         if actions:
-            print(f"[INFO] Replaying {len(actions)} actions for {entry['png_name']}")
+            print(f"[INFO] Replaying {len(actions)} actions for {png_name}")
             await replay_actions(page, actions)
-
-            logging.warning(f"Replaying {len(actions)} actions for {entry}.")
+            logging.warning(f"Replayed {len(actions)} actions for {png_name}")
         else:
-            print(f"[INFO] No recorded actions for {entry['png_name']} — skipping replay.")
-            logging.info(f"No recorded actions for {entry['png_name']} — skipping replay.")
+            print(f"[INFO] No recorded actions for {png_name} — skipping replay.")
+            logging.info(f"No recorded actions for {png_name} — skipping replay.")
 
         await take_screenshot(page, path, clip)
-        logging.info(f"Screenshot taken for {entry['png_name']} at {path}.")
-        #input("[ACTION] Finished, press Enter to continue...")
+        logging.info(f"Screenshot taken for {png_name} at {path}")
 
     await compare_and_prompt(page)
-    logging.info("All screenshots processed and compared.")
+    logging.info("All selected screenshots processed and compared.")
+
 
 
 
