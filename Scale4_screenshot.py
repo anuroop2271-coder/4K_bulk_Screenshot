@@ -1,5 +1,5 @@
 #Scale4_screenshot.py
-# Log
+# Selected SS
 
 
 import asyncio
@@ -102,6 +102,26 @@ def convert_events_to_actions(events):
             actions.append({"type": "wheel", "deltaX": ev.get("deltaX", 0), "deltaY": ev.get("deltaY", 0), "selector": ev.get("selector", "")})
         last_time = ev["t"]
     return actions
+
+
+def parse_indices(input_str, total_entries):
+    indices = set()
+    for part in input_str.split(','):
+        part = part.strip()
+        if '-' in part:
+            try:
+                start, end = map(int, part.split('-'))
+                indices.update(range(start, end + 1))
+            except ValueError:
+                print(f"[WARNING] Skipping invalid range: {part}")
+        else:
+            try:
+                indices.add(int(part))
+            except ValueError:
+                print(f"[WARNING] Skipping invalid entry: {part}")
+    # Ensure indices are valid
+    return [i for i in sorted(indices) if 1 <= i <= total_entries]
+
 
 async def replay_actions(page, actions):
     for act in actions:
@@ -599,11 +619,34 @@ async def run_json_editor(context, page: Page, recorded_events_buffer):
 
 
 
-async def run_screenshots(page: Page, selection_filter: str = None):
+async def run_screenshots(page: Page, entries,  selection_filter: str = None):
     ensure_json()
     data = load_json()
     # need to add filter for selected entries
-    
+
+    if selection_filter:
+        indices = set()
+        for part in selection_filter.split(','):
+            part = part.strip()
+            if '-' in part:
+                try:
+                    start, end = map(int, part.split('-'))
+                    indices.update(range(start, end + 1))
+                except ValueError:
+                    print(f"[WARNING] Skipping invalid range: {part}")
+            else:
+                try:
+                    indices.add(int(part))
+                except ValueError:
+                    print(f"[WARNING] Skipping invalid index: {part}")
+
+        selected_data = [entry for i, entry in enumerate(data, start=1) if i in indices]
+        print(f"[INFO] Selected entries: {sorted(indices)}")
+    else:
+        selected_data = data
+        print("[INFO] No filter applied, processing all entries.")
+
+
     SCREENSHOT_DIR.mkdir(exist_ok=True)
     TEMP_SCREENSHOT_DIR.mkdir(exist_ok=True)
 
@@ -636,6 +679,9 @@ async def run_screenshots(page: Page, selection_filter: str = None):
         
         try:
             await page.goto(url, wait_until="networkidle", timeout=60000)
+            if "saml_login" in page.url:
+                print("[INFO] Redirected to login page. Please log in manually.")
+                await page.wait_for_url("**/single.mcns.io/**", timeout=0)  # waits until logged in
         except Exception as e:
             print(f"[ERROR] Failed to open {url}: {e}")
             logging.warning(f"Failed to open: {url}.")
@@ -907,6 +953,12 @@ async def main():
                     for i, entry in enumerate(data):                
                         print(f"{i+1}. {entry.get('png_name','')} -> {entry['url']} -> {len(entry.get('actions',[]))} actions")
                     selection = input("Enter indices of entries to screenshot (example: 1,5,7 or 1-3,6,9-10): ")
+                    selected_indices = parse_indices(selection, len(data))
+                    if not selected_indices:
+                        print("[ERROR] No valid indices selected.")
+                        continue
+                    else:
+                        selected_data = [data[i-1] for i in selected_indices]
                     await run_screenshots(page, selection_filter=selection)
 
                 
