@@ -959,7 +959,8 @@ async def main():
                         continue
                     else:
                         selected_data = [data[i-1] for i in selected_indices]
-                    await run_screenshots(page, selection_filter=selection)
+                    await run_screenshots(page, entries=selected_data, selection_filter=selection)
+
 
                 
             elif choice == "2":
