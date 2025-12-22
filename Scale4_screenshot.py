@@ -635,7 +635,7 @@ async def run_screenshots(page: Page, entries=None, selection_filter: str = None
                     start, end = map(int, part.split('-'))
                     indices.update(range(start, end + 1))
                 except ValueError:
-                    print(f"[WARNING] Skipping invalid range: {part}")
+                    print(f"[WARNING] Skippingw invalid range: {part}")
             else:
                 try:
                     indices.add(int(part))

@@ -3,12 +3,772 @@
         "url": "https://single.mcns.io/dashboard/overview",
         "png_name": "dashboard-overview-1.png",
         "clip": {
-            "x": 0,
+            "x": 1,
             "y": 0,
-            "width": 1280,
-            "height": 715
+            "width": 1277,
+            "height": 719
         },
-        "actions": []
+        "actions": [
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": 25,
+                "selector": "div#fs-map-container > svg:nth-child(1)"
+            },
+            {
+                "type": "wait",
+                "ms": 80
+            },
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": 25,
+                "selector": "div#fs-map-container > svg:nth-child(1)"
+            },
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": 25,
+                "selector": "div#fs-map-container > svg:nth-child(1)"
+            },
+            {
+                "type": "wait",
+                "ms": 44
+            },
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": 25,
+                "selector": "div#fs-map-container > svg:nth-child(1)"
+            },
+            {
+                "type": "wait",
+                "ms": 76
+            },
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": 25,
+                "selector": "div#fs-map-container > svg:nth-child(1)"
+            },
+            {
+                "type": "wait",
+                "ms": 327
+            },
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": 25,
+                "selector": "div#fs-map-container > svg:nth-child(1)"
+            },
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": 25,
+                "selector": "div#fs-map-container > svg:nth-child(1)"
+            },
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": 25,
+                "selector": "div#fs-map-container > svg:nth-child(1)"
+            },
+            {
+                "type": "wait",
+                "ms": 58
+            },
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": 25,
+                "selector": "div#fs-map-container > svg:nth-child(1)"
+            },
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": 25,
+                "selector": "div#fs-map-container > svg:nth-child(1)"
+            },
+            {
+                "type": "wait",
+                "ms": 331
+            },
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": 25,
+                "selector": "div#fs-map-container > svg:nth-child(1)"
+            },
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": 25,
+                "selector": "div#fs-map-container > svg:nth-child(1)"
+            },
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": 25,
+                "selector": "div#fs-map-container > svg:nth-child(1)"
+            },
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": 25,
+                "selector": "div#fs-map-container > svg:nth-child(1)"
+            },
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": 25,
+                "selector": "div#fs-map-container > svg:nth-child(1)"
+            },
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": 25,
+                "selector": "div#fs-map-container > svg:nth-child(1)"
+            },
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": 25,
+                "selector": "div#fs-map-container > svg:nth-child(1)"
+            },
+            {
+                "type": "wait",
+                "ms": 376
+            },
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": 25,
+                "selector": "div#fs-map-container > svg:nth-child(1)"
+            },
+            {
+                "type": "wait",
+                "ms": 64
+            },
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": 25,
+                "selector": "div#fs-map-container > svg:nth-child(1)"
+            },
+            {
+                "type": "wait",
+                "ms": 49
+            },
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": 25,
+                "selector": "div#fs-map-container > svg:nth-child(1)"
+            },
+            {
+                "type": "wait",
+                "ms": 151
+            },
+            {
+                "type": "mousemove",
+                "x": 688,
+                "y": 434
+            },
+            {
+                "type": "wait",
+                "ms": 43
+            },
+            {
+                "type": "mousemove",
+                "x": 688,
+                "y": 440
+            },
+            {
+                "type": "wait",
+                "ms": 50
+            },
+            {
+                "type": "mousemove",
+                "x": 688,
+                "y": 442
+            },
+            {
+                "type": "wait",
+                "ms": 234
+            },
+            {
+                "type": "mousemove",
+                "x": 689,
+                "y": 443
+            },
+            {
+                "type": "wait",
+                "ms": 211
+            },
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": -25,
+                "selector": "div#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1)"
+            },
+            {
+                "type": "wait",
+                "ms": 41
+            },
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": -25,
+                "selector": "div#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1)"
+            },
+            {
+                "type": "wait",
+                "ms": 50
+            },
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": -25,
+                "selector": "div#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1)"
+            },
+            {
+                "type": "wait",
+                "ms": 64
+            },
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": -25,
+                "selector": "div#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1)"
+            },
+            {
+                "type": "wait",
+                "ms": 122
+            },
+            {
+                "type": "wheel",
+                "deltaX": -0.0,
+                "deltaY": -25,
+                "selector": "div#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1)"
+            },
+            {
+                "type": "wait",
+                "ms": 328
+            },
+            {
+                "type": "mousemove",
+                "x": 690,
+                "y": 445
+            },
+            {
+                "type": "mousemove",
+                "x": 691,
+                "y": 447
+            },
+            {
+                "type": "mousemove",
+                "x": 692,
+                "y": 449
+            },
+            {
+                "type": "mousemove",
+                "x": 692,
+                "y": 453
+            },
+            {
+                "type": "mousemove",
+                "x": 693,
+                "y": 456
+            },
+            {
+                "type": "mousemove",
+                "x": 693,
+                "y": 461
+            },
+            {
+                "type": "mousemove",
+                "x": 697,
+                "y": 472
+            },
+            {
+                "type": "mousemove",
+                "x": 697,
+                "y": 476
+            },
+            {
+                "type": "mousemove",
+                "x": 698,
+                "y": 483
+            },
+            {
+                "type": "mousemove",
+                "x": 698,
+                "y": 486
+            },
+            {
+                "type": "mousemove",
+                "x": 701,
+                "y": 492
+            },
+            {
+                "type": "mousemove",
+                "x": 702,
+                "y": 496
+            },
+            {
+                "type": "mousemove",
+                "x": 704,
+                "y": 501
+            },
+            {
+                "type": "mousemove",
+                "x": 704,
+                "y": 504
+            },
+            {
+                "type": "mousemove",
+                "x": 704,
+                "y": 507
+            },
+            {
+                "type": "mousemove",
+                "x": 704,
+                "y": 510
+            },
+            {
+                "type": "mousemove",
+                "x": 704,
+                "y": 514
+            },
+            {
+                "type": "mousemove",
+                "x": 704,
+                "y": 518
+            },
+            {
+                "type": "wait",
+                "ms": 50
+            },
+            {
+                "type": "mousemove",
+                "x": 704,
+                "y": 523
+            },
+            {
+                "type": "wait",
+                "ms": 119
+            },
+            {
+                "type": "mousedown",
+                "x": 704,
+                "y": 525
+            },
+            {
+                "type": "mousemove",
+                "x": 703,
+                "y": 525
+            },
+            {
+                "type": "mousemove",
+                "x": 699,
+                "y": 517
+            },
+            {
+                "type": "mousemove",
+                "x": 698,
+                "y": 512
+            },
+            {
+                "type": "mousemove",
+                "x": 696,
+                "y": 504
+            },
+            {
+                "type": "mousemove",
+                "x": 695,
+                "y": 498
+            },
+            {
+                "type": "mousemove",
+                "x": 694,
+                "y": 493
+            },
+            {
+                "type": "mousemove",
+                "x": 693,
+                "y": 485
+            },
+            {
+                "type": "mousemove",
+                "x": 691,
+                "y": 473
+            },
+            {
+                "type": "mousemove",
+                "x": 690,
+                "y": 468
+            },
+            {
+                "type": "mousemove",
+                "x": 689,
+                "y": 462
+            },
+            {
+                "type": "mousemove",
+                "x": 688,
+                "y": 459
+            },
+            {
+                "type": "mousemove",
+                "x": 688,
+                "y": 456
+            },
+            {
+                "type": "mousemove",
+                "x": 687,
+                "y": 452
+            },
+            {
+                "type": "mousemove",
+                "x": 687,
+                "y": 449
+            },
+            {
+                "type": "mousemove",
+                "x": 687,
+                "y": 444
+            },
+            {
+                "type": "mousemove",
+                "x": 685,
+                "y": 441
+            },
+            {
+                "type": "mousemove",
+                "x": 685,
+                "y": 436
+            },
+            {
+                "type": "mousemove",
+                "x": 685,
+                "y": 430
+            },
+            {
+                "type": "mousemove",
+                "x": 684,
+                "y": 423
+            },
+            {
+                "type": "mousemove",
+                "x": 683,
+                "y": 416
+            },
+            {
+                "type": "mousemove",
+                "x": 682,
+                "y": 409
+            },
+            {
+                "type": "mousemove",
+                "x": 681,
+                "y": 406
+            },
+            {
+                "type": "mousemove",
+                "x": 679,
+                "y": 404
+            },
+            {
+                "type": "mousemove",
+                "x": 678,
+                "y": 402
+            },
+            {
+                "type": "wait",
+                "ms": 50
+            },
+            {
+                "type": "mousemove",
+                "x": 678,
+                "y": 401
+            },
+            {
+                "type": "wait",
+                "ms": 67
+            },
+            {
+                "type": "mousemove",
+                "x": 678,
+                "y": 400
+            },
+            {
+                "type": "wait",
+                "ms": 50
+            },
+            {
+                "type": "mousemove",
+                "x": 678,
+                "y": 399
+            },
+            {
+                "type": "wait",
+                "ms": 245
+            },
+            {
+                "type": "mousemove",
+                "x": 678,
+                "y": 398
+            },
+            {
+                "type": "mousemove",
+                "x": 676,
+                "y": 396
+            },
+            {
+                "type": "wait",
+                "ms": 49
+            },
+            {
+                "type": "mousemove",
+                "x": 672,
+                "y": 394
+            },
+            {
+                "type": "mousemove",
+                "x": 669,
+                "y": 393
+            },
+            {
+                "type": "wait",
+                "ms": 84
+            },
+            {
+                "type": "mousemove",
+                "x": 666,
+                "y": 393
+            },
+            {
+                "type": "wait",
+                "ms": 150
+            },
+            {
+                "type": "mousemove",
+                "x": 665,
+                "y": 393
+            },
+            {
+                "type": "wait",
+                "ms": 49
+            },
+            {
+                "type": "mousemove",
+                "x": 664,
+                "y": 396
+            },
+            {
+                "type": "wait",
+                "ms": 117
+            },
+            {
+                "type": "mousemove",
+                "x": 663,
+                "y": 397
+            },
+            {
+                "type": "mousemove",
+                "x": 662,
+                "y": 399
+            },
+            {
+                "type": "wait",
+                "ms": 46
+            },
+            {
+                "type": "mousemove",
+                "x": 661,
+                "y": 401
+            },
+            {
+                "type": "wait",
+                "ms": 50
+            },
+            {
+                "type": "mousemove",
+                "x": 660,
+                "y": 402
+            },
+            {
+                "type": "wait",
+                "ms": 76
+            },
+            {
+                "type": "mouseup",
+                "x": 660,
+                "y": 402
+            },
+            {
+                "type": "click",
+                "x": 660,
+                "y": 402
+            },
+            {
+                "type": "mousemove",
+                "x": 660,
+                "y": 402
+            },
+            {
+                "type": "wait",
+                "ms": 164
+            },
+            {
+                "type": "mousemove",
+                "x": 660,
+                "y": 403
+            },
+            {
+                "type": "wait",
+                "ms": 53
+            },
+            {
+                "type": "mousemove",
+                "x": 660,
+                "y": 405
+            },
+            {
+                "type": "mousemove",
+                "x": 662,
+                "y": 407
+            },
+            {
+                "type": "mousemove",
+                "x": 664,
+                "y": 409
+            },
+            {
+                "type": "wait",
+                "ms": 42
+            },
+            {
+                "type": "mousemove",
+                "x": 665,
+                "y": 412
+            },
+            {
+                "type": "wait",
+                "ms": 67
+            },
+            {
+                "type": "mousemove",
+                "x": 665,
+                "y": 416
+            },
+            {
+                "type": "wait",
+                "ms": 41
+            },
+            {
+                "type": "mousemove",
+                "x": 665,
+                "y": 417
+            },
+            {
+                "type": "wait",
+                "ms": 42
+            },
+            {
+                "type": "mousemove",
+                "x": 665,
+                "y": 419
+            },
+            {
+                "type": "mousemove",
+                "x": 666,
+                "y": 421
+            },
+            {
+                "type": "mousemove",
+                "x": 668,
+                "y": 424
+            },
+            {
+                "type": "mousemove",
+                "x": 670,
+                "y": 425
+            },
+            {
+                "type": "mousemove",
+                "x": 674,
+                "y": 425
+            },
+            {
+                "type": "mousemove",
+                "x": 678,
+                "y": 425
+            },
+            {
+                "type": "wait",
+                "ms": 173
+            },
+            {
+                "type": "mousemove",
+                "x": 681,
+                "y": 424
+            },
+            {
+                "type": "wait",
+                "ms": 302
+            },
+            {
+                "type": "mousemove",
+                "x": 681,
+                "y": 424
+            },
+            {
+                "type": "mousemove",
+                "x": 675,
+                "y": 428
+            },
+            {
+                "type": "mousemove",
+                "x": 663,
+                "y": 431
+            },
+            {
+                "type": "mousemove",
+                "x": 633,
+                "y": 435
+            },
+            {
+                "type": "mousemove",
+                "x": 584,
+                "y": 443
+            },
+            {
+                "type": "mousemove",
+                "x": 504,
+                "y": 450
+            },
+            {
+                "type": "mousemove",
+                "x": 411,
+                "y": 454
+            },
+            {
+                "type": "mousemove",
+                "x": 304,
+                "y": 460
+            },
+            {
+                "type": "mousemove",
+                "x": 183,
+                "y": 472
+            },
+            {
+                "type": "mousemove",
+                "x": 59,
+                "y": 488
+            }
+        ]
     },
     {
         "url": "https://single.mcns.io/dashboard/overview",
@@ -7169,5 +7929,16 @@
                 "y": 480
             }
         ]
+    },
+    {
+        "url": "https://cluster.mcns.io/security/firenet/gateways",
+        "png_name": "transit-firenet-tab.png",
+        "clip": {
+            "x": 0,
+            "y": 1,
+            "width": 1275,
+            "height": 490
+        },
+        "actions": []
     }
 ]

@@ -5024,3 +5024,294 @@ SystemExit: 0
 2025-11-13 11:37:14 | WARNING | user=AnuroopParambil | Replayed 261 actions for gateways-transit-settings.png
 2025-11-13 11:37:18 | INFO | user=AnuroopParambil | Screenshot taken for gateways-transit-settings.png at screenshots_tmp\gateways-transit-settings.png
 2025-11-13 11:37:29 | INFO | user=AnuroopParambil | All selected screenshots processed and compared.
+2025-11-17 16:08:56 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-17 16:09:24 | INFO | user=AnuroopParambil | Captured full-page screenshot: asd.png
+2025-11-17 16:18:11 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-18 12:37:31 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-18 12:38:07 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-18 12:39:45 | INFO | user=AnuroopParambil | Captured full-page screenshot: flightpath-before-run.png
+2025-11-18 13:29:57 | INFO | user=AnuroopParambil | Captured full-page screenshot: flightpath-overview.png
+2025-11-18 13:30:22 | INFO | user=AnuroopParambil | Captured full-page screenshot: flightpath-routing.png
+2025-11-18 13:30:32 | INFO | user=AnuroopParambil | Captured full-page screenshot: flightpath-metrics.png
+2025-11-18 13:34:02 | INFO | user=AnuroopParambil | Captured full-page screenshot: flightpath-routing.png
+2025-11-26 12:38:47 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-26 12:40:13 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-26 12:40:55 | INFO | user=AnuroopParambil | Captured full-page screenshot: transit-firenet-tab.png
+2025-11-26 12:45:20 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-26 12:45:53 | INFO | user=AnuroopParambil | Recorded 65 raw events, 76 actions for https://single.mcns.io/dashboard/overview
+2025-11-26 12:46:06 | INFO | user=AnuroopParambil | [ACTION] JSON_ADD | Added entry transit-firenet-tab.png with clip {'x': 0, 'y': 2, 'width': 1272, 'height': 482} and 76 actions
+2025-11-26 12:46:39 | WARNING | user=AnuroopParambil | Taking screenshot for: transit-firenet-tab.png: https://single.mcns.io/dashboard/overview
+2025-11-26 12:46:46 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2025-11-26 12:46:49 | WARNING | user=AnuroopParambil | Replayed 76 actions for transit-firenet-tab.png
+2025-11-26 12:46:53 | INFO | user=AnuroopParambil | Screenshot taken for transit-firenet-tab.png at screenshots_tmp\transit-firenet-tab.png
+2025-11-26 12:47:19 | INFO | user=AnuroopParambil | All selected screenshots processed and compared.
+2025-11-26 12:47:49 | INFO | user=AnuroopParambil | Re-recorded 117 actions for transit-firenet-tab.png
+2025-11-26 12:48:15 | INFO | user=AnuroopParambil | [ACTION] JSON_EDIT | Clip area edited with transit-firenet-tab.png | URL=https://single.mcns.io/dashboard/overview | Clip={'x': 0, 'y': 3, 'width': 1279, 'height': 473}
+2025-11-26 12:48:15 | INFO | user=AnuroopParambil | [ACTION] JSON_EDIT | JSON updated for transit-firenet-tab.png | URL=https://single.mcns.io/dashboard/overview | Clip={'x': 0, 'y': 3, 'width': 1279, 'height': 473}
+2025-11-26 12:48:27 | INFO | user=AnuroopParambil | Captured full-page screenshot: 0.png
+2025-11-26 12:48:34 | WARNING | user=AnuroopParambil | Taking screenshot for: transit-firenet-tab.png: https://single.mcns.io/dashboard/overview
+2025-11-26 12:48:41 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2025-11-26 12:48:48 | WARNING | user=AnuroopParambil | Replayed 117 actions for transit-firenet-tab.png
+2025-11-26 12:48:51 | INFO | user=AnuroopParambil | Screenshot taken for transit-firenet-tab.png at screenshots_tmp\transit-firenet-tab.png
+2025-11-26 12:49:36 | INFO | user=AnuroopParambil | All selected screenshots processed and compared.
+2025-11-26 12:49:57 | INFO | user=AnuroopParambil | Captured full-page screenshot: transit-firenet-tab.png
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:32 | ERROR | user=AnuroopParambil | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-11-26 12:53:49 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-11-26 12:54:37 | INFO | user=AnuroopParambil | Recorded 112 raw events, 124 actions for https://cluster.mcns.io/dashboard/overview
+2025-11-26 12:54:46 | INFO | user=AnuroopParambil | [ACTION] JSON_ADD | Added entry transit-firenet-tab.png with clip {'x': 0, 'y': 2, 'width': 1275, 'height': 523} and 124 actions
+2025-11-26 12:54:57 | WARNING | user=AnuroopParambil | Taking screenshot for: transit-firenet-tab.png: https://cluster.mcns.io/dashboard/overview
+2025-11-26 12:55:14 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2025-11-26 12:55:16 | WARNING | user=AnuroopParambil | Replayed 124 actions for transit-firenet-tab.png
+2025-11-26 12:55:20 | INFO | user=AnuroopParambil | Screenshot taken for transit-firenet-tab.png at screenshots_tmp\transit-firenet-tab.png
+2025-11-26 12:55:28 | INFO | user=AnuroopParambil | All selected screenshots processed and compared.
+2025-11-26 12:55:34 | INFO | user=AnuroopParambil | [ACTION] JSON_REMOVE | Removed entry: transit-firenet-tab.png (https://cluster.mcns.io/dashboard/overview)
+2025-11-26 12:55:37 | INFO | user=AnuroopParambil | [ACTION] JSON_REMOVE | Removed entry: transit-firenet-tab.png (https://single.mcns.io/dashboard/overview)
+2025-11-26 12:56:01 | INFO | user=AnuroopParambil | Recorded 0 raw events, 0 actions for https://cluster.mcns.io/security/firenet/gateways
+2025-11-26 12:56:13 | INFO | user=AnuroopParambil | [ACTION] JSON_ADD | Added entry transit-firenet-tab.png with clip {'x': 0, 'y': 1, 'width': 1275, 'height': 490} and 0 actions
+2025-11-26 12:56:23 | WARNING | user=AnuroopParambil | Taking screenshot for: transit-firenet-tab.png: https://cluster.mcns.io/security/firenet/gateways
+2025-11-26 12:56:29 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2025-11-26 12:56:29 | INFO | user=AnuroopParambil | No recorded actions for transit-firenet-tab.png — skipping replay.
+2025-11-26 12:56:32 | INFO | user=AnuroopParambil | Screenshot taken for transit-firenet-tab.png at screenshots_tmp\transit-firenet-tab.png
+2025-11-26 12:56:36 | INFO | user=AnuroopParambil | All selected screenshots processed and compared.
+2025-12-11 08:08:27 | ERROR | user=AnuroopParambil | Task was destroyed but it is pending!
+task: <Task cancelling name='Task-2' coro=<Connection.run() running at C:\Users\AnuroopParambil\Desktop\Screenshot script\4K_bulk_Screenshot\.venv\Lib\site-packages\playwright\_impl\_connection.py:310> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at C:\Users\AnuroopParambil\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py:820]>
+2025-12-11 08:08:45 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-12-11 08:15:24 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-12-11 08:15:40 | WARNING | user=AnuroopParambil | Taking screenshot for: dashboard-overview-1.png: https://single.mcns.io/dashboard/overview
+2025-12-11 08:15:51 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2025-12-11 08:15:51 | INFO | user=AnuroopParambil | No recorded actions for dashboard-overview-1.png — skipping replay.
+2025-12-11 08:15:57 | INFO | user=AnuroopParambil | Screenshot taken for dashboard-overview-1.png at screenshots_tmp\dashboard-overview-1.png
+2025-12-11 08:15:57 | WARNING | user=AnuroopParambil | Taking screenshot for: dashboard-overview-2.png: https://single.mcns.io/dashboard/overview
+2025-12-11 08:16:12 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2025-12-11 08:16:17 | WARNING | user=AnuroopParambil | Replayed 20 actions for dashboard-overview-2.png
+2025-12-11 08:16:22 | INFO | user=AnuroopParambil | Screenshot taken for dashboard-overview-2.png at screenshots_tmp\dashboard-overview-2.png
+2025-12-11 08:16:22 | WARNING | user=AnuroopParambil | Taking screenshot for: dashboard-overview-3.png: https://single.mcns.io/dashboard/overview
+2025-12-11 08:16:34 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2025-12-11 08:16:44 | WARNING | user=AnuroopParambil | Replayed 13 actions for dashboard-overview-3.png
+2025-12-11 08:16:49 | INFO | user=AnuroopParambil | Screenshot taken for dashboard-overview-3.png at screenshots_tmp\dashboard-overview-3.png
+2025-12-11 08:16:49 | WARNING | user=AnuroopParambil | Taking screenshot for: dashboard-overview-4.png: https://single.mcns.io/dashboard/overview
+2025-12-11 08:16:58 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2025-12-11 08:17:11 | WARNING | user=AnuroopParambil | Replayed 11 actions for dashboard-overview-4.png
+2025-12-11 08:17:15 | INFO | user=AnuroopParambil | Screenshot taken for dashboard-overview-4.png at screenshots_tmp\dashboard-overview-4.png
+2025-12-11 08:17:15 | WARNING | user=AnuroopParambil | Taking screenshot for: dashboard-overview-5.png: https://single.mcns.io/dashboard/overview
+2025-12-11 08:17:26 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2025-12-11 08:17:33 | WARNING | user=AnuroopParambil | Replayed 65 actions for dashboard-overview-5.png
+2025-12-11 08:17:37 | INFO | user=AnuroopParambil | Screenshot taken for dashboard-overview-5.png at screenshots_tmp\dashboard-overview-5.png
+2025-12-11 08:17:37 | WARNING | user=AnuroopParambil | Taking screenshot for: gateways-transit-details.png: https://single.mcns.io/cloud-fabric/gateways/transit
+2025-12-11 08:17:52 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2025-12-11 08:17:59 | WARNING | user=AnuroopParambil | Replayed 65 actions for gateways-transit-details.png
+2025-12-11 08:18:04 | INFO | user=AnuroopParambil | Screenshot taken for gateways-transit-details.png at screenshots_tmp\gateways-transit-details.png
+2025-12-11 08:18:04 | WARNING | user=AnuroopParambil | Taking screenshot for: gateways-transit-instances.png: https://single.mcns.io/cloud-fabric/gateways/transit
+2025-12-11 08:18:12 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2025-12-11 08:18:18 | WARNING | user=AnuroopParambil | Replayed 37 actions for gateways-transit-instances.png
+2025-12-11 08:18:23 | INFO | user=AnuroopParambil | Screenshot taken for gateways-transit-instances.png at screenshots_tmp\gateways-transit-instances.png
+2025-12-11 08:18:23 | WARNING | user=AnuroopParambil | Taking screenshot for: gateways-transit-attachments.png: https://single.mcns.io/cloud-fabric/gateways/transit/
+2025-12-11 08:18:33 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2025-12-11 08:18:53 | WARNING | user=AnuroopParambil | Replayed 340 actions for gateways-transit-attachments.png
+2025-12-11 08:18:57 | INFO | user=AnuroopParambil | Screenshot taken for gateways-transit-attachments.png at screenshots_tmp\gateways-transit-attachments.png
+2025-12-11 08:18:57 | WARNING | user=AnuroopParambil | Taking screenshot for: gateways-transit-vpc_vnet_route_tables.png: https://single.mcns.io/cloud-fabric/gateways/transit
+2025-12-11 08:19:07 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2025-12-11 08:19:16 | WARNING | user=AnuroopParambil | Replayed 97 actions for gateways-transit-vpc_vnet_route_tables.png
+2025-12-11 08:19:20 | INFO | user=AnuroopParambil | Screenshot taken for gateways-transit-vpc_vnet_route_tables.png at screenshots_tmp\gateways-transit-vpc_vnet_route_tables.png
+2025-12-11 08:19:20 | WARNING | user=AnuroopParambil | Taking screenshot for: gateways-transit-gateway_routes.png: https://single.mcns.io/cloud-fabric/gateways/transit
+2025-12-11 08:19:29 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2025-12-11 08:19:34 | WARNING | user=AnuroopParambil | Replayed 102 actions for gateways-transit-gateway_routes.png
+2025-12-11 08:19:39 | INFO | user=AnuroopParambil | Screenshot taken for gateways-transit-gateway_routes.png at screenshots_tmp\gateways-transit-gateway_routes.png
+2025-12-11 08:19:39 | WARNING | user=AnuroopParambil | Taking screenshot for: gateways-transit-interface_stats.png: https://single.mcns.io/cloud-fabric/gateways/transit
+2025-12-11 08:19:49 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2025-12-11 08:19:58 | WARNING | user=AnuroopParambil | Replayed 135 actions for gateways-transit-interface_stats.png
+2025-12-11 08:20:03 | INFO | user=AnuroopParambil | Screenshot taken for gateways-transit-interface_stats.png at screenshots_tmp\gateways-transit-interface_stats.png
+2025-12-11 08:20:03 | WARNING | user=AnuroopParambil | Taking screenshot for: gateways-transit-route_db.png: https://single.mcns.io/cloud-fabric/gateways/transit
+2025-12-12 11:32:39 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-12-16 14:22:14 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-12-22 11:52:22 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-12-22 11:52:56 | WARNING | user=AnuroopParambil | Taking screenshot for: dashboard-overview-1.png: https://single.mcns.io/dashboard/overview
+2025-12-22 11:52:58 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2025-12-22 11:52:58 | INFO | user=AnuroopParambil | No recorded actions for dashboard-overview-1.png — skipping replay.
+2025-12-22 11:53:02 | INFO | user=AnuroopParambil | Screenshot taken for dashboard-overview-1.png at screenshots_tmp\dashboard-overview-1.png
+2025-12-22 11:53:02 | WARNING | user=AnuroopParambil | Taking screenshot for: dashboard-overview-2.png: https://single.mcns.io/dashboard/overview
+2025-12-22 11:53:04 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2025-12-22 11:53:09 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2025-12-22 11:54:42 | WARNING | user=AnuroopParambil | Taking screenshot for: dashboard-overview-1.png: https://single.mcns.io/dashboard/overview
+2025-12-22 11:54:43 | WARNING | user=AnuroopParambil | Failed to open: https://single.mcns.io/dashboard/overview
+2025-12-22 11:54:43 | WARNING | user=AnuroopParambil | Taking screenshot for: dashboard-overview-2.png: https://single.mcns.io/dashboard/overview
+2025-12-22 11:54:50 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2025-12-22 11:54:55 | WARNING | user=AnuroopParambil | Replayed 20 actions for dashboard-overview-2.png
+2025-12-22 11:54:59 | INFO | user=AnuroopParambil | Screenshot taken for dashboard-overview-2.png at screenshots_tmp\dashboard-overview-2.png
+2025-12-22 11:54:59 | WARNING | user=AnuroopParambil | Taking screenshot for: dashboard-overview-3.png: https://single.mcns.io/dashboard/overview
+2025-12-22 11:55:06 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2025-12-22 11:55:16 | WARNING | user=AnuroopParambil | Replayed 13 actions for dashboard-overview-3.png
+2025-12-22 11:55:20 | INFO | user=AnuroopParambil | Screenshot taken for dashboard-overview-3.png at screenshots_tmp\dashboard-overview-3.png
+2025-12-22 11:55:20 | WARNING | user=AnuroopParambil | Taking screenshot for: dashboard-overview-4.png: https://single.mcns.io/dashboard/overview
+2025-12-22 11:55:27 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2025-12-22 11:55:39 | WARNING | user=AnuroopParambil | Replayed 11 actions for dashboard-overview-4.png
+2025-12-22 11:55:43 | INFO | user=AnuroopParambil | Screenshot taken for dashboard-overview-4.png at screenshots_tmp\dashboard-overview-4.png
+2025-12-22 11:55:43 | WARNING | user=AnuroopParambil | Taking screenshot for: dashboard-overview-5.png: https://single.mcns.io/dashboard/overview
+2025-12-22 11:55:50 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2025-12-22 11:55:58 | WARNING | user=AnuroopParambil | Replayed 65 actions for dashboard-overview-5.png
+2025-12-22 11:56:01 | INFO | user=AnuroopParambil | Screenshot taken for dashboard-overview-5.png at screenshots_tmp\dashboard-overview-5.png
+2025-12-22 11:58:31 | INFO | user=AnuroopParambil | All selected screenshots processed and compared.
+2025-12-22 12:00:09 | INFO | user=AnuroopParambil | Re-recorded 155 actions for dashboard-overview-1.png
+2025-12-22 12:00:26 | INFO | user=AnuroopParambil | [ACTION] JSON_EDIT | Clip area edited with dashboard-overview-1.png | URL=https://single.mcns.io/dashboard/overview | Clip={'x': 0, 'y': 2, 'width': 1277, 'height': 716}
+2025-12-22 12:00:26 | INFO | user=AnuroopParambil | [ACTION] JSON_EDIT | JSON updated for dashboard-overview-1.png | URL=https://single.mcns.io/dashboard/overview | Clip={'x': 0, 'y': 2, 'width': 1277, 'height': 716}
+2025-12-22 12:01:44 | WARNING | user=AnuroopParambil | Taking screenshot for: dashboard-overview-1.png: https://single.mcns.io/dashboard/overview
+2025-12-22 12:01:51 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2025-12-22 12:01:58 | WARNING | user=AnuroopParambil | Replayed 155 actions for dashboard-overview-1.png
+2025-12-22 12:02:01 | INFO | user=AnuroopParambil | Screenshot taken for dashboard-overview-1.png at screenshots_tmp\dashboard-overview-1.png
+2025-12-22 12:02:11 | INFO | user=AnuroopParambil | All selected screenshots processed and compared.
+2025-12-22 12:02:45 | INFO | user=AnuroopParambil | [ACTION] JSON_EDIT | No actions recorded with dashboard-overview-1.png | URL=https://single.mcns.io/dashboard/overview | Clip={'x': 0, 'y': 0, 'width': 1280, 'height': 175}
+2025-12-22 12:03:08 | INFO | user=AnuroopParambil | [ACTION] JSON_EDIT | Clip area edited with dashboard-overview-1.png | URL=https://single.mcns.io/dashboard/overview | Clip={'x': 1, 'y': 0, 'width': 1277, 'height': 719}
+2025-12-22 12:03:08 | INFO | user=AnuroopParambil | [ACTION] JSON_EDIT | JSON updated for dashboard-overview-1.png | URL=https://single.mcns.io/dashboard/overview | Clip={'x': 1, 'y': 0, 'width': 1277, 'height': 719}
+2025-12-22 12:05:37 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
