@@ -3,540 +3,56 @@
         "url": "https://single.mcns.io/dashboard/overview",
         "png_name": "dashboard-overview-1.png",
         "clip": {
-            "x": 1,
+            "x": 0,
             "y": 0,
-            "width": 1277,
-            "height": 719
+            "width": 1280,
+            "height": 715
         },
         "actions": [
             {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": 25,
-                "selector": "div#fs-map-container > svg:nth-child(1)"
-            },
-            {
-                "type": "wait",
-                "ms": 80
-            },
-            {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": 25,
-                "selector": "div#fs-map-container > svg:nth-child(1)"
-            },
-            {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": 25,
-                "selector": "div#fs-map-container > svg:nth-child(1)"
-            },
-            {
-                "type": "wait",
-                "ms": 44
-            },
-            {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": 25,
-                "selector": "div#fs-map-container > svg:nth-child(1)"
-            },
-            {
-                "type": "wait",
-                "ms": 76
-            },
-            {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": 25,
-                "selector": "div#fs-map-container > svg:nth-child(1)"
-            },
-            {
-                "type": "wait",
-                "ms": 327
-            },
-            {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": 25,
-                "selector": "div#fs-map-container > svg:nth-child(1)"
-            },
-            {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": 25,
-                "selector": "div#fs-map-container > svg:nth-child(1)"
-            },
-            {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": 25,
-                "selector": "div#fs-map-container > svg:nth-child(1)"
-            },
-            {
-                "type": "wait",
-                "ms": 58
-            },
-            {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": 25,
-                "selector": "div#fs-map-container > svg:nth-child(1)"
-            },
-            {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": 25,
-                "selector": "div#fs-map-container > svg:nth-child(1)"
-            },
-            {
-                "type": "wait",
-                "ms": 331
-            },
-            {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": 25,
-                "selector": "div#fs-map-container > svg:nth-child(1)"
-            },
-            {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": 25,
-                "selector": "div#fs-map-container > svg:nth-child(1)"
-            },
-            {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": 25,
-                "selector": "div#fs-map-container > svg:nth-child(1)"
-            },
-            {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": 25,
-                "selector": "div#fs-map-container > svg:nth-child(1)"
-            },
-            {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": 25,
-                "selector": "div#fs-map-container > svg:nth-child(1)"
-            },
-            {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": 25,
-                "selector": "div#fs-map-container > svg:nth-child(1)"
-            },
-            {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": 25,
-                "selector": "div#fs-map-container > svg:nth-child(1)"
-            },
-            {
-                "type": "wait",
-                "ms": 376
-            },
-            {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": 25,
-                "selector": "div#fs-map-container > svg:nth-child(1)"
-            },
-            {
-                "type": "wait",
-                "ms": 64
-            },
-            {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": 25,
-                "selector": "div#fs-map-container > svg:nth-child(1)"
-            },
-            {
-                "type": "wait",
-                "ms": 49
-            },
-            {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": 25,
-                "selector": "div#fs-map-container > svg:nth-child(1)"
-            },
-            {
-                "type": "wait",
-                "ms": 151
+                "type": "mousemove",
+                "x": 33,
+                "y": 248
             },
             {
                 "type": "mousemove",
-                "x": 688,
-                "y": 434
-            },
-            {
-                "type": "wait",
-                "ms": 43
+                "x": 63,
+                "y": 248
             },
             {
                 "type": "mousemove",
-                "x": 688,
-                "y": 440
-            },
-            {
-                "type": "wait",
-                "ms": 50
+                "x": 123,
+                "y": 248
             },
             {
                 "type": "mousemove",
-                "x": 688,
-                "y": 442
-            },
-            {
-                "type": "wait",
-                "ms": 234
+                "x": 183,
+                "y": 248
             },
             {
                 "type": "mousemove",
-                "x": 689,
-                "y": 443
-            },
-            {
-                "type": "wait",
-                "ms": 211
-            },
-            {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": -25,
-                "selector": "div#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1)"
-            },
-            {
-                "type": "wait",
-                "ms": 41
-            },
-            {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": -25,
-                "selector": "div#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1)"
-            },
-            {
-                "type": "wait",
-                "ms": 50
-            },
-            {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": -25,
-                "selector": "div#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1)"
-            },
-            {
-                "type": "wait",
-                "ms": 64
-            },
-            {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": -25,
-                "selector": "div#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1)"
-            },
-            {
-                "type": "wait",
-                "ms": 122
-            },
-            {
-                "type": "wheel",
-                "deltaX": -0.0,
-                "deltaY": -25,
-                "selector": "div#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1)"
-            },
-            {
-                "type": "wait",
-                "ms": 328
+                "x": 224,
+                "y": 248
             },
             {
                 "type": "mousemove",
-                "x": 690,
-                "y": 445
+                "x": 256,
+                "y": 248
             },
             {
                 "type": "mousemove",
-                "x": 691,
-                "y": 447
+                "x": 280,
+                "y": 248
             },
             {
                 "type": "mousemove",
-                "x": 692,
-                "y": 449
+                "x": 287,
+                "y": 248
             },
             {
                 "type": "mousemove",
-                "x": 692,
-                "y": 453
-            },
-            {
-                "type": "mousemove",
-                "x": 693,
-                "y": 456
-            },
-            {
-                "type": "mousemove",
-                "x": 693,
-                "y": 461
-            },
-            {
-                "type": "mousemove",
-                "x": 697,
-                "y": 472
-            },
-            {
-                "type": "mousemove",
-                "x": 697,
-                "y": 476
-            },
-            {
-                "type": "mousemove",
-                "x": 698,
-                "y": 483
-            },
-            {
-                "type": "mousemove",
-                "x": 698,
-                "y": 486
-            },
-            {
-                "type": "mousemove",
-                "x": 701,
-                "y": 492
-            },
-            {
-                "type": "mousemove",
-                "x": 702,
-                "y": 496
-            },
-            {
-                "type": "mousemove",
-                "x": 704,
-                "y": 501
-            },
-            {
-                "type": "mousemove",
-                "x": 704,
-                "y": 504
-            },
-            {
-                "type": "mousemove",
-                "x": 704,
-                "y": 507
-            },
-            {
-                "type": "mousemove",
-                "x": 704,
-                "y": 510
-            },
-            {
-                "type": "mousemove",
-                "x": 704,
-                "y": 514
-            },
-            {
-                "type": "mousemove",
-                "x": 704,
-                "y": 518
-            },
-            {
-                "type": "wait",
-                "ms": 50
-            },
-            {
-                "type": "mousemove",
-                "x": 704,
-                "y": 523
-            },
-            {
-                "type": "wait",
-                "ms": 119
-            },
-            {
-                "type": "mousedown",
-                "x": 704,
-                "y": 525
-            },
-            {
-                "type": "mousemove",
-                "x": 703,
-                "y": 525
-            },
-            {
-                "type": "mousemove",
-                "x": 699,
-                "y": 517
-            },
-            {
-                "type": "mousemove",
-                "x": 698,
-                "y": 512
-            },
-            {
-                "type": "mousemove",
-                "x": 696,
-                "y": 504
-            },
-            {
-                "type": "mousemove",
-                "x": 695,
-                "y": 498
-            },
-            {
-                "type": "mousemove",
-                "x": 694,
-                "y": 493
-            },
-            {
-                "type": "mousemove",
-                "x": 693,
-                "y": 485
-            },
-            {
-                "type": "mousemove",
-                "x": 691,
-                "y": 473
-            },
-            {
-                "type": "mousemove",
-                "x": 690,
-                "y": 468
-            },
-            {
-                "type": "mousemove",
-                "x": 689,
-                "y": 462
-            },
-            {
-                "type": "mousemove",
-                "x": 688,
-                "y": 459
-            },
-            {
-                "type": "mousemove",
-                "x": 688,
-                "y": 456
-            },
-            {
-                "type": "mousemove",
-                "x": 687,
-                "y": 452
-            },
-            {
-                "type": "mousemove",
-                "x": 687,
-                "y": 449
-            },
-            {
-                "type": "mousemove",
-                "x": 687,
-                "y": 444
-            },
-            {
-                "type": "mousemove",
-                "x": 685,
-                "y": 441
-            },
-            {
-                "type": "mousemove",
-                "x": 685,
-                "y": 436
-            },
-            {
-                "type": "mousemove",
-                "x": 685,
-                "y": 430
-            },
-            {
-                "type": "mousemove",
-                "x": 684,
-                "y": 423
-            },
-            {
-                "type": "mousemove",
-                "x": 683,
-                "y": 416
-            },
-            {
-                "type": "mousemove",
-                "x": 682,
-                "y": 409
-            },
-            {
-                "type": "mousemove",
-                "x": 681,
-                "y": 406
-            },
-            {
-                "type": "mousemove",
-                "x": 679,
-                "y": 404
-            },
-            {
-                "type": "mousemove",
-                "x": 678,
-                "y": 402
-            },
-            {
-                "type": "wait",
-                "ms": 50
-            },
-            {
-                "type": "mousemove",
-                "x": 678,
-                "y": 401
-            },
-            {
-                "type": "wait",
-                "ms": 67
-            },
-            {
-                "type": "mousemove",
-                "x": 678,
-                "y": 400
-            },
-            {
-                "type": "wait",
-                "ms": 50
-            },
-            {
-                "type": "mousemove",
-                "x": 678,
-                "y": 399
-            },
-            {
-                "type": "wait",
-                "ms": 245
-            },
-            {
-                "type": "mousemove",
-                "x": 678,
-                "y": 398
-            },
-            {
-                "type": "mousemove",
-                "x": 676,
-                "y": 396
-            },
-            {
-                "type": "wait",
-                "ms": 49
-            },
-            {
-                "type": "mousemove",
-                "x": 672,
-                "y": 394
-            },
-            {
-                "type": "mousemove",
-                "x": 669,
-                "y": 393
+                "x": 288,
+                "y": 244
             },
             {
                 "type": "wait",
@@ -544,40 +60,138 @@
             },
             {
                 "type": "mousemove",
-                "x": 666,
-                "y": 393
+                "x": 280,
+                "y": 248
+            },
+            {
+                "type": "mousemove",
+                "x": 282,
+                "y": 253
             },
             {
                 "type": "wait",
-                "ms": 150
+                "ms": 167
             },
             {
                 "type": "mousemove",
-                "x": 665,
-                "y": 393
+                "x": 285,
+                "y": 253
+            },
+            {
+                "type": "mousemove",
+                "x": 289,
+                "y": 252
+            },
+            {
+                "type": "mousemove",
+                "x": 289,
+                "y": 249
+            },
+            {
+                "type": "mousemove",
+                "x": 286,
+                "y": 248
+            },
+            {
+                "type": "mousemove",
+                "x": 274,
+                "y": 244
+            },
+            {
+                "type": "mousemove",
+                "x": 244,
+                "y": 236
+            },
+            {
+                "type": "mousemove",
+                "x": 210,
+                "y": 221
+            },
+            {
+                "type": "mousemove",
+                "x": 166,
+                "y": 200
+            },
+            {
+                "type": "mousemove",
+                "x": 113,
+                "y": 168
+            },
+            {
+                "type": "mousemove",
+                "x": 45,
+                "y": 122
+            },
+            {
+                "type": "mousemove",
+                "x": 20,
+                "y": 104
             },
             {
                 "type": "wait",
-                "ms": 49
+                "ms": 313
             },
             {
                 "type": "mousemove",
-                "x": 664,
-                "y": 396
+                "x": 1,
+                "y": 22
+            },
+            {
+                "type": "mousemove",
+                "x": 10,
+                "y": 20
+            },
+            {
+                "type": "mousemove",
+                "x": 27,
+                "y": 16
+            },
+            {
+                "type": "mousemove",
+                "x": 30,
+                "y": 14
+            },
+            {
+                "type": "mousemove",
+                "x": 37,
+                "y": 11
+            },
+            {
+                "type": "mousemove",
+                "x": 43,
+                "y": 8
             },
             {
                 "type": "wait",
-                "ms": 117
+                "ms": 69
             },
             {
                 "type": "mousemove",
-                "x": 663,
-                "y": 397
+                "x": 43,
+                "y": 5
             },
             {
                 "type": "mousemove",
-                "x": 662,
-                "y": 399
+                "x": 43,
+                "y": 1
+            },
+            {
+                "type": "wait",
+                "ms": 279
+            },
+            {
+                "type": "mousemove",
+                "x": 1,
+                "y": 2
+            },
+            {
+                "type": "wait",
+                "ms": 323
+            },
+            {
+                "type": "mousemove",
+                "x": 1,
+                "y": 6
             },
             {
                 "type": "wait",
@@ -585,8 +199,54 @@
             },
             {
                 "type": "mousemove",
-                "x": 661,
-                "y": 401
+                "x": 5,
+                "y": 6
+            },
+            {
+                "type": "mousemove",
+                "x": 8,
+                "y": 6
+            },
+            {
+                "type": "wait",
+                "ms": 49
+            },
+            {
+                "type": "mousemove",
+                "x": 11,
+                "y": 6
+            },
+            {
+                "type": "wait",
+                "ms": 66
+            },
+            {
+                "type": "mousemove",
+                "x": 14,
+                "y": 6
+            },
+            {
+                "type": "wait",
+                "ms": 229
+            },
+            {
+                "type": "mousemove",
+                "x": 14,
+                "y": 6
+            },
+            {
+                "type": "mousemove",
+                "x": 12,
+                "y": 7
+            },
+            {
+                "type": "wait",
+                "ms": 47
+            },
+            {
+                "type": "mousemove",
+                "x": 12,
+                "y": 9
             },
             {
                 "type": "wait",
@@ -594,179 +254,79 @@
             },
             {
                 "type": "mousemove",
-                "x": 660,
-                "y": 402
+                "x": 11,
+                "y": 11
             },
             {
                 "type": "wait",
-                "ms": 76
-            },
-            {
-                "type": "mouseup",
-                "x": 660,
-                "y": 402
-            },
-            {
-                "type": "click",
-                "x": 660,
-                "y": 402
+                "ms": 50
             },
             {
                 "type": "mousemove",
-                "x": 660,
-                "y": 402
+                "x": 11,
+                "y": 12
             },
             {
                 "type": "wait",
-                "ms": 164
+                "ms": 268
             },
             {
                 "type": "mousemove",
-                "x": 660,
-                "y": 403
+                "x": 12,
+                "y": 12
             },
             {
                 "type": "wait",
-                "ms": 53
+                "ms": 87
             },
             {
                 "type": "mousemove",
-                "x": 660,
-                "y": 405
-            },
-            {
-                "type": "mousemove",
-                "x": 662,
-                "y": 407
-            },
-            {
-                "type": "mousemove",
-                "x": 664,
-                "y": 409
+                "x": 14,
+                "y": 12
             },
             {
                 "type": "wait",
-                "ms": 42
+                "ms": 241
             },
             {
                 "type": "mousemove",
-                "x": 665,
-                "y": 412
-            },
-            {
-                "type": "wait",
-                "ms": 67
+                "x": 16,
+                "y": 12
             },
             {
                 "type": "mousemove",
-                "x": 665,
-                "y": 416
-            },
-            {
-                "type": "wait",
-                "ms": 41
+                "x": 19,
+                "y": 14
             },
             {
                 "type": "mousemove",
-                "x": 665,
-                "y": 417
-            },
-            {
-                "type": "wait",
-                "ms": 42
+                "x": 24,
+                "y": 17
             },
             {
                 "type": "mousemove",
-                "x": 665,
-                "y": 419
+                "x": 28,
+                "y": 24
             },
             {
                 "type": "mousemove",
-                "x": 666,
-                "y": 421
+                "x": 29,
+                "y": 32
             },
             {
                 "type": "mousemove",
-                "x": 668,
-                "y": 424
+                "x": 29,
+                "y": 35
             },
             {
                 "type": "mousemove",
-                "x": 670,
-                "y": 425
+                "x": 22,
+                "y": 43
             },
             {
                 "type": "mousemove",
-                "x": 674,
-                "y": 425
-            },
-            {
-                "type": "mousemove",
-                "x": 678,
-                "y": 425
-            },
-            {
-                "type": "wait",
-                "ms": 173
-            },
-            {
-                "type": "mousemove",
-                "x": 681,
-                "y": 424
-            },
-            {
-                "type": "wait",
-                "ms": 302
-            },
-            {
-                "type": "mousemove",
-                "x": 681,
-                "y": 424
-            },
-            {
-                "type": "mousemove",
-                "x": 675,
-                "y": 428
-            },
-            {
-                "type": "mousemove",
-                "x": 663,
-                "y": 431
-            },
-            {
-                "type": "mousemove",
-                "x": 633,
-                "y": 435
-            },
-            {
-                "type": "mousemove",
-                "x": 584,
-                "y": 443
-            },
-            {
-                "type": "mousemove",
-                "x": 504,
-                "y": 450
-            },
-            {
-                "type": "mousemove",
-                "x": 411,
-                "y": 454
-            },
-            {
-                "type": "mousemove",
-                "x": 304,
-                "y": 460
-            },
-            {
-                "type": "mousemove",
-                "x": 183,
-                "y": 472
-            },
-            {
-                "type": "mousemove",
-                "x": 59,
-                "y": 488
+                "x": 1,
+                "y": 58
             }
         ]
     },
@@ -782,98 +342,112 @@
         "actions": [
             {
                 "type": "mousemove",
-                "x": 1254,
-                "y": 225
+                "x": 1279,
+                "y": 232
             },
             {
                 "type": "mousemove",
-                "x": 1258,
-                "y": 219
+                "x": 1276,
+                "y": 229
+            },
+            {
+                "type": "wait",
+                "ms": 49
             },
             {
                 "type": "mousemove",
-                "x": 1260,
-                "y": 215
+                "x": 1275,
+                "y": 227
+            },
+            {
+                "type": "wait",
+                "ms": 58
             },
             {
                 "type": "mousemove",
-                "x": 1261,
-                "y": 213
+                "x": 1274,
+                "y": 227
             },
             {
-                "type": "mousemove",
-                "x": 1264,
-                "y": 209
-            },
-            {
-                "type": "mousemove",
-                "x": 1267,
-                "y": 205
-            },
-            {
-                "type": "mousemove",
-                "x": 1269,
-                "y": 204
+                "type": "wait",
+                "ms": 462
             },
             {
                 "type": "mousemove",
                 "x": 1273,
-                "y": 201
-            },
-            {
-                "type": "mousemove",
-                "x": 1277,
-                "y": 199
-            },
-            {
-                "type": "mousemove",
-                "x": 1279,
-                "y": 197
+                "y": 225
             },
             {
                 "type": "wait",
-                "ms": 43
-            },
-            {
-                "type": "mousemove",
-                "x": 1279,
-                "y": 195
-            },
-            {
-                "type": "wait",
-                "ms": 180
-            },
-            {
-                "type": "mousemove",
-                "x": 1278,
-                "y": 194
-            },
-            {
-                "type": "wait",
-                "ms": 646
-            },
-            {
-                "type": "mousemove",
-                "x": 1276,
-                "y": 193
-            },
-            {
-                "type": "wait",
-                "ms": 294
+                "ms": 275
             },
             {
                 "type": "mousedown",
-                "x": 1276,
-                "y": 193
+                "x": 1273,
+                "y": 225
             },
             {
                 "type": "wait",
-                "ms": 3872
+                "ms": 4706
             },
             {
                 "type": "mouseup",
-                "x": 1288,
-                "y": 318
+                "x": 1304,
+                "y": 366
+            },
+            {
+                "type": "wait",
+                "ms": 416
+            },
+            {
+                "type": "mousemove",
+                "x": 1279,
+                "y": 367
+            },
+            {
+                "type": "mousemove",
+                "x": 1260,
+                "y": 369
+            },
+            {
+                "type": "mousemove",
+                "x": 1220,
+                "y": 376
+            },
+            {
+                "type": "mousemove",
+                "x": 1135,
+                "y": 393
+            },
+            {
+                "type": "mousemove",
+                "x": 1005,
+                "y": 430
+            },
+            {
+                "type": "mousemove",
+                "x": 836,
+                "y": 472
+            },
+            {
+                "type": "mousemove",
+                "x": 636,
+                "y": 527
+            },
+            {
+                "type": "mousemove",
+                "x": 327,
+                "y": 608
+            },
+            {
+                "type": "mousemove",
+                "x": 120,
+                "y": 663
+            },
+            {
+                "type": "mousemove",
+                "x": 17,
+                "y": 695
             }
         ]
     },
@@ -882,70 +456,636 @@
         "png_name": "dashboard-overview-3.png",
         "clip": {
             "x": 0,
-            "y": 3,
-            "width": 1272,
-            "height": 712
+            "y": 0,
+            "width": 1280,
+            "height": 715
         },
         "actions": [
             {
                 "type": "mousemove",
-                "x": 1272,
-                "y": 182
+                "x": 1249,
+                "y": 257
+            },
+            {
+                "type": "wait",
+                "ms": 130
+            },
+            {
+                "type": "mousemove",
+                "x": 1250,
+                "y": 257
+            },
+            {
+                "type": "mousemove",
+                "x": 1252,
+                "y": 256
+            },
+            {
+                "type": "mousemove",
+                "x": 1254,
+                "y": 254
+            },
+            {
+                "type": "mousemove",
+                "x": 1256,
+                "y": 253
+            },
+            {
+                "type": "mousemove",
+                "x": 1258,
+                "y": 251
+            },
+            {
+                "type": "mousemove",
+                "x": 1259,
+                "y": 249
+            },
+            {
+                "type": "mousemove",
+                "x": 1261,
+                "y": 247
+            },
+            {
+                "type": "mousemove",
+                "x": 1263,
+                "y": 245
+            },
+            {
+                "type": "mousemove",
+                "x": 1266,
+                "y": 242
+            },
+            {
+                "type": "mousemove",
+                "x": 1268,
+                "y": 240
             },
             {
                 "type": "mousemove",
                 "x": 1270,
-                "y": 181
+                "y": 239
             },
             {
                 "type": "mousemove",
-                "x": 1269,
-                "y": 179
-            },
-            {
-                "type": "wait",
-                "ms": 48
+                "x": 1272,
+                "y": 237
             },
             {
                 "type": "mousemove",
-                "x": 1268,
-                "y": 178
-            },
-            {
-                "type": "wait",
-                "ms": 197
+                "x": 1274,
+                "y": 236
             },
             {
                 "type": "mousemove",
-                "x": 1268,
-                "y": 177
-            },
-            {
-                "type": "wait",
-                "ms": 86
+                "x": 1275,
+                "y": 234
             },
             {
                 "type": "mousemove",
-                "x": 1269,
-                "y": 175
+                "x": 1276,
+                "y": 232
+            },
+            {
+                "type": "mousemove",
+                "x": 1277,
+                "y": 229
+            },
+            {
+                "type": "mousemove",
+                "x": 1279,
+                "y": 227
             },
             {
                 "type": "wait",
-                "ms": 317
+                "ms": 47
+            },
+            {
+                "type": "mousemove",
+                "x": 1279,
+                "y": 224
+            },
+            {
+                "type": "wait",
+                "ms": 87
+            },
+            {
+                "type": "mousemove",
+                "x": 1279,
+                "y": 223
+            },
+            {
+                "type": "wait",
+                "ms": 95
+            },
+            {
+                "type": "mousemove",
+                "x": 1278,
+                "y": 222
+            },
+            {
+                "type": "wait",
+                "ms": 51
+            },
+            {
+                "type": "mousemove",
+                "x": 1276,
+                "y": 220
+            },
+            {
+                "type": "wait",
+                "ms": 99
+            },
+            {
+                "type": "mousemove",
+                "x": 1275,
+                "y": 220
+            },
+            {
+                "type": "wait",
+                "ms": 66
+            },
+            {
+                "type": "mousemove",
+                "x": 1274,
+                "y": 218
+            },
+            {
+                "type": "wait",
+                "ms": 55
+            },
+            {
+                "type": "mousemove",
+                "x": 1274,
+                "y": 216
+            },
+            {
+                "type": "wait",
+                "ms": 90
+            },
+            {
+                "type": "mousemove",
+                "x": 1273,
+                "y": 215
+            },
+            {
+                "type": "wait",
+                "ms": 528
             },
             {
                 "type": "mousedown",
-                "x": 1269,
-                "y": 175
+                "x": 1273,
+                "y": 215
             },
             {
                 "type": "wait",
-                "ms": 9430
+                "ms": 6965
             },
             {
                 "type": "mouseup",
-                "x": 1320,
-                "y": 416
+                "x": 1318,
+                "y": 483
+            },
+            {
+                "type": "wait",
+                "ms": 463
+            },
+            {
+                "type": "mousemove",
+                "x": 1259,
+                "y": 493
+            },
+            {
+                "type": "mousemove",
+                "x": 1183,
+                "y": 505
+            },
+            {
+                "type": "mousemove",
+                "x": 1133,
+                "y": 509
+            },
+            {
+                "type": "mousemove",
+                "x": 941,
+                "y": 513
+            },
+            {
+                "type": "mousemove",
+                "x": 828,
+                "y": 523
+            },
+            {
+                "type": "mousemove",
+                "x": 700,
+                "y": 544
+            },
+            {
+                "type": "mousemove",
+                "x": 575,
+                "y": 566
+            },
+            {
+                "type": "mousemove",
+                "x": 474,
+                "y": 588
+            },
+            {
+                "type": "mousemove",
+                "x": 406,
+                "y": 609
+            },
+            {
+                "type": "mousemove",
+                "x": 376,
+                "y": 620
+            },
+            {
+                "type": "mousemove",
+                "x": 364,
+                "y": 628
+            },
+            {
+                "type": "mousemove",
+                "x": 357,
+                "y": 632
+            },
+            {
+                "type": "mousemove",
+                "x": 355,
+                "y": 633
+            },
+            {
+                "type": "mousemove",
+                "x": 358,
+                "y": 633
+            },
+            {
+                "type": "mousemove",
+                "x": 360,
+                "y": 632
+            },
+            {
+                "type": "wait",
+                "ms": 251
+            },
+            {
+                "type": "mousemove",
+                "x": 359,
+                "y": 632
+            },
+            {
+                "type": "mousemove",
+                "x": 328,
+                "y": 640
+            },
+            {
+                "type": "mousemove",
+                "x": 285,
+                "y": 649
+            },
+            {
+                "type": "mousemove",
+                "x": 190,
+                "y": 662
+            },
+            {
+                "type": "mousemove",
+                "x": 40,
+                "y": 668
+            },
+            {
+                "type": "wait",
+                "ms": 583
+            },
+            {
+                "type": "mousemove",
+                "x": 921,
+                "y": 712
+            },
+            {
+                "type": "mousemove",
+                "x": 1083,
+                "y": 692
+            },
+            {
+                "type": "mousemove",
+                "x": 1185,
+                "y": 671
+            },
+            {
+                "type": "mousemove",
+                "x": 1232,
+                "y": 648
+            },
+            {
+                "type": "mousemove",
+                "x": 1247,
+                "y": 634
+            },
+            {
+                "type": "mousemove",
+                "x": 1249,
+                "y": 626
+            },
+            {
+                "type": "mousemove",
+                "x": 1249,
+                "y": 623
+            },
+            {
+                "type": "mousemove",
+                "x": 1247,
+                "y": 619
+            },
+            {
+                "type": "mousemove",
+                "x": 1242,
+                "y": 615
+            },
+            {
+                "type": "mousemove",
+                "x": 1240,
+                "y": 612
+            },
+            {
+                "type": "mousemove",
+                "x": 1239,
+                "y": 608
+            },
+            {
+                "type": "mousemove",
+                "x": 1235,
+                "y": 601
+            },
+            {
+                "type": "mousemove",
+                "x": 1232,
+                "y": 599
+            },
+            {
+                "type": "mousemove",
+                "x": 1227,
+                "y": 596
+            },
+            {
+                "type": "mousemove",
+                "x": 1223,
+                "y": 596
+            },
+            {
+                "type": "mousemove",
+                "x": 1220,
+                "y": 594
+            },
+            {
+                "type": "mousemove",
+                "x": 1220,
+                "y": 590
+            },
+            {
+                "type": "mousemove",
+                "x": 1220,
+                "y": 585
+            },
+            {
+                "type": "mousemove",
+                "x": 1220,
+                "y": 575
+            },
+            {
+                "type": "mousemove",
+                "x": 1220,
+                "y": 567
+            },
+            {
+                "type": "mousemove",
+                "x": 1220,
+                "y": 561
+            },
+            {
+                "type": "mousemove",
+                "x": 1221,
+                "y": 551
+            },
+            {
+                "type": "mousemove",
+                "x": 1230,
+                "y": 534
+            },
+            {
+                "type": "mousemove",
+                "x": 1237,
+                "y": 522
+            },
+            {
+                "type": "mousemove",
+                "x": 1239,
+                "y": 519
+            },
+            {
+                "type": "mousemove",
+                "x": 1241,
+                "y": 512
+            },
+            {
+                "type": "mousemove",
+                "x": 1242,
+                "y": 509
+            },
+            {
+                "type": "mousemove",
+                "x": 1243,
+                "y": 507
+            },
+            {
+                "type": "mousemove",
+                "x": 1245,
+                "y": 505
+            },
+            {
+                "type": "mousemove",
+                "x": 1246,
+                "y": 502
+            },
+            {
+                "type": "mousemove",
+                "x": 1247,
+                "y": 499
+            },
+            {
+                "type": "mousemove",
+                "x": 1248,
+                "y": 496
+            },
+            {
+                "type": "mousemove",
+                "x": 1250,
+                "y": 492
+            },
+            {
+                "type": "mousemove",
+                "x": 1253,
+                "y": 486
+            },
+            {
+                "type": "mousemove",
+                "x": 1260,
+                "y": 477
+            },
+            {
+                "type": "mousemove",
+                "x": 1262,
+                "y": 476
+            },
+            {
+                "type": "mousemove",
+                "x": 1263,
+                "y": 473
+            },
+            {
+                "type": "mousemove",
+                "x": 1264,
+                "y": 471
+            },
+            {
+                "type": "mousemove",
+                "x": 1266,
+                "y": 469
+            },
+            {
+                "type": "mousemove",
+                "x": 1267,
+                "y": 466
+            },
+            {
+                "type": "mousemove",
+                "x": 1269,
+                "y": 465
+            },
+            {
+                "type": "mousemove",
+                "x": 1270,
+                "y": 463
+            },
+            {
+                "type": "wait",
+                "ms": 111
+            },
+            {
+                "type": "mousemove",
+                "x": 1270,
+                "y": 462
+            },
+            {
+                "type": "wait",
+                "ms": 263
+            },
+            {
+                "type": "mousedown",
+                "x": 1270,
+                "y": 462
+            },
+            {
+                "type": "wait",
+                "ms": 1631
+            },
+            {
+                "type": "mouseup",
+                "x": 1270,
+                "y": 465
+            },
+            {
+                "type": "mousemove",
+                "x": 1270,
+                "y": 465
+            },
+            {
+                "type": "wait",
+                "ms": 100
+            },
+            {
+                "type": "mousemove",
+                "x": 1270,
+                "y": 466
+            },
+            {
+                "type": "wait",
+                "ms": 67
+            },
+            {
+                "type": "mousemove",
+                "x": 1270,
+                "y": 468
+            },
+            {
+                "type": "mousemove",
+                "x": 1270,
+                "y": 474
+            },
+            {
+                "type": "mousemove",
+                "x": 1269,
+                "y": 481
+            },
+            {
+                "type": "mousemove",
+                "x": 1261,
+                "y": 490
+            },
+            {
+                "type": "mousemove",
+                "x": 1259,
+                "y": 492
+            },
+            {
+                "type": "mousemove",
+                "x": 1248,
+                "y": 498
+            },
+            {
+                "type": "mousemove",
+                "x": 1226,
+                "y": 508
+            },
+            {
+                "type": "mousemove",
+                "x": 1167,
+                "y": 525
+            },
+            {
+                "type": "mousemove",
+                "x": 1069,
+                "y": 540
+            },
+            {
+                "type": "mousemove",
+                "x": 994,
+                "y": 553
+            },
+            {
+                "type": "mousemove",
+                "x": 717,
+                "y": 597
+            },
+            {
+                "type": "mousemove",
+                "x": 515,
+                "y": 624
+            },
+            {
+                "type": "mousemove",
+                "x": 329,
+                "y": 646
+            },
+            {
+                "type": "mousemove",
+                "x": 162,
+                "y": 663
+            },
+            {
+                "type": "mousemove",
+                "x": 11,
+                "y": 680
             }
         ]
     },
@@ -960,60 +1100,83 @@
         },
         "actions": [
             {
-                "type": "mousemove",
-                "x": 1274,
-                "y": 164
-            },
-            {
-                "type": "wait",
-                "ms": 163
-            },
-            {
                 "type": "mousedown",
-                "x": 1274,
-                "y": 164
+                "x": 1268,
+                "y": 216
             },
             {
                 "type": "wait",
-                "ms": 345
+                "ms": 16806
             },
             {
                 "type": "mouseup",
-                "x": 1274,
-                "y": 164
+                "x": 1342,
+                "y": 631
             },
             {
                 "type": "wait",
-                "ms": 344
+                "ms": 591
             },
             {
                 "type": "mousemove",
-                "x": 1274,
-                "y": 163
+                "x": 1264,
+                "y": 595
             },
             {
-                "type": "wait",
-                "ms": 247
+                "type": "mousemove",
+                "x": 1223,
+                "y": 592
             },
             {
-                "type": "mousedown",
-                "x": 1274,
-                "y": 163
+                "type": "mousemove",
+                "x": 1046,
+                "y": 586
             },
             {
-                "type": "wait",
-                "ms": 11019
+                "type": "mousemove",
+                "x": 915,
+                "y": 593
             },
             {
-                "type": "mouseup",
-                "x": 1320,
-                "y": 499
+                "type": "mousemove",
+                "x": 791,
+                "y": 607
+            },
+            {
+                "type": "mousemove",
+                "x": 659,
+                "y": 626
+            },
+            {
+                "type": "mousemove",
+                "x": 508,
+                "y": 639
+            },
+            {
+                "type": "mousemove",
+                "x": 347,
+                "y": 656
+            },
+            {
+                "type": "mousemove",
+                "x": 203,
+                "y": 679
+            },
+            {
+                "type": "mousemove",
+                "x": 84,
+                "y": 695
+            },
+            {
+                "type": "mousemove",
+                "x": 36,
+                "y": 705
             }
         ]
     },
     {
-        "url": "https://single.mcns.io/dashboard/overview",
-        "png_name": "dashboard-overview-5.png",
+        "url": "https://single.mcns.io/cloud-fabric/topology/overview",
+        "png_name": "topology-overview.png",
         "clip": {
             "x": 0,
             "y": 0,
@@ -1023,288 +1186,507 @@
         "actions": [
             {
                 "type": "mousemove",
-                "x": 1234,
-                "y": 591
+                "x": 944,
+                "y": 414
+            },
+            {
+                "type": "wait",
+                "ms": 83
             },
             {
                 "type": "mousemove",
-                "x": 1128,
-                "y": 573
+                "x": 943,
+                "y": 414
             },
             {
-                "type": "mousemove",
-                "x": 1048,
-                "y": 557
-            },
-            {
-                "type": "mousemove",
-                "x": 1000,
-                "y": 537
-            },
-            {
-                "type": "mousemove",
-                "x": 965,
-                "y": 518
-            },
-            {
-                "type": "mousemove",
-                "x": 946,
-                "y": 502
-            },
-            {
-                "type": "mousemove",
-                "x": 937,
-                "y": 494
-            },
-            {
-                "type": "mousemove",
-                "x": 936,
-                "y": 492
-            },
-            {
-                "type": "mousemove",
-                "x": 936,
-                "y": 489
-            },
-            {
-                "type": "mousemove",
-                "x": 938,
-                "y": 485
-            },
-            {
-                "type": "mousemove",
-                "x": 939,
-                "y": 483
+                "type": "wait",
+                "ms": 654
             },
             {
                 "type": "mousemove",
                 "x": 942,
-                "y": 475
+                "y": 414
             },
             {
                 "type": "mousemove",
-                "x": 948,
-                "y": 461
+                "x": 942,
+                "y": 417
             },
             {
                 "type": "mousemove",
-                "x": 952,
-                "y": 456
+                "x": 942,
+                "y": 423
             },
             {
                 "type": "mousemove",
-                "x": 956,
-                "y": 445
+                "x": 942,
+                "y": 431
             },
             {
                 "type": "mousemove",
-                "x": 960,
-                "y": 437
+                "x": 940,
+                "y": 446
             },
             {
                 "type": "mousemove",
-                "x": 966,
-                "y": 427
+                "x": 935,
+                "y": 460
             },
             {
                 "type": "mousemove",
-                "x": 975,
-                "y": 415
+                "x": 932,
+                "y": 468
             },
             {
                 "type": "mousemove",
-                "x": 985,
-                "y": 401
+                "x": 928,
+                "y": 478
             },
             {
                 "type": "mousemove",
-                "x": 999,
-                "y": 388
+                "x": 917,
+                "y": 498
             },
             {
                 "type": "mousemove",
-                "x": 1019,
-                "y": 373
+                "x": 911,
+                "y": 509
             },
             {
                 "type": "mousemove",
-                "x": 1056,
-                "y": 356
+                "x": 905,
+                "y": 518
             },
             {
                 "type": "mousemove",
-                "x": 1077,
-                "y": 348
+                "x": 901,
+                "y": 529
             },
             {
                 "type": "mousemove",
-                "x": 1119,
-                "y": 333
+                "x": 897,
+                "y": 550
             },
             {
                 "type": "mousemove",
-                "x": 1164,
-                "y": 318
+                "x": 891,
+                "y": 579
             },
             {
                 "type": "mousemove",
-                "x": 1179,
-                "y": 311
+                "x": 886,
+                "y": 610
             },
             {
                 "type": "mousemove",
-                "x": 1192,
-                "y": 303
+                "x": 883,
+                "y": 631
             },
             {
                 "type": "mousemove",
-                "x": 1193,
-                "y": 301
+                "x": 879,
+                "y": 652
+            },
+            {
+                "type": "mousemove",
+                "x": 877,
+                "y": 661
+            },
+            {
+                "type": "mousemove",
+                "x": 872,
+                "y": 675
+            },
+            {
+                "type": "mousemove",
+                "x": 864,
+                "y": 689
+            },
+            {
+                "type": "mousemove",
+                "x": 862,
+                "y": 694
+            },
+            {
+                "type": "mousemove",
+                "x": 861,
+                "y": 697
+            },
+            {
+                "type": "mousemove",
+                "x": 860,
+                "y": 700
+            },
+            {
+                "type": "mousemove",
+                "x": 859,
+                "y": 702
+            },
+            {
+                "type": "mousemove",
+                "x": 859,
+                "y": 705
+            },
+            {
+                "type": "mousemove",
+                "x": 855,
+                "y": 709
+            },
+            {
+                "type": "mousemove",
+                "x": 848,
+                "y": 712
+            },
+            {
+                "type": "mousemove",
+                "x": 842,
+                "y": 716
+            },
+            {
+                "type": "mousemove",
+                "x": 840,
+                "y": 717
+            },
+            {
+                "type": "mousemove",
+                "x": 836,
+                "y": 718
             },
             {
                 "type": "wait",
-                "ms": 267
+                "ms": 41
             },
             {
                 "type": "mousemove",
-                "x": 1193,
-                "y": 300
+                "x": 832,
+                "y": 718
             },
             {
                 "type": "wait",
-                "ms": 83
+                "ms": 61
             },
             {
                 "type": "mousemove",
-                "x": 1192,
-                "y": 299
+                "x": 831,
+                "y": 718
             },
             {
                 "type": "mousemove",
-                "x": 1192,
-                "y": 295
+                "x": 827,
+                "y": 717
             },
             {
                 "type": "mousemove",
-                "x": 1193,
-                "y": 290
+                "x": 823,
+                "y": 713
+            },
+            {
+                "type": "mousemove",
+                "x": 820,
+                "y": 712
+            },
+            {
+                "type": "mousemove",
+                "x": 816,
+                "y": 709
             },
             {
                 "type": "wait",
-                "ms": 417
+                "ms": 43
             },
             {
                 "type": "mousemove",
-                "x": 1193,
-                "y": 288
+                "x": 814,
+                "y": 707
             },
             {
                 "type": "wait",
-                "ms": 200
+                "ms": 62
             },
             {
                 "type": "mousemove",
-                "x": 1200,
-                "y": 286
+                "x": 812,
+                "y": 701
             },
             {
                 "type": "mousemove",
-                "x": 1208,
-                "y": 281
+                "x": 810,
+                "y": 698
             },
             {
                 "type": "mousemove",
-                "x": 1216,
+                "x": 808,
+                "y": 697
+            },
+            {
+                "type": "wait",
+                "ms": 69
+            },
+            {
+                "type": "mousemove",
+                "x": 805,
+                "y": 694
+            },
+            {
+                "type": "wait",
+                "ms": 48
+            },
+            {
+                "type": "mousemove",
+                "x": 805,
+                "y": 691
+            },
+            {
+                "type": "wait",
+                "ms": 51
+            },
+            {
+                "type": "mousemove",
+                "x": 804,
+                "y": 689
+            },
+            {
+                "type": "wait",
+                "ms": 221
+            },
+            {
+                "type": "mousemove",
+                "x": 804,
+                "y": 688
+            },
+            {
+                "type": "mousemove",
+                "x": 806,
+                "y": 687
+            },
+            {
+                "type": "mousemove",
+                "x": 808,
+                "y": 685
+            },
+            {
+                "type": "mousemove",
+                "x": 811,
+                "y": 685
+            },
+            {
+                "type": "mousemove",
+                "x": 814,
+                "y": 685
+            },
+            {
+                "type": "mousemove",
+                "x": 817,
+                "y": 685
+            },
+            {
+                "type": "mousemove",
+                "x": 820,
+                "y": 685
+            },
+            {
+                "type": "mousemove",
+                "x": 827,
+                "y": 685
+            },
+            {
+                "type": "mousemove",
+                "x": 831,
+                "y": 685
+            },
+            {
+                "type": "wait",
+                "ms": 117
+            },
+            {
+                "type": "mousemove",
+                "x": 834,
+                "y": 685
+            },
+            {
+                "type": "wait",
+                "ms": 46
+            },
+            {
+                "type": "mousedown",
+                "x": 834,
+                "y": 685
+            },
+            {
+                "type": "wait",
+                "ms": 114
+            },
+            {
+                "type": "mouseup",
+                "x": 834,
+                "y": 685
+            },
+            {
+                "type": "click",
+                "x": 834,
+                "y": 685
+            },
+            {
+                "type": "wait",
+                "ms": 1636
+            },
+            {
+                "type": "mousedown",
+                "x": 834,
+                "y": 685
+            },
+            {
+                "type": "wait",
+                "ms": 94
+            },
+            {
+                "type": "mouseup",
+                "x": 834,
+                "y": 685
+            },
+            {
+                "type": "click",
+                "x": 834,
+                "y": 685
+            },
+            {
+                "type": "wait",
+                "ms": 680
+            },
+            {
+                "type": "mousemove",
+                "x": 835,
+                "y": 685
+            },
+            {
+                "type": "wait",
+                "ms": 518
+            },
+            {
+                "type": "mousemove",
+                "x": 835,
+                "y": 686
+            },
+            {
+                "type": "wait",
+                "ms": 41
+            },
+            {
+                "type": "mousemove",
+                "x": 836,
+                "y": 687
+            },
+            {
+                "type": "mousemove",
+                "x": 838,
+                "y": 689
+            },
+            {
+                "type": "mousemove",
+                "x": 840,
+                "y": 691
+            },
+            {
+                "type": "mousemove",
+                "x": 844,
+                "y": 695
+            },
+            {
+                "type": "mousemove",
+                "x": 854,
+                "y": 703
+            },
+            {
+                "type": "mousemove",
+                "x": 864,
+                "y": 709
+            },
+            {
+                "type": "mousemove",
+                "x": 881,
+                "y": 713
+            }
+        ]
+    },
+    {
+        "url": "https://single.mcns.io/cloud-fabric/topology/overview",
+        "png_name": "topology-overview-details.png",
+        "clip": {
+            "x": 912,
+            "y": 1,
+            "width": 364,
+            "height": 716
+        },
+        "actions": [
+            {
+                "type": "mousemove",
+                "x": 826,
+                "y": 374
+            },
+            {
+                "type": "mousemove",
+                "x": 828,
+                "y": 371
+            },
+            {
+                "type": "mousemove",
+                "x": 831,
+                "y": 369
+            },
+            {
+                "type": "mousemove",
+                "x": 836,
+                "y": 364
+            },
+            {
+                "type": "mousemove",
+                "x": 843,
+                "y": 357
+            },
+            {
+                "type": "mousemove",
+                "x": 854,
+                "y": 349
+            },
+            {
+                "type": "mousemove",
+                "x": 868,
+                "y": 341
+            },
+            {
+                "type": "mousemove",
+                "x": 900,
+                "y": 322
+            },
+            {
+                "type": "mousemove",
+                "x": 928,
+                "y": 307
+            },
+            {
+                "type": "mousemove",
+                "x": 953,
+                "y": 291
+            },
+            {
+                "type": "mousemove",
+                "x": 972,
                 "y": 279
             },
             {
                 "type": "mousemove",
-                "x": 1229,
-                "y": 277
+                "x": 988,
+                "y": 269
             },
             {
                 "type": "mousemove",
-                "x": 1242,
-                "y": 271
-            },
-            {
-                "type": "mousemove",
-                "x": 1250,
-                "y": 267
-            },
-            {
-                "type": "mousemove",
-                "x": 1254,
+                "x": 994,
                 "y": 265
             },
             {
-                "type": "wait",
-                "ms": 83
-            },
-            {
                 "type": "mousemove",
-                "x": 1256,
-                "y": 264
-            },
-            {
-                "type": "mousemove",
-                "x": 1258,
-                "y": 261
-            },
-            {
-                "type": "mousemove",
-                "x": 1262,
-                "y": 259
-            },
-            {
-                "type": "wait",
-                "ms": 100
-            },
-            {
-                "type": "mousemove",
-                "x": 1264,
-                "y": 257
-            },
-            {
-                "type": "wait",
-                "ms": 87
-            },
-            {
-                "type": "mousemove",
-                "x": 1273,
-                "y": 249
-            },
-            {
-                "type": "mousemove",
-                "x": 1276,
-                "y": 246
-            },
-            {
-                "type": "wait",
-                "ms": 684
-            },
-            {
-                "type": "mousemove",
-                "x": 1279,
-                "y": 210
-            },
-            {
-                "type": "wait",
-                "ms": 104
-            },
-            {
-                "type": "mousemove",
-                "x": 1276,
-                "y": 209
-            },
-            {
-                "type": "wait",
-                "ms": 1146
-            },
-            {
-                "type": "mousemove",
-                "x": 1275,
-                "y": 209
+                "x": 995,
+                "y": 262
             },
             {
                 "type": "wait",
@@ -1312,357 +1694,110 @@
             },
             {
                 "type": "mousemove",
-                "x": 1275,
-                "y": 207
+                "x": 996,
+                "y": 259
             },
             {
                 "type": "wait",
-                "ms": 1378
+                "ms": 50
+            },
+            {
+                "type": "mousemove",
+                "x": 996,
+                "y": 258
+            },
+            {
+                "type": "wait",
+                "ms": 72
+            },
+            {
+                "type": "mousemove",
+                "x": 996,
+                "y": 257
+            },
+            {
+                "type": "wait",
+                "ms": 322
             },
             {
                 "type": "mousedown",
-                "x": 1275,
-                "y": 207
+                "x": 996,
+                "y": 257
             },
             {
                 "type": "wait",
-                "ms": 2063
+                "ms": 156
             },
             {
                 "type": "mouseup",
-                "x": 1313,
-                "y": 697
-            }
-        ]
-    },
-    {
-        "url": "https://single.mcns.io/cloud-fabric/gateways/transit",
-        "png_name": "gateways-transit-details.png",
-        "clip": {
-            "x": 0,
-            "y": 0,
-            "width": 1280,
-            "height": 715
-        },
-        "actions": [
-            {
-                "type": "mousemove",
-                "x": 1244,
-                "y": 601
-            },
-            {
-                "type": "mousemove",
-                "x": 1077,
-                "y": 597
-            },
-            {
-                "type": "mousemove",
-                "x": 925,
-                "y": 595
-            },
-            {
-                "type": "mousemove",
-                "x": 804,
-                "y": 597
-            },
-            {
-                "type": "mousemove",
-                "x": 701,
-                "y": 606
-            },
-            {
-                "type": "mousemove",
-                "x": 624,
-                "y": 611
-            },
-            {
-                "type": "mousemove",
-                "x": 564,
-                "y": 611
-            },
-            {
-                "type": "mousemove",
-                "x": 509,
-                "y": 602
-            },
-            {
-                "type": "mousemove",
-                "x": 461,
-                "y": 593
-            },
-            {
-                "type": "mousemove",
-                "x": 419,
-                "y": 584
-            },
-            {
-                "type": "mousemove",
-                "x": 400,
-                "y": 577
+                "x": 996,
+                "y": 257
             },
             {
                 "type": "wait",
-                "ms": 268
-            },
-            {
-                "type": "mousemove",
-                "x": 400,
-                "y": 575
-            },
-            {
-                "type": "mousemove",
-                "x": 396,
-                "y": 570
-            },
-            {
-                "type": "mousemove",
-                "x": 396,
-                "y": 561
-            },
-            {
-                "type": "mousemove",
-                "x": 396,
-                "y": 555
-            },
-            {
-                "type": "mousemove",
-                "x": 396,
-                "y": 541
-            },
-            {
-                "type": "mousemove",
-                "x": 394,
-                "y": 526
-            },
-            {
-                "type": "mousemove",
-                "x": 392,
-                "y": 513
-            },
-            {
-                "type": "mousemove",
-                "x": 391,
-                "y": 499
-            },
-            {
-                "type": "mousemove",
-                "x": 390,
-                "y": 484
-            },
-            {
-                "type": "mousemove",
-                "x": 388,
-                "y": 466
-            },
-            {
-                "type": "mousemove",
-                "x": 387,
-                "y": 444
-            },
-            {
-                "type": "mousemove",
-                "x": 384,
-                "y": 424
-            },
-            {
-                "type": "mousemove",
-                "x": 381,
-                "y": 395
-            },
-            {
-                "type": "mousemove",
-                "x": 377,
-                "y": 372
-            },
-            {
-                "type": "mousemove",
-                "x": 373,
-                "y": 359
-            },
-            {
-                "type": "mousemove",
-                "x": 365,
-                "y": 329
-            },
-            {
-                "type": "mousemove",
-                "x": 357,
-                "y": 292
-            },
-            {
-                "type": "mousemove",
-                "x": 353,
-                "y": 277
-            },
-            {
-                "type": "mousemove",
-                "x": 348,
-                "y": 266
-            },
-            {
-                "type": "mousemove",
-                "x": 347,
-                "y": 261
-            },
-            {
-                "type": "mousemove",
-                "x": 344,
-                "y": 255
-            },
-            {
-                "type": "mousemove",
-                "x": 344,
-                "y": 251
-            },
-            {
-                "type": "mousemove",
-                "x": 342,
-                "y": 245
-            },
-            {
-                "type": "mousemove",
-                "x": 341,
-                "y": 241
-            },
-            {
-                "type": "mousemove",
-                "x": 341,
-                "y": 236
-            },
-            {
-                "type": "mousemove",
-                "x": 341,
-                "y": 233
-            },
-            {
-                "type": "mousemove",
-                "x": 340,
-                "y": 230
-            },
-            {
-                "type": "mousemove",
-                "x": 338,
-                "y": 219
-            },
-            {
-                "type": "mousemove",
-                "x": 337,
-                "y": 214
-            },
-            {
-                "type": "wait",
-                "ms": 559
-            },
-            {
-                "type": "mousedown",
-                "x": 337,
-                "y": 213
-            },
-            {
-                "type": "mousemove",
-                "x": 337,
-                "y": 213
-            },
-            {
-                "type": "wait",
-                "ms": 120
-            },
-            {
-                "type": "mouseup",
-                "x": 337,
-                "y": 213
+                "ms": 65
             },
             {
                 "type": "click",
-                "x": 337,
-                "y": 213
+                "x": 996,
+                "y": 257
+            },
+            {
+                "type": "mousemove",
+                "x": 995,
+                "y": 257
             },
             {
                 "type": "wait",
-                "ms": 3272
+                "ms": 298
             },
             {
                 "type": "mousemove",
-                "x": 332,
-                "y": 210
-            },
-            {
-                "type": "mousemove",
-                "x": 325,
-                "y": 208
-            },
-            {
-                "type": "mousemove",
-                "x": 323,
-                "y": 207
-            },
-            {
-                "type": "mousemove",
-                "x": 321,
-                "y": 206
+                "x": 994,
+                "y": 257
             },
             {
                 "type": "wait",
-                "ms": 56
+                "ms": 640
             },
             {
                 "type": "mousemove",
-                "x": 318,
-                "y": 205
-            },
-            {
-                "type": "mousemove",
-                "x": 316,
-                "y": 204
-            },
-            {
-                "type": "mousemove",
-                "x": 313,
-                "y": 203
-            },
-            {
-                "type": "mousemove",
-                "x": 311,
-                "y": 202
+                "x": 993,
+                "y": 257
             },
             {
                 "type": "wait",
-                "ms": 1449
+                "ms": 275
             },
             {
                 "type": "mousemove",
-                "x": 313,
-                "y": 202
+                "x": 995,
+                "y": 260
             },
             {
                 "type": "mousemove",
-                "x": 324,
-                "y": 207
+                "x": 1000,
+                "y": 262
             },
             {
                 "type": "mousemove",
-                "x": 361,
-                "y": 223
+                "x": 1007,
+                "y": 265
             },
             {
                 "type": "mousemove",
-                "x": 429,
-                "y": 245
-            },
-            {
-                "type": "mousemove",
-                "x": 567,
+                "x": 1038,
                 "y": 279
             },
             {
                 "type": "mousemove",
-                "x": 827,
-                "y": 341
+                "x": 1112,
+                "y": 304
             },
             {
                 "type": "mousemove",
-                "x": 1170,
-                "y": 410
+                "x": 1225,
+                "y": 334
             }
         ]
     },
@@ -7940,5 +8075,789 @@
             "height": 490
         },
         "actions": []
+    },
+    {
+        "url": "https://single.mcns.io/cloud-fabric/gateways/transit",
+        "png_name": "gateways-transit-create.png",
+        "clip": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 715
+        },
+        "actions": [
+            {
+                "type": "mousemove",
+                "x": 868,
+                "y": 697
+            },
+            {
+                "type": "mousemove",
+                "x": 823,
+                "y": 650
+            },
+            {
+                "type": "wait",
+                "ms": 59
+            },
+            {
+                "type": "mousemove",
+                "x": 400,
+                "y": 208
+            },
+            {
+                "type": "mousemove",
+                "x": 344,
+                "y": 148
+            },
+            {
+                "type": "mousemove",
+                "x": 328,
+                "y": 130
+            },
+            {
+                "type": "mousemove",
+                "x": 313,
+                "y": 113
+            },
+            {
+                "type": "mousemove",
+                "x": 313,
+                "y": 110
+            },
+            {
+                "type": "mousemove",
+                "x": 313,
+                "y": 107
+            },
+            {
+                "type": "mousemove",
+                "x": 313,
+                "y": 104
+            },
+            {
+                "type": "mousemove",
+                "x": 313,
+                "y": 100
+            },
+            {
+                "type": "mousemove",
+                "x": 313,
+                "y": 95
+            },
+            {
+                "type": "mousemove",
+                "x": 313,
+                "y": 92
+            },
+            {
+                "type": "mousemove",
+                "x": 315,
+                "y": 89
+            },
+            {
+                "type": "wait",
+                "ms": 65
+            },
+            {
+                "type": "mousemove",
+                "x": 316,
+                "y": 91
+            },
+            {
+                "type": "mousemove",
+                "x": 318,
+                "y": 97
+            },
+            {
+                "type": "mousemove",
+                "x": 318,
+                "y": 100
+            },
+            {
+                "type": "mousemove",
+                "x": 319,
+                "y": 113
+            },
+            {
+                "type": "mousemove",
+                "x": 320,
+                "y": 117
+            },
+            {
+                "type": "mousemove",
+                "x": 321,
+                "y": 121
+            },
+            {
+                "type": "wait",
+                "ms": 50
+            },
+            {
+                "type": "mousemove",
+                "x": 321,
+                "y": 124
+            },
+            {
+                "type": "wait",
+                "ms": 217
+            },
+            {
+                "type": "mousemove",
+                "x": 322,
+                "y": 126
+            },
+            {
+                "type": "wait",
+                "ms": 110
+            },
+            {
+                "type": "mousedown",
+                "x": 322,
+                "y": 126
+            },
+            {
+                "type": "mousemove",
+                "x": 322,
+                "y": 126
+            },
+            {
+                "type": "wait",
+                "ms": 76
+            },
+            {
+                "type": "mouseup",
+                "x": 322,
+                "y": 126
+            },
+            {
+                "type": "click",
+                "x": 322,
+                "y": 126
+            },
+            {
+                "type": "wait",
+                "ms": 951
+            },
+            {
+                "type": "mousemove",
+                "x": 324,
+                "y": 129
+            },
+            {
+                "type": "mousemove",
+                "x": 329,
+                "y": 134
+            },
+            {
+                "type": "mousemove",
+                "x": 349,
+                "y": 153
+            },
+            {
+                "type": "mousemove",
+                "x": 417,
+                "y": 215
+            },
+            {
+                "type": "mousemove",
+                "x": 500,
+                "y": 286
+            },
+            {
+                "type": "mousemove",
+                "x": 585,
+                "y": 349
+            },
+            {
+                "type": "mousemove",
+                "x": 664,
+                "y": 405
+            },
+            {
+                "type": "mousemove",
+                "x": 742,
+                "y": 472
+            },
+            {
+                "type": "mousemove",
+                "x": 824,
+                "y": 554
+            },
+            {
+                "type": "mousemove",
+                "x": 903,
+                "y": 643
+            },
+            {
+                "type": "wait",
+                "ms": 1650
+            },
+            {
+                "type": "mousemove",
+                "x": 1020,
+                "y": 718
+            },
+            {
+                "type": "mousemove",
+                "x": 1048,
+                "y": 669
+            },
+            {
+                "type": "mousemove",
+                "x": 1073,
+                "y": 629
+            }
+        ]
+    },
+    {
+        "url": "https://single.mcns.io/cloud-fabric/gateways/management",
+        "png_name": "gateways-software-upgrade.png",
+        "clip": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 715
+        },
+        "actions": [
+            {
+                "type": "wait",
+                "ms": 119
+            },
+            {
+                "type": "mousemove",
+                "x": 655,
+                "y": 363
+            },
+            {
+                "type": "mousemove",
+                "x": 662,
+                "y": 367
+            },
+            {
+                "type": "mousemove",
+                "x": 680,
+                "y": 379
+            },
+            {
+                "type": "mousemove",
+                "x": 691,
+                "y": 387
+            },
+            {
+                "type": "wait",
+                "ms": 3208
+            },
+            {
+                "type": "mousemove",
+                "x": 994,
+                "y": 694
+            },
+            {
+                "type": "wait",
+                "ms": 152
+            },
+            {
+                "type": "mousemove",
+                "x": 994,
+                "y": 693
+            },
+            {
+                "type": "wait",
+                "ms": 141
+            },
+            {
+                "type": "mousemove",
+                "x": 994,
+                "y": 692
+            },
+            {
+                "type": "mousemove",
+                "x": 992,
+                "y": 690
+            },
+            {
+                "type": "wait",
+                "ms": 68
+            },
+            {
+                "type": "mousemove",
+                "x": 992,
+                "y": 687
+            },
+            {
+                "type": "wait",
+                "ms": 500
+            }
+        ]
+    },
+    {
+        "url": "https://single.mcns.io/cloud-fabric/gateways/management",
+        "png_name": "gateways-image-upgrade.png",
+        "clip": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 715
+        },
+        "actions": [
+            {
+                "type": "mousemove",
+                "x": 599,
+                "y": 341
+            },
+            {
+                "type": "mousemove",
+                "x": 596,
+                "y": 337
+            },
+            {
+                "type": "mousemove",
+                "x": 594,
+                "y": 333
+            },
+            {
+                "type": "mousemove",
+                "x": 592,
+                "y": 331
+            },
+            {
+                "type": "mousemove",
+                "x": 586,
+                "y": 325
+            },
+            {
+                "type": "mousemove",
+                "x": 581,
+                "y": 320
+            },
+            {
+                "type": "mousemove",
+                "x": 573,
+                "y": 313
+            },
+            {
+                "type": "mousemove",
+                "x": 562,
+                "y": 305
+            },
+            {
+                "type": "mousemove",
+                "x": 545,
+                "y": 295
+            },
+            {
+                "type": "mousemove",
+                "x": 528,
+                "y": 283
+            },
+            {
+                "type": "mousemove",
+                "x": 511,
+                "y": 271
+            },
+            {
+                "type": "mousemove",
+                "x": 497,
+                "y": 260
+            },
+            {
+                "type": "mousemove",
+                "x": 488,
+                "y": 248
+            },
+            {
+                "type": "mousemove",
+                "x": 480,
+                "y": 231
+            },
+            {
+                "type": "mousemove",
+                "x": 472,
+                "y": 202
+            },
+            {
+                "type": "mousemove",
+                "x": 470,
+                "y": 193
+            },
+            {
+                "type": "mousemove",
+                "x": 467,
+                "y": 180
+            },
+            {
+                "type": "mousemove",
+                "x": 466,
+                "y": 177
+            },
+            {
+                "type": "mousemove",
+                "x": 464,
+                "y": 175
+            },
+            {
+                "type": "mousemove",
+                "x": 464,
+                "y": 171
+            },
+            {
+                "type": "mousemove",
+                "x": 463,
+                "y": 167
+            },
+            {
+                "type": "mousemove",
+                "x": 460,
+                "y": 157
+            },
+            {
+                "type": "mousemove",
+                "x": 460,
+                "y": 149
+            },
+            {
+                "type": "mousemove",
+                "x": 458,
+                "y": 140
+            },
+            {
+                "type": "mousemove",
+                "x": 457,
+                "y": 136
+            },
+            {
+                "type": "mousemove",
+                "x": 457,
+                "y": 130
+            },
+            {
+                "type": "mousemove",
+                "x": 456,
+                "y": 127
+            },
+            {
+                "type": "mousemove",
+                "x": 453,
+                "y": 122
+            },
+            {
+                "type": "mousemove",
+                "x": 450,
+                "y": 118
+            },
+            {
+                "type": "wait",
+                "ms": 325
+            },
+            {
+                "type": "mousedown",
+                "x": 449,
+                "y": 117
+            },
+            {
+                "type": "wait",
+                "ms": 90
+            },
+            {
+                "type": "mouseup",
+                "x": 449,
+                "y": 117
+            },
+            {
+                "type": "click",
+                "x": 449,
+                "y": 117
+            },
+            {
+                "type": "wait",
+                "ms": 79
+            },
+            {
+                "type": "mousemove",
+                "x": 448,
+                "y": 121
+            },
+            {
+                "type": "wait",
+                "ms": 160
+            },
+            {
+                "type": "mousemove",
+                "x": 448,
+                "y": 122
+            },
+            {
+                "type": "wait",
+                "ms": 163
+            },
+            {
+                "type": "mousemove",
+                "x": 448,
+                "y": 123
+            },
+            {
+                "type": "wait",
+                "ms": 995
+            }
+        ]
+    },
+    {
+        "url": "https://single.mcns.io/cloud-fabric/gateways/management",
+        "png_name": "gateways-rollback.png",
+        "clip": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 715
+        },
+        "actions": [
+            {
+                "type": "mousemove",
+                "x": 599,
+                "y": 173
+            },
+            {
+                "type": "mousemove",
+                "x": 612,
+                "y": 188
+            },
+            {
+                "type": "mousemove",
+                "x": 629,
+                "y": 203
+            },
+            {
+                "type": "mousemove",
+                "x": 644,
+                "y": 216
+            },
+            {
+                "type": "mousemove",
+                "x": 649,
+                "y": 221
+            },
+            {
+                "type": "wait",
+                "ms": 189
+            },
+            {
+                "type": "mousemove",
+                "x": 649,
+                "y": 222
+            },
+            {
+                "type": "wait",
+                "ms": 160
+            },
+            {
+                "type": "mousemove",
+                "x": 650,
+                "y": 222
+            },
+            {
+                "type": "mousemove",
+                "x": 652,
+                "y": 223
+            },
+            {
+                "type": "mousemove",
+                "x": 655,
+                "y": 224
+            },
+            {
+                "type": "mousemove",
+                "x": 659,
+                "y": 225
+            },
+            {
+                "type": "mousemove",
+                "x": 662,
+                "y": 225
+            },
+            {
+                "type": "mousemove",
+                "x": 668,
+                "y": 225
+            },
+            {
+                "type": "mousemove",
+                "x": 672,
+                "y": 225
+            },
+            {
+                "type": "mousemove",
+                "x": 675,
+                "y": 225
+            },
+            {
+                "type": "wait",
+                "ms": 1211
+            },
+            {
+                "type": "mousemove",
+                "x": 672,
+                "y": 232
+            },
+            {
+                "type": "mousemove",
+                "x": 661,
+                "y": 217
+            },
+            {
+                "type": "mousemove",
+                "x": 652,
+                "y": 209
+            },
+            {
+                "type": "mousemove",
+                "x": 631,
+                "y": 190
+            },
+            {
+                "type": "mousemove",
+                "x": 609,
+                "y": 173
+            },
+            {
+                "type": "mousemove",
+                "x": 593,
+                "y": 158
+            },
+            {
+                "type": "mousemove",
+                "x": 590,
+                "y": 153
+            },
+            {
+                "type": "mousemove",
+                "x": 589,
+                "y": 150
+            },
+            {
+                "type": "mousemove",
+                "x": 585,
+                "y": 138
+            },
+            {
+                "type": "mousemove",
+                "x": 583,
+                "y": 131
+            },
+            {
+                "type": "mousemove",
+                "x": 579,
+                "y": 122
+            },
+            {
+                "type": "mousemove",
+                "x": 576,
+                "y": 118
+            },
+            {
+                "type": "mousemove",
+                "x": 573,
+                "y": 115
+            },
+            {
+                "type": "mousemove",
+                "x": 572,
+                "y": 113
+            },
+            {
+                "type": "mousemove",
+                "x": 570,
+                "y": 112
+            },
+            {
+                "type": "mousemove",
+                "x": 568,
+                "y": 110
+            },
+            {
+                "type": "mousemove",
+                "x": 564,
+                "y": 107
+            },
+            {
+                "type": "mousemove",
+                "x": 561,
+                "y": 105
+            },
+            {
+                "type": "wait",
+                "ms": 166
+            },
+            {
+                "type": "mousemove",
+                "x": 561,
+                "y": 110
+            },
+            {
+                "type": "mousemove",
+                "x": 563,
+                "y": 116
+            },
+            {
+                "type": "mousemove",
+                "x": 566,
+                "y": 118
+            },
+            {
+                "type": "mousemove",
+                "x": 567,
+                "y": 120
+            },
+            {
+                "type": "wait",
+                "ms": 65
+            },
+            {
+                "type": "mousemove",
+                "x": 568,
+                "y": 121
+            },
+            {
+                "type": "wait",
+                "ms": 98
+            },
+            {
+                "type": "mousemove",
+                "x": 568,
+                "y": 123
+            },
+            {
+                "type": "mousemove",
+                "x": 569,
+                "y": 125
+            },
+            {
+                "type": "wait",
+                "ms": 117
+            },
+            {
+                "type": "mousedown",
+                "x": 569,
+                "y": 125
+            },
+            {
+                "type": "wait",
+                "ms": 108
+            },
+            {
+                "type": "mouseup",
+                "x": 569,
+                "y": 125
+            },
+            {
+                "type": "click",
+                "x": 569,
+                "y": 125
+            },
+            {
+                "type": "wait",
+                "ms": 1435
+            }
+        ]
     }
 ]
