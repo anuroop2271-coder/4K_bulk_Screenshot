@@ -96,7 +96,7 @@ def convert_events_to_actions(events):
             actions.append({"type": "mousemove", "x": ev["x"], "y": ev["y"]})
         elif ev["type"] == "mouseup":
             actions.append({"type": "mouseup", "x": ev["x"], "y": ev["y"]})            
-        elif ev["type"] == "keydown":
+        elif ev["type"] == "keyboard":
             actions.append({"type": "keyboard", "key": ev["key"]})
         elif ev["type"] == "wheel":
             actions.append({"type": "wheel", "deltaX": ev.get("deltaX", 0), "deltaY": ev.get("deltaY", 0), "selector": ev.get("selector", "")})
@@ -326,7 +326,14 @@ async () => {
     }
   }
   function onClick(e) { emit('click', { x: e.clientX, y: e.clientY }); }
-  function onKey(e) { emit('keyboard', { key: e.key }); }
+  function onKey(e) {
+  if (e.key === 'Escape') {
+    window.__stopInlineRecorder();
+  } else {
+    emit('keyboard', { key: e.key });
+  }
+}
+
   function onWheel(e) {
     emit('wheel', {
       deltaX: e.deltaX,
@@ -341,6 +348,7 @@ async () => {
       emit('scrollTo', { x, y });
       lastScroll = { x, y, t: now };
     }
+
   }
 
   window.addEventListener('mousedown', onMouseDown, true);
@@ -482,7 +490,7 @@ async def run_json_editor(context, page: Page, recorded_events_buffer):
                 status = await page.evaluate(RECORD_ACTIONS_JS)
                 recorded_events_buffer.clear()
                 print(f"[INFO] Recorder status: {status}")
-                print("[ACTION] Interact with the page, then press Enter here to stop recording...")
+                print("[ACTION] Interact with the page, then press Esc to stop recording...")
 
                 input()
                 await page.evaluate("window.__stopInlineRecorder && window.__stopInlineRecorder();")
