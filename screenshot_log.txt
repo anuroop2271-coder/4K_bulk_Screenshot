@@ -5912,3 +5912,55 @@ playwright._impl._errors.TargetClosedError: Target page, context or browser has 
 2026-01-09 14:59:12 | INFO | user=AnuroopParambil | [ACTION] JSON_ADD | Added entry gateways-specialty-create.png with clip {'x': 0, 'y': 0, 'width': 1280, 'height': 715} and 79 actions
 2026-01-09 15:00:06 | INFO | user=AnuroopParambil | Recorded 352 raw events, 419 actions for https://single.mcns.io/cloud-fabric/gateways/specialty?type=other
 2026-01-09 15:00:07 | INFO | user=AnuroopParambil | [ACTION] JSON_ADD | Added entry gateways-specialty-edit.png with clip {'x': 0, 'y': 0, 'width': 1280, 'height': 715} and 419 actions
+2026-01-09 15:01:43 | INFO | user=AnuroopParambil | Re-recorded 56 actions for gateways-specialty-edit.png
+2026-01-09 15:01:45 | INFO | user=AnuroopParambil | [ACTION] JSON_EDIT | JSON updated for gateways-specialty-edit.png | URL=https://single.mcns.io/cloud-fabric/gateways/specialty?type=other | Clip={'x': 0, 'y': 0, 'width': 1280, 'height': 715}
+2026-01-09 15:01:55 | INFO | user=AnuroopParambil | [ACTION] JSON_EDIT | Updated URL: gateways-specialty-edit.png | URL=https://single.mcns.io/cloud-fabric/gateways/specialty | Clip={'x': 0, 'y': 0, 'width': 1280, 'height': 715}
+2026-01-09 15:02:18 | INFO | user=AnuroopParambil | Re-recorded 143 actions for gateways-specialty-edit.png
+2026-01-09 15:02:20 | INFO | user=AnuroopParambil | [ACTION] JSON_EDIT | JSON updated for gateways-specialty-edit.png | URL=https://single.mcns.io/cloud-fabric/gateways/specialty | Clip={'x': 0, 'y': 0, 'width': 1280, 'height': 715}
+2026-01-09 15:02:55 | INFO | user=AnuroopParambil | Recorded 51 raw events, 55 actions for https://single.mcns.io/cloud-fabric/gateways/specialty
+2026-01-09 15:02:57 | INFO | user=AnuroopParambil | [ACTION] JSON_ADD | Added entry gateways-specialty-details.png with clip {'x': 0, 'y': 0, 'width': 1280, 'height': 715} and 55 actions
+2026-01-09 15:04:22 | INFO | user=AnuroopParambil | Recorded 0 raw events, 0 actions for https://single.mcns.io/cloud-fabric/gateways/management
+2026-01-09 15:04:24 | INFO | user=AnuroopParambil | [ACTION] JSON_ADD | Added entry gateways-software-upgrade.png with clip {'x': 0, 'y': 0, 'width': 1280, 'height': 715} and 0 actions
+2026-01-09 15:04:54 | INFO | user=AnuroopParambil | Recorded 15 raw events, 19 actions for https://single.mcns.io/cloud-fabric/gateways/management
+2026-01-09 15:04:56 | INFO | user=AnuroopParambil | [ACTION] JSON_ADD | Added entry gateways-image-upgrade.png with clip {'x': 0, 'y': 0, 'width': 1280, 'height': 715} and 19 actions
+2026-01-09 15:05:16 | INFO | user=AnuroopParambil | Recorded 19 raw events, 21 actions for https://single.mcns.io/cloud-fabric/gateways/management
+2026-01-09 15:05:17 | INFO | user=AnuroopParambil | [ACTION] JSON_ADD | Added entry gateways-rollback.png with clip {'x': 0, 'y': 0, 'width': 1280, 'height': 715} and 21 actions
+2026-01-09 15:05:38 | INFO | user=AnuroopParambil | Recorded 7 raw events, 7 actions for https://single.mcns.io/cloud-fabric/gateways/settings
+2026-01-09 15:05:39 | INFO | user=AnuroopParambil | [ACTION] JSON_ADD | Added entry gateways-settings.png with clip {'x': 0, 'y': 0, 'width': 1280, 'height': 715} and 7 actions
+2026-01-09 15:06:11 | INFO | user=AnuroopParambil | Recorded 0 raw events, 0 actions for https://single.mcns.io/cloud-fabric/hybrid-cloud/overview
+2026-01-09 15:06:12 | INFO | user=AnuroopParambil | [ACTION] JSON_ADD | Added entry hybrid-overview.png with clip {'x': 0, 'y': 0, 'width': 1280, 'height': 715} and 0 actions
+2026-01-09 15:06:46 | INFO | user=AnuroopParambil | Recorded 0 raw events, 0 actions for https://single.mcns.io/cloud-fabric/hybrid-cloud/edge-gateways/spoke
+2026-01-09 15:06:47 | INFO | user=AnuroopParambil | [ACTION] JSON_ADD | Added entry hybrid-edge-spoke.png with clip {'x': 0, 'y': 0, 'width': 1280, 'height': 715} and 0 actions
+2026-01-09 15:09:16 | INFO | user=AnuroopParambil | Recorded 15 raw events, 19 actions for https://single.mcns.io/cloud-fabric/hybrid-cloud/edge-gateways/spoke
+2026-01-09 15:09:17 | INFO | user=AnuroopParambil | [ACTION] JSON_ADD | Added entry hybrid-edge-spoke-create.png with clip {'x': 0, 'y': 0, 'width': 1280, 'height': 715} and 19 actions
+2026-01-09 15:09:55 | INFO | user=AnuroopParambil | [ACTION] JSON_REMOVE | Removed entry: hybrid-edge-spoke-create.png (https://single.mcns.io/cloud-fabric/hybrid-cloud/edge-gateways/spoke)
+2026-01-09 15:11:50 | INFO | user=AnuroopParambil | Recorded 63 raw events, 69 actions for https://single.mcns.io/cloud-fabric/hybrid-cloud/edge-gateways/spoke
+2026-01-09 15:11:51 | INFO | user=AnuroopParambil | [ACTION] JSON_ADD | Added entry hybrid-edge-spoke-create-1.png with clip {'x': 0, 'y': 0, 'width': 1280, 'height': 715} and 69 actions
+2026-01-09 15:12:28 | INFO | user=AnuroopParambil | Recorded 247 raw events, 281 actions for https://single.mcns.io/cloud-fabric/hybrid-cloud/edge-gateways/spoke
+2026-01-09 15:12:30 | INFO | user=AnuroopParambil | [ACTION] JSON_ADD | Added entry hybrid-edge-spoke-create-2.png with clip {'x': 0, 'y': 0, 'width': 1280, 'height': 715} and 281 actions
+2026-01-09 15:12:56 | INFO | user=AnuroopParambil | Recorded 0 raw events, 0 actions for https://single.mcns.io/cloud-fabric/hybrid-cloud/edge-gateways/transit
+2026-01-09 15:12:57 | INFO | user=AnuroopParambil | [ACTION] JSON_ADD | Added entry hybrid-edge-transit.png with clip {'x': 0, 'y': 0, 'width': 1280, 'height': 715} and 0 actions
+2026-01-09 15:13:55 | INFO | user=AnuroopParambil | Recorded 44 raw events, 50 actions for https://single.mcns.io/cloud-fabric/hybrid-cloud/edge-gateways/transit
+2026-01-09 15:13:56 | INFO | user=AnuroopParambil | [ACTION] JSON_ADD | Added entry hybrid-edge-transit-create-1.png with clip {'x': 0, 'y': 0, 'width': 1280, 'height': 715} and 50 actions
+2026-01-09 15:15:07 | INFO | user=AnuroopParambil | Recorded 199 raw events, 248 actions for https://single.mcns.io/cloud-fabric/hybrid-cloud/edge-gateways/transit
+2026-01-09 15:15:08 | INFO | user=AnuroopParambil | [ACTION] JSON_ADD | Added entry hybrid-edge-transit-create-2.png with clip {'x': 0, 'y': 0, 'width': 1280, 'height': 715} and 248 actions
+2026-01-09 15:16:24 | INFO | user=AnuroopParambil | Recorded 359 raw events, 421 actions for https://single.mcns.io/cloud-fabric/hybrid-cloud/edge-gateways/transit
+2026-01-09 15:16:25 | INFO | user=AnuroopParambil | [ACTION] JSON_ADD | Added entry hybrid-edge-transit-create-3.png with clip {'x': 0, 'y': 0, 'width': 1280, 'height': 715} and 421 actions
+2026-01-09 15:17:15 | INFO | user=AnuroopParambil | Recorded 0 raw events, 0 actions for https://single.mcns.io/cloud-fabric/hybrid-cloud/devices
+2026-01-09 15:17:16 | INFO | user=AnuroopParambil | [ACTION] JSON_ADD | Added entry hybrid-devices.png with clip {'x': 0, 'y': 0, 'width': 1280, 'height': 715} and 0 actions
+2026-01-09 15:18:00 | INFO | user=AnuroopParambil | Recorded 0 raw events, 0 actions for https://single.mcns.io/cloud-fabric/hybrid-cloud/devices/onboard-device
+2026-01-09 15:18:02 | INFO | user=AnuroopParambil | [ACTION] JSON_ADD | Added entry hybrid-devices-onboard.png with clip {'x': 0, 'y': 0, 'width': 1280, 'height': 715} and 0 actions
+2026-01-09 15:18:57 | INFO | user=AnuroopParambil | Recorded 5 raw events, 5 actions for https://single.mcns.io/cloud-fabric/hybrid-cloud/platforms
+2026-01-09 15:18:58 | INFO | user=AnuroopParambil | [ACTION] JSON_ADD | Added entry hybrid-platforms.png with clip {'x': 0, 'y': 0, 'width': 1280, 'height': 715} and 5 actions
+2026-01-09 15:20:17 | WARNING | user=AnuroopParambil | Taking screenshot for: hybrid-edge-transit-create-3.png: https://single.mcns.io/cloud-fabric/hybrid-cloud/edge-gateways/transit
+2026-01-09 15:20:23 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2026-01-09 15:20:51 | WARNING | user=AnuroopParambil | Replayed 421 actions for hybrid-edge-transit-create-3.png
+2026-01-09 15:20:55 | INFO | user=AnuroopParambil | Screenshot taken for hybrid-edge-transit-create-3.png at screenshots_tmp\hybrid-edge-transit-create-3.png
+2026-01-09 15:20:55 | INFO | user=AnuroopParambil | All selected screenshots processed and compared.
+2026-01-09 15:27:40 | INFO | user=AnuroopParambil | Re-recorded 315 actions for hybrid-edge-spoke-create-2.png
+2026-01-09 15:27:45 | INFO | user=AnuroopParambil | [ACTION] JSON_EDIT | JSON updated for hybrid-edge-spoke-create-2.png | URL=https://single.mcns.io/cloud-fabric/hybrid-cloud/edge-gateways/spoke | Clip={'x': 0, 'y': 0, 'width': 1280, 'height': 715}
+2026-01-09 15:27:56 | WARNING | user=AnuroopParambil | Taking screenshot for: hybrid-edge-spoke-create-2.png: https://single.mcns.io/cloud-fabric/hybrid-cloud/edge-gateways/spoke
+2026-01-09 15:28:01 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2026-01-09 15:28:14 | WARNING | user=AnuroopParambil | Replayed 315 actions for hybrid-edge-spoke-create-2.png
+2026-01-09 15:28:18 | INFO | user=AnuroopParambil | Screenshot taken for hybrid-edge-spoke-create-2.png at screenshots_tmp\hybrid-edge-spoke-create-2.png
+2026-01-09 15:28:18 | INFO | user=AnuroopParambil | All selected screenshots processed and compared.
