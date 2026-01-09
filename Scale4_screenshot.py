@@ -781,7 +781,7 @@ async def compare_and_prompt(page: Page):
     flex: 1;
     border: 3px solid #555;
     background: #111;
-    width: 400px;
+    width: 600px;
     height: 400px;
     overflow: hidden;
     position: sticky;
