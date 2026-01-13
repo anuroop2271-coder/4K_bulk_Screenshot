@@ -5964,3 +5964,34 @@ playwright._impl._errors.TargetClosedError: Target page, context or browser has 
 2026-01-09 15:28:14 | WARNING | user=AnuroopParambil | Replayed 315 actions for hybrid-edge-spoke-create-2.png
 2026-01-09 15:28:18 | INFO | user=AnuroopParambil | Screenshot taken for hybrid-edge-spoke-create-2.png at screenshots_tmp\hybrid-edge-spoke-create-2.png
 2026-01-09 15:28:18 | INFO | user=AnuroopParambil | All selected screenshots processed and compared.
+2026-01-09 15:33:38 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2026-01-09 15:34:44 | INFO | user=AnuroopParambil | Re-recorded 249 actions for hybrid-edge-transit-create-2.png
+2026-01-09 15:35:00 | INFO | user=AnuroopParambil | [ACTION] JSON_EDIT | JSON updated for hybrid-edge-transit-create-2.png | URL=https://single.mcns.io/cloud-fabric/hybrid-cloud/edge-gateways/transit | Clip={'x': 0, 'y': 0, 'width': 1280, 'height': 715}
+2026-01-09 15:35:21 | WARNING | user=AnuroopParambil | Taking screenshot for: hybrid-edge-transit-create-2.png: https://single.mcns.io/cloud-fabric/hybrid-cloud/edge-gateways/transit
+2026-01-09 15:35:32 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2026-01-09 15:35:44 | WARNING | user=AnuroopParambil | Replayed 249 actions for hybrid-edge-transit-create-2.png
+2026-01-09 15:35:48 | INFO | user=AnuroopParambil | Screenshot taken for hybrid-edge-transit-create-2.png at screenshots_tmp\hybrid-edge-transit-create-2.png
+2026-01-09 15:35:48 | INFO | user=AnuroopParambil | All selected screenshots processed and compared.
+2026-01-09 15:37:14 | INFO | user=AnuroopParambil | Re-recorded 446 actions for hybrid-edge-spoke-create-2.png
+2026-01-09 15:37:18 | INFO | user=AnuroopParambil | [ACTION] JSON_EDIT | JSON updated for hybrid-edge-spoke-create-2.png | URL=https://single.mcns.io/cloud-fabric/hybrid-cloud/edge-gateways/spoke | Clip={'x': 0, 'y': 0, 'width': 1280, 'height': 715}
+2026-01-09 15:37:33 | WARNING | user=AnuroopParambil | Taking screenshot for: hybrid-edge-spoke-create-2.png: https://single.mcns.io/cloud-fabric/hybrid-cloud/edge-gateways/spoke
+2026-01-09 15:37:39 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2026-01-09 15:38:01 | WARNING | user=AnuroopParambil | Replayed 446 actions for hybrid-edge-spoke-create-2.png
+2026-01-09 15:38:05 | INFO | user=AnuroopParambil | Screenshot taken for hybrid-edge-spoke-create-2.png at screenshots_tmp\hybrid-edge-spoke-create-2.png
+2026-01-09 15:38:05 | INFO | user=AnuroopParambil | All selected screenshots processed and compared.
+2026-01-09 15:38:56 | INFO | user=AnuroopParambil | Re-recorded 254 actions for hybrid-edge-spoke-create-2.png
+2026-01-09 15:38:57 | INFO | user=AnuroopParambil | [ACTION] JSON_EDIT | JSON updated for hybrid-edge-spoke-create-2.png | URL=https://single.mcns.io/cloud-fabric/hybrid-cloud/edge-gateways/spoke | Clip={'x': 0, 'y': 0, 'width': 1280, 'height': 715}
+2026-01-09 15:39:02 | WARNING | user=AnuroopParambil | Taking screenshot for: hybrid-edge-spoke-create-2.png: https://single.mcns.io/cloud-fabric/hybrid-cloud/edge-gateways/spoke
+2026-01-09 15:39:08 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2026-01-09 15:39:29 | WARNING | user=AnuroopParambil | Replayed 254 actions for hybrid-edge-spoke-create-2.png
+2026-01-09 15:39:33 | INFO | user=AnuroopParambil | Screenshot taken for hybrid-edge-spoke-create-2.png at screenshots_tmp\hybrid-edge-spoke-create-2.png
+2026-01-09 15:39:38 | INFO | user=AnuroopParambil | All selected screenshots processed and compared.
+2026-01-09 15:40:36 | INFO | user=AnuroopParambil | Re-recorded 233 actions for hybrid-edge-spoke-create-2.png
+2026-01-09 15:40:38 | INFO | user=AnuroopParambil | [ACTION] JSON_EDIT | JSON updated for hybrid-edge-spoke-create-2.png | URL=https://single.mcns.io/cloud-fabric/hybrid-cloud/edge-gateways/spoke | Clip={'x': 0, 'y': 0, 'width': 1280, 'height': 715}
+2026-01-09 15:40:42 | WARNING | user=AnuroopParambil | Taking screenshot for: hybrid-edge-spoke-create-2.png: https://single.mcns.io/cloud-fabric/hybrid-cloud/edge-gateways/spoke
+2026-01-09 15:40:47 | WARNING | user=AnuroopParambil | png_name saved to TEMP_SCREENSHOT_DIR.
+2026-01-09 15:41:13 | WARNING | user=AnuroopParambil | Replayed 233 actions for hybrid-edge-spoke-create-2.png
+2026-01-09 15:41:17 | INFO | user=AnuroopParambil | Screenshot taken for hybrid-edge-spoke-create-2.png at screenshots_tmp\hybrid-edge-spoke-create-2.png
+2026-01-09 15:41:21 | INFO | user=AnuroopParambil | All selected screenshots processed and compared.
+2026-01-09 15:42:34 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
+2026-01-09 15:42:39 | INFO | user=AnuroopParambil | recordEventBridge exposed once at startup.
